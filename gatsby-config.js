@@ -6,6 +6,8 @@ module.exports = {
     author: `@avinerenberg`,
   },
   plugins: [
+    `gatsby-plugin-stylus`,
+    `gatsby-plugin-purgecss`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -19,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `afpa-wordpress-site`,
+        name: `afpa-wordpress`,
         short_name: `afpa`,
         start_url: `/`,
         background_color: `#663399`,
@@ -31,21 +33,26 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `allianceforpatientaccess.org`,
+        baseUrl: `afpa.staging.wpengine.com`,
         protocol: `https`,
         hostingWPCOM: false,
         useACF: false, // TODO: returned 404
+        // concurrentRequests: 10,
+        // searchAndReplaceContentUrls: {
+        //   sourceUrl: "https://wcldn2018talk.wpengine.com",
+        //   replacementUrl: "https://wpheadless.indigotree.co.uk",
+        // },
         includedRoutes: [
           '**/posts',
           '**/pages',
-          // "**/media",
+          '**/media',
           '**/categories',
           '**/tags',
           '**/taxonomies',
         ],
       },
     },
-    'gatsby-plugin-eslint',
+    `gatsby-plugin-typescript`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

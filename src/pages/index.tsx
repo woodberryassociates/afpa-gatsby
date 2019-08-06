@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
-import SEO from '../components/seo'
+import SEO from '../components/seo.js'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => (
 )
 
 IndexPage.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object.isRequired,
 }
 
 export const pageQuery = graphql`
