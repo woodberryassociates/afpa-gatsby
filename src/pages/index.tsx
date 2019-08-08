@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
-import SEO from '../components/seo.js'
+import SEO from '../components/seo'
+// import '../global.styl'
 
 const IndexPage = ({ data }) => (
   <Layout>

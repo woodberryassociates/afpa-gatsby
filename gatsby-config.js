@@ -6,7 +6,14 @@ module.exports = {
     author: `@avinerenberg`,
   },
   plugins: [
-    `gatsby-plugin-stylus`,
+    // `gatsby-plugin-stylus`, TODO: rm lib
+    {
+      resolve: `gatsby-plugin-stylus-resources`,
+      options: {
+        resources: ['./src/global.styl'],
+        postCssPlugins: [require('tailwindcss')],
+      },
+    },
     `gatsby-plugin-purgecss`,
     `gatsby-plugin-react-helmet`,
     {
@@ -45,10 +52,10 @@ module.exports = {
         includedRoutes: [
           '**/posts',
           '**/pages',
-          '**/media',
-          '**/categories',
-          '**/tags',
-          '**/taxonomies',
+          // '**/media',
+          // '**/categories',
+          // '**/tags',
+          // '**/taxonomies',
         ],
       },
     },
