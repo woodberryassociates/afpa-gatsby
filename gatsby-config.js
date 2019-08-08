@@ -6,7 +6,7 @@ module.exports = {
     author: `@avinerenberg`,
   },
   plugins: [
-    // `gatsby-plugin-stylus`, TODO: rm lib
+    // `gatsby-plugin-stylus`, // TODO: rm lib
     {
       resolve: `gatsby-plugin-stylus-resources`,
       options: {
@@ -31,7 +31,7 @@ module.exports = {
         name: `afpa-wordpress`,
         short_name: `afpa`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`,
@@ -59,6 +59,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-tslint`,
     `gatsby-plugin-typescript`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

@@ -1,10 +1,10 @@
-import React from 'react'
 import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import React from 'react'
 
-import Layout from '../components/layout'
 import Image from '../components/image'
+import Layout from '../components/layout'
 import SEO from '../components/seo'
 // import '../global.styl'
 
