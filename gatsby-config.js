@@ -37,30 +37,41 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-remote-images`,
+    //   options: {
+    //     nodeType: 'wordpressWpMedia',
+    //     imagePath: 'edges.node.source_url',
+    //     name: 'wpImage',
+    //   },
+    // },
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `afpa.staging.wpengine.com`,
-        protocol: `https`,
+        baseUrl: process.env.WP_ENV, // localhost or the remote URL
+        protocol: `http`,
         hostingWPCOM: false,
-        useACF: false, // TODO: returned 404
-        // concurrentRequests: 10,
+        useACF: false, // TODO(?)
         // searchAndReplaceContentUrls: {
         //   sourceUrl: "https://wcldn2018talk.wpengine.com",
         //   replacementUrl: "https://wpheadless.indigotree.co.uk",
         // },
         includedRoutes: [
-          '**/posts',
+          '**/sliders',
+          '**/working-groups',
+          '**/coalitions',
+          '**/events',
+          // '**/posts',
           '**/pages',
-          // '**/media',
+          '**/media',
           // '**/categories',
           // '**/tags',
           // '**/taxonomies',
         ],
       },
     },
-    `gatsby-plugin-tslint`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-tslint`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

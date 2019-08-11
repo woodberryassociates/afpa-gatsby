@@ -1,31 +1,18 @@
-import { Link } from 'gatsby'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import Image from '../components/image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Slider from '../components/slider'
+
 // import '../global.styl'
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-
-    {data.allWordpressPost.edges.map(({ key, node }) => (
-      <div key={key}>
-        <h3>{node.title}</h3>
-        <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-      </div>
-    ))}
-
-    <Link to="/page-2/">Go to page 2</Link>
+    <Slider />
   </Layout>
 )
 
@@ -34,13 +21,15 @@ IndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query {
-    allWordpressPost(sort: { fields: [date] }) {
+  query IndexPage {
+    allWordpressWpSliders {
       edges {
         node {
+          content
           title
-          excerpt
-          slug
+          featured_media {
+            link
+          }
         }
       }
     }

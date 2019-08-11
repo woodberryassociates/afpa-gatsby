@@ -1,101 +1,107 @@
-import { Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import '../global.styl'
-import { facebook, logo, search, twitter, youtube } from '../images'
+import { facebook, search, twitter, youtube } from '../images'
 
-const Header = () => (
-  <header className="px-32 font-mons text-darkBlue bg-white flex flex-wrap">
-    <div className="w-1/4">
-      <h4
-        style={{
-          paddingBottom: '100%',
-          background: '#EEE',
-        }}
-      >
-        <Link to="/">
-          <img src={logo} />
-        </Link>
-      </h4>
-    </div>
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      img: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
-    <section className="mx-6 w-1/2 flex flex-wrap justify-around items-center font-semibold">
-      <div>
-        <h4>
-          <Link className="" to="/about">
-            ABOUT
+  return (
+    <header className="px-32 text-darkBlue bg-white flex flex-wrap">
+      <div className="w-1/4">
+        <h6>
+          <Link to="/">
+            <Img fluid={data.img.childImageSharp.fluid} />
           </Link>
-        </h4>
+        </h6>
       </div>
 
-      <div>
-        <h4>
-          <Link className="" to="/events">
-            EVENTS
-          </Link>
-        </h4>
-      </div>
+      <section className="mx-6 w-1/2 flex flex-wrap justify-around items-center font-semibold">
+        <div>
+          <h6>
+            <Link className="" to="/about">
+              ABOUT
+            </Link>
+          </h6>
+        </div>
 
-      <div>
-        <h4>
-          <Link className="" to="/resources">
-            RESOURCES
-          </Link>
-        </h4>
-      </div>
+        <div>
+          <h6>
+            <Link className="" to="/events">
+              EVENTS
+            </Link>
+          </h6>
+        </div>
 
-      <div>
-        <h4>
-          <Link className="" to="/advocacy">
-            ADVOCACY
-          </Link>
-        </h4>
-      </div>
+        <div>
+          <h6>
+            <Link className="" to="/resources">
+              RESOURCES
+            </Link>
+          </h6>
+        </div>
 
-      <div>
-        <h4>
-          <Link className="" to="/surveyhub">
-            SURVEYHUB
-          </Link>
-        </h4>
-      </div>
-    </section>
+        <div>
+          <h6>
+            <Link className="" to="/advocacy">
+              ADVOCACY
+            </Link>
+          </h6>
+        </div>
 
-    <section className="w-1/6 flex justify-around items-center">
-      <div>
-        <a href="https://facebook.com/patientaccess">
-          <img src={facebook} />
-        </a>
-      </div>
+        <div>
+          <h6>
+            <Link className="" to="/surveyhub">
+              SURVEYHUB
+            </Link>
+          </h6>
+        </div>
+      </section>
 
-      <div>
-        <a href="https://twitter.com/patientaccess">
-          <img src={twitter} />
-        </a>
-      </div>
+      <section className="w-1/6 flex justify-around items-center">
+        <div>
+          <a href="https://facebook.com/patientaccess">
+            <img src={facebook} />
+          </a>
+        </div>
 
-      <div>
-        <a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
-          <img src={youtube} />
-        </a>
-      </div>
+        <div>
+          <a href="https://twitter.com/patientaccess">
+            <img src={twitter} />
+          </a>
+        </div>
 
-      <div>
-        <a href="/">
-          <img src={search} />
-        </a>
-      </div>
-    </section>
-  </header>
-)
+        <div>
+          <a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
+            <img src={youtube} />
+          </a>
+        </div>
 
-Header.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
+        <div>
+          <a href="/">
+            <img src={search} />
+          </a>
+        </div>
+      </section>
+    </header>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+// Header.propTypes = {
+//   data: PropTypes.object.isRequired,
+// }
 
 export default Header

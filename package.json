@@ -24,7 +24,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-responsive-carousel": "^3.1.50"
   },
   "devDependencies": {
     "@types/node": "^12.7.0",
@@ -41,8 +42,8 @@
     "prettier": "^1.18.2",
     "tailwindcss": "^1.1.0",
     "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0",
     "tslint-loader": "^3.5.4",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.3"
@@ -53,9 +54,11 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "GATSBY_CONCURRENT_DOWNLOAD=5 npm run develop",
+    "develop": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
+    "format": "prettier --write src/**/*.{tsx}",
+    "local": "WP_ENV=localhost/afpa npm run develop",
+    "staging": "WP_ENV=afpa.staging.wpengine.com npm run develop",
+    "start": "WP_ENV=allianceforpatientaccess.org npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
