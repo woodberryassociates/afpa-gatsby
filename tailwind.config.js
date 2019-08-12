@@ -13,10 +13,6 @@ module.exports = {
         'sans-serif',
       ],
     },
-    fontSize: {
-      '2xl': '1.5rem', // TODO: this shouldn't be necessary, should be in defaults
-      '7xl': '4.5rem',
-    },
     colors: {
       lightBlue: '#008FC3',
       darkBlue: '#242B5F',
@@ -24,11 +20,16 @@ module.exports = {
     maxHeight: {
       '3/4': '75vh',
     },
-    inset: {
-      '1/4': '25%',
-      '1/6': '16%',
+    extend: {
+      fontSize: {
+        '7xl': '4.5rem',
+      },
+      inset: {
+        '1/4': '25%',
+        '1/6': '16%',
+        '1/10': '10%',
+      },
     },
-    extend: {},
   },
   variants: {},
   plugins: [],

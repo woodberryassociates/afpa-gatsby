@@ -20,7 +20,7 @@ const Header = () => {
   `)
 
   return (
-    <header className="px-32 text-darkBlue bg-white flex flex-wrap">
+    <header className="xl:px-32 text-darkBlue bg-white flex flex-wrap">
       <div className="w-1/4">
         <h6>
           <Link to="/">
