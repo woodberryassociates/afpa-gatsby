@@ -1,7 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import {
+  ButtonBack,
+  ButtonNext,
+  CarouselProvider,
+  Slide,
+  Slider,
+} from 'pure-react-carousel'
+// tslint:disable-next-line:no-submodule-imports
+import 'pure-react-carousel/dist/react-carousel.es.css'
 import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
 
 const Slide = ({ data }) => (
   <div className="relative">
