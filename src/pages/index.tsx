@@ -2,16 +2,15 @@ import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Image from '../components/image'
-import Slider from '../components/index/slider'
+import Slider from '../components/indexPage/slider'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 // import '../global.styl'
-import FeaturedEvent from './../components/index/featuredEvent'
-import FeaturedTweet from './../components/index/featuredTweet'
+import FeaturedEvent from '../components/indexPage/featuredEvent'
+import FeaturedTweet from '../components/indexPage/featuredTweet'
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Slider />
@@ -26,20 +25,20 @@ IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export const pageQuery = graphql`
-  query IndexPage {
-    allWordpressWpSliders {
-      edges {
-        node {
-          content
-          title
-          featured_media {
-            link
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query IndexPage {
+//     allWordpressWpSliders {
+//       edges {
+//         node {
+//           content
+//           title
+//           featured_media {
+//             link
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default IndexPage

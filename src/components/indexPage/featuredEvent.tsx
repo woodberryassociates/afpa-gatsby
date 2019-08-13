@@ -31,23 +31,22 @@ const FeaturedEvent = () => {
     }
   `)
 
-  const nodes = data.allWordpressWpEvents.edges.map(({ key, node }) => (
-    <BackgroundImage
-      key={key}
-      fluid={node.featured_media.localFile.childImageSharp.fluid}
-    />
-  ))
-
   return data.allWordpressWpEvents.edges.map(({ key, node }) => (
     <BackgroundImage
-      style={{ width: '50%' }} // for some reason, tailwind styles aren't working
+      className="backgroundImage" // TODO: tailwind styles aren't being applied correctly
       key={key}
       fluid={[
         node.featured_media.localFile.childImageSharp.fluid,
         `linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,
       ].reverse()}
     >
-      <div className="overflow-hidden">hello world</div>
+      <div className="flex flex-col justify-center h-full">
+        <h2 dangerouslySetInnerHTML={{ __html: node.title }} />
+        <p
+          className="overflow-hidden"
+          dangerouslySetInnerHTML={{ __html: node.content }}
+        />
+      </div>
     </BackgroundImage>
   ))
 }
