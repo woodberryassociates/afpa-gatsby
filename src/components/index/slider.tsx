@@ -14,19 +14,17 @@ import React from 'react'
 const Slide = ({ key, data }) => (
   <CarouselSlide key={key} index={key}>
     <Img
-      className="object-fill max-h-3/4"
+      className="h-in max-h-3/4"
       fluid={data.featured_media.localFile.childImageSharp.fluid}
     />
-    <div className="flex flex-col absolute top-0 h-full max-w-xl">
-      <div className="relative left-1/6 top-1/10 xl:top-1/6 xl:left-1/4">
-        <h1 className="text-4xl lg:text-6xl xl:text-7xl leading-tight text-darkBlue my-3">
-          {data.title}
-        </h1>
-        <p
-          className="text-lg lg:text-xl xl:text-2xl font-light leading-snug"
-          dangerouslySetInnerHTML={{ __html: data.content }}
-        />
-      </div>
+    <div className="absolute left-0 xs:left-1/10 top-0 xs:top-1/6 lg:top-1/10 xl:top-1/6 max-w-xl">
+      <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-darkBlue my-3">
+        {data.title}
+      </h1>
+      <p
+        className="text-base sm:text-lg lg:text-xl xl:text-2xl font-light leading-snug"
+        dangerouslySetInnerHTML={{ __html: data.content }}
+      />
     </div>
   </CarouselSlide>
 )
@@ -58,15 +56,16 @@ const Slider = () => {
     <CarouselProvider
       naturalSlideWidth={1920}
       naturalSlideHeight={700}
-      totalSlides={3}
+      totalSlides={2}
+      isPlaying={true}
     >
       <CarouselSlider>
         {data.allWordpressWpSliders.edges.map(({ key, node }) => (
           <Slide key={key} data={node} />
         ))}
       </CarouselSlider>
-      <ButtonBack>Back</ButtonBack>
-      <ButtonNext>Next</ButtonNext>
+      {/* <ButtonBack>Back</ButtonBack>
+      <ButtonNext>Next</ButtonNext> */}
     </CarouselProvider>
   )
 }

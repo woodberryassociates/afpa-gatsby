@@ -3,16 +3,22 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Image from '../components/image'
+import Slider from '../components/index/slider'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Slider from '../components/slider'
 
 // import '../global.styl'
+import FeaturedEvent from './../components/index/featuredEvent'
+import FeaturedTweet from './../components/index/featuredTweet'
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Slider />
+    <div className="flex flex-wrap">
+      <FeaturedEvent />
+      <FeaturedTweet />
+    </div>
   </Layout>
 )
 
