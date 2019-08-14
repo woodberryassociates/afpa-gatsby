@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+
+h3 {
+  @apply text-lightGray uppercase tracking-wide;
+}
+
+h4 {
+  @apply text-lightBlue text-3xl;
+}
+
+.button {
+  @apply inline py-3 px-1 rounded-sm text-white bg-lightBlue;
+  font-size: 1.15reml;
+}
+
+.clipped {
+  @apply bg-afpaGreen;
+  background: url('./images/backgroundClip2.svg') no-repeat 0 100% overflow auto;
+  /* prevents margin collapse */
+}
+.featuredeventbackgroundimage {
+  @apply .w-full;
+  min-height: 400px;
+}
+
+@media (min-width: 1024px) {
+  .featuredEventBackgroundImage {
+    @apply w-1/2;
+  }
+}
+
+@tailwind utilities;

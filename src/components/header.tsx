@@ -3,7 +3,6 @@ import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import '../global.styl'
 import { facebook, search, twitter, youtube } from '../images'
 
 const Header = () => {

@@ -6,12 +6,21 @@ module.exports = {
     author: `@avinerenberg`,
   },
   plugins: [
-    // `gatsby-plugin-stylus`, // TODO: rm lib
+    // {
+    //   resolve: `gatsby-plugin-stylus-resources`,
+    //   options: {
+    //     resources: ['./src/global.styl'],
+    //     postCssPlugins: [require('tailwindcss')],
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-stylus-resources`,
+      resolve: `gatsby-plugin-postcss`,
       options: {
-        resources: ['./src/global.styl'],
-        postCssPlugins: [require('tailwindcss')],
+        postCssPlugins: [
+          require(`tailwindcss`),
+          require(`precss`),
+          require(`postcss-preset-env`),
+        ],
       },
     },
     `gatsby-plugin-purgecss`,
@@ -51,19 +60,20 @@ module.exports = {
         baseUrl: process.env.WP_ENV, // localhost or the remote URL
         protocol: `http`,
         hostingWPCOM: false,
-        useACF: false, // TODO(?)
+        useACF: true, // TODO(?)
         // searchAndReplaceContentUrls: {
-        //   sourceUrl: "https://wcldn2018talk.wpengine.com",
-        //   replacementUrl: "https://wpheadless.indigotree.co.uk",
+        //   sourceUrl: "",
+        //   replacementUrl: "",
         // },
         includedRoutes: [
           '**/sliders',
           '**/working-groups',
           '**/coalitions',
           '**/events',
-          // '**/posts',
+
           '**/pages',
           '**/media',
+
           // '**/categories',
           '**/tags',
           // '**/taxonomies',

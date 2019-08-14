@@ -1,28 +1,21 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
-import '../../global.styl'
 
-// (
-// 	filter: { tags: { elemMatch: { slug: { eq: "featured" } } } }
-// )
 const FeaturedEvent = () => {
   const data = useStaticQuery(graphql`
     query FeaturedEvent {
-      allWordpressWpEvents(
-        filter: { tags: { elemMatch: { slug: { eq: "featured" } } } }
-      ) {
-        edges {
-          node {
-            title
-            content
-            featured_media {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 960) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
+      wordpressWpEvents(tags: { elemMatch: { slug: { eq: "featured" } } }) {
+        title
+        content
+        acf {
+          registration_link
+        }
+        featured_media {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 960) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -31,24 +24,30 @@ const FeaturedEvent = () => {
     }
   `)
 
-  return data.allWordpressWpEvents.edges.map(({ key, node }) => (
+  return (
     <BackgroundImage
-      className="backgroundImage" // TODO: tailwind styles aren't being applied correctly
-      key={key}
+      className="featuredEventBackgroundImage" // TODO: tailwind classes aren't working
       fluid={[
-        node.featured_media.localFile.childImageSharp.fluid,
+        data.wordpressWpEvents.featured_media.localFile.childImageSharp.fluid,
         `linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,
       ].reverse()}
     >
-      <div className="flex flex-col justify-center h-full">
-        <h2 dangerouslySetInnerHTML={{ __html: node.title }} />
-        <p
-          className="overflow-hidden"
-          dangerouslySetInnerHTML={{ __html: node.content }}
-        />
+      <div className="h-full flex flex-col justify-center items-center">
+        <div className="h-50 max-h-200 mr-24 max-w-md flex flex-col justify-between items-start">
+          <h3>Coming up</h3>
+          <h2
+            className="text-white text-2xl leading-relaxed my-2"
+            dangerouslySetInnerHTML={{ __html: data.wordpressWpEvents.title }}
+          />
+          <div
+            className="text-white leading-relaxed mb-4"
+            dangerouslySetInnerHTML={{ __html: data.wordpressWpEvents.content }}
+          />
+          <button className="button">Register Now</button>
+        </div>
       </div>
     </BackgroundImage>
-  ))
+  )
 }
 
 export default FeaturedEvent

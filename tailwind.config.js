@@ -13,10 +13,6 @@ module.exports = {
         'sans-serif',
       ],
     },
-    colors: {
-      lightBlue: '#008FC3',
-      darkBlue: '#242B5F',
-    },
     screens: {
       // TODO: overrides all defaults (unexpected)
       xs: '450px',
@@ -26,12 +22,29 @@ module.exports = {
       xl: '1280px',
     },
     extend: {
+      colors: {
+        lightBlue: '#008FC3',
+        darkBlue: '#242B5F',
+        lightGray: '#9B9B9B',
+        darkGray: '#4A4A4A',
+        afpaGreen: '#008560',
+      },
       height: {
         in: 'inherit',
+        '50': '50%',
       },
       maxHeight: {
         '200': '200px',
         '3/4': '75vh',
+      },
+      minHeight: {
+        '200': '200px',
+      },
+      maxWidth: {
+        '2xs': '12rem',
+      },
+      minWidth: {
+        '91': '91px',
       },
       fontSize: {
         '7xl': '4.5rem',
