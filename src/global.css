@@ -22,8 +22,12 @@ button {
 }
 
 .clipped {
-  @apply bg-lightBlue;
-  background: url('./images/backgroundClip.svg') no-repeat 0 100%;
+  /* @apply bg-afpaGreen; */
+  border-top: 500px solid green;
+  border-bottom: 300px solid transparent;
+  border-right: 98.69vw solid green;
+  z-index: -1;
+  /* background: url('./images/backgroundClip.svg') no-repeat 0 100%; */
   /* prevents margin collapse */
 }
 

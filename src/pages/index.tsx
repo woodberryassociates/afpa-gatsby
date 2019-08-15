@@ -16,28 +16,24 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Slider />
-
     <div className="flex flex-wrap">
       <FeaturedEvent />
       <FeaturedTweet />
     </div>
-
-    <div className="clipped flex flex-col items-center text-center">
-      <div>
-        <div className="m-16 mb-0 px-64 pb-0 pt-6 bg-white max-w-1200">
-          <h4>AfPA in Action</h4>
-          <h3 className="text-darkBlue">Working Groups</h3>
-          <div
-            className="mb-3"
-            dangerouslySetInnerHTML={{
-              __html: data.wordpressPage.acf.working_groups,
-            }}
-          />
-          <WorkingGroups />
-        </div>
+    <div className="clipped absolute" />
+    <div className="flex flex-col items-center text-center ">
+      <div className="m-24 px-64 pb-0 pt-6 bg-white">
+        <h4>AfPA in Action</h4>
+        <h3 className="text-darkBlue">Working Groups</h3>
+        <div
+          className="mb-3"
+          dangerouslySetInnerHTML={{
+            __html: data.wordpressPage.acf.working_groups,
+          }}
+        />
+        <WorkingGroups />
       </div>
     </div>
-
     <div className="my-16 flex flex-col items-center text-center">
       <div className="mx-16 px-40 flex flex-col items-center text-center max-w-1200">
         <h3 className="text-darkBlue">Coalitions</h3>
@@ -50,7 +46,6 @@ const IndexPage = ({ data }) => (
         <Coalitions />
       </div>
     </div>
-
     <div className="p-16 flex flex-col items-center text-center bg-backgroundGray">
       <div className="flex flex-col items-center text-center">
         <h4>Online Resource Center</h4>
