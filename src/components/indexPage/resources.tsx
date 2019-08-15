@@ -49,7 +49,9 @@ const Resources = () => {
             className="min-h-200 font-light"
             dangerouslySetInnerHTML={{ __html: node.content }}
           />
-          <button className="darkButton">Explore More</button>
+          <a href={node.acf.resource_url}>
+            <button className="darkButton">Explore More</button>
+          </a>
         </div>
       ))}
     </div>

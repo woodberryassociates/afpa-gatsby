@@ -1,6 +1,3 @@
-<svg viewBox="0 0 329.6667 86">
-  <clipPath id="cloud02" clipPathUnits="objectBoundingBox"
-   transform="scale(0.003033 0.0116279)">
-    <path d="0 0, 0 62, 100 100, 100 0"/>
-  </clipPath>
+<svg width="1920" height="1094" viewBox="0 0 1920 1094" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1920V1094L65.5348 721.175L0 708V0Z" fill="#008560"/>
 </svg>
