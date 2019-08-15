@@ -32,7 +32,7 @@ const FeaturedEvent = () => {
         `linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,
       ].reverse()}
     >
-      <div className="h-full flex flex-col justify-center items-center">
+      <div className="h-full w-full flex flex-col justify-center items-center">
         <div className="h-50 max-h-200 mr-24 max-w-md flex flex-col justify-between items-start">
           <h3>Coming up</h3>
           <h2
@@ -43,7 +43,7 @@ const FeaturedEvent = () => {
             className="text-white leading-relaxed mb-4"
             dangerouslySetInnerHTML={{ __html: data.wordpressWpEvents.content }}
           />
-          <button className="button">Register Now</button>
+          <button>Register Now</button>
         </div>
       </div>
     </BackgroundImage>

@@ -25,7 +25,7 @@ module.exports = {
       colors: {
         lightBlue: '#008FC3',
         darkBlue: '#242B5F',
-        lightGray: '#9B9B9B',
+        lightGray: '#9B9B9B', // 979797
         darkGray: '#4A4A4A',
         backgroundGray: '#F2F2F2',
         afpaGreen: '#008560',
@@ -39,11 +39,15 @@ module.exports = {
         '3/4': '75vh',
       },
       minHeight: {
+        '150': '150px',
         '200': '200px',
+        '400': '400px',
       },
       maxWidth: {
         '2xs': '12rem',
         '1200': '1200px',
+        '425': '425px',
+        '650': '650px',
       },
       minWidth: {
         '91': '91px',

@@ -2,16 +2,23 @@
 @tailwind components;
 
 h3 {
-  @apply mb-2 text-lightGray uppercase tracking-wide .leading-loose;
+  @apply text-lightGray uppercase tracking-wide leading-loose;
 }
 
 h4 {
-  @apply mb-2 text-lightBlue text-3xl .leading-loose;
+  @apply mb-2 text-lightBlue text-3xl leading-loose;
 }
 
-.button {
-  @apply inline py-3 px-1 rounded-sm text-white bg-lightBlue;
-  font-size: 1.15reml;
+button {
+  @apply inline py-3 px-8 rounded text-white text-base bg-lightBlue;
+}
+
+.darkButton {
+  @apply bg-white border border-lightGray text-darkGray;
+}
+
+.darkButton:hover {
+  @apply bg-darkBlue text-white;
 }
 
 .clipped {
@@ -19,12 +26,12 @@ h4 {
   background: url('./images/backgroundClip2.svg') no-repeat 0 100%;
   /* prevents margin collapse */
 }
-.featuredeventbackgroundimage {
-  @apply w-full;
-  min-height: 400px;
+
+.featuredEventBackgroundImage {
+  @apply w-full min-h-400;
 }
 
-@media (min-width: 1024px) {
+@screen lg {
   .featuredEventBackgroundImage {
     @apply w-1/2;
   }

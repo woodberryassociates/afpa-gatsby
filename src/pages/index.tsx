@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => (
       </div>
     </div>
 
-    <div className="mt-16 flex flex-col items-center text-center">
+    <div className="my-16 flex flex-col items-center text-center">
       <div className="mx-16 px-40 flex flex-col items-center text-center max-w-1200">
         <h3 className="text-darkBlue">Coalitions</h3>
         <div
@@ -51,10 +51,11 @@ const IndexPage = ({ data }) => (
       </div>
     </div>
 
-    <div className="flex flex-col items-center text-center bg-backgroundGray">
+    <div className="p-16 flex flex-col items-center text-center bg-backgroundGray">
       <div className="flex flex-col items-center text-center">
         <h4>Online Resource Center</h4>
         <div
+          className="max-w-425 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: data.wordpressPage.acf.resources,
           }}

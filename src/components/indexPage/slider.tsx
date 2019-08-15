@@ -56,7 +56,7 @@ const Slider = () => {
     <CarouselProvider
       naturalSlideWidth={1920}
       naturalSlideHeight={700}
-      totalSlides={2}
+      totalSlides={data.allWordpressWpSliders.edges.length}
       isPlaying={true}
     >
       <CarouselSlider>
