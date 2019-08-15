@@ -2,11 +2,11 @@
 @tailwind components;
 
 h3 {
-  @apply text-lightGray uppercase tracking-wide;
+  @apply mb-2 text-lightGray uppercase tracking-wide .leading-loose;
 }
 
 h4 {
-  @apply text-lightBlue text-3xl;
+  @apply mb-2 text-lightBlue text-3xl .leading-loose;
 }
 
 .button {
@@ -16,11 +16,11 @@ h4 {
 
 .clipped {
   @apply bg-afpaGreen;
-  background: url('./images/backgroundClip2.svg') no-repeat 0 100% overflow auto;
+  background: url('./images/backgroundClip2.svg') no-repeat 0 100%;
   /* prevents margin collapse */
 }
 .featuredeventbackgroundimage {
-  @apply .w-full;
+  @apply w-full;
   min-height: 400px;
 }
 

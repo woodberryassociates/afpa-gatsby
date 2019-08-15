@@ -23,37 +23,44 @@ const IndexPage = ({ data }) => (
     </div>
 
     <div className="clipped flex flex-col items-center text-center">
-      <div className="m-16 mb-0 p-32 pt-6 bg-white">
-        <h4>AfPA in Action</h4>
-        <h3 className="text-darkBlue">Working Groups</h3>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: data.wordpressPage.acf.working_groups,
-          }}
-        />
-        <WorkingGroups />
+      <div>
+        <div className="m-16 mb-0 px-64 pb-0 pt-6 bg-white max-w-1200">
+          <h4>AfPA in Action</h4>
+          <h3 className="text-darkBlue">Working Groups</h3>
+          <div
+            className="mb-3"
+            dangerouslySetInnerHTML={{
+              __html: data.wordpressPage.acf.working_groups,
+            }}
+          />
+          <WorkingGroups />
+        </div>
       </div>
     </div>
 
-    <div className="flex flex-col items-center text-center">
-      <h3 className="my-3 text-darkBlue">Coalitions</h3>
-      <div
-        className="my-3"
-        dangerouslySetInnerHTML={{
-          __html: data.wordpressPage.acf.coalitions,
-        }}
-      />
-      <Coalitions />
+    <div className="mt-16 flex flex-col items-center text-center">
+      <div className="mx-16 px-40 flex flex-col items-center text-center max-w-1200">
+        <h3 className="text-darkBlue">Coalitions</h3>
+        <div
+          className="my-3"
+          dangerouslySetInnerHTML={{
+            __html: data.wordpressPage.acf.coalitions,
+          }}
+        />
+        <Coalitions />
+      </div>
     </div>
 
-    <div className="my-5 flex flex-col items-center text-center">
-      <h4>Online Resource Center</h4>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.wordpressPage.acf.resources,
-        }}
-      />
-      <Resources />
+    <div className="flex flex-col items-center text-center bg-backgroundGray">
+      <div className="flex flex-col items-center text-center">
+        <h4>Online Resource Center</h4>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.wordpressPage.acf.resources,
+          }}
+        />
+        <Resources />
+      </div>
     </div>
   </Layout>
 )

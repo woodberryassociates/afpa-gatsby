@@ -27,6 +27,7 @@ module.exports = {
         darkBlue: '#242B5F',
         lightGray: '#9B9B9B',
         darkGray: '#4A4A4A',
+        backgroundGray: '#F2F2F2',
         afpaGreen: '#008560',
       },
       height: {
@@ -42,6 +43,7 @@ module.exports = {
       },
       maxWidth: {
         '2xs': '12rem',
+        '1200': '1200px',
       },
       minWidth: {
         '91': '91px',

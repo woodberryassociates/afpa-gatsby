@@ -70,6 +70,7 @@ module.exports = {
           '**/working-groups',
           '**/coalitions',
           '**/events',
+          '**/home-resources',
 
           '**/pages',
           '**/media',
