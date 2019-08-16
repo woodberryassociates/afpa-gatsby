@@ -74,7 +74,7 @@ module.exports = {
           '**/annual-reports',
           '**/guiding-principles',
           '**/leadership',
-          // '**/videos',
+          '**/videos',
           // '**/podcasts',
           // '**/infographics',
 

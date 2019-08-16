@@ -3,29 +3,35 @@ import React from 'react'
 
 import { PropTypes } from 'prop-types'
 import Layout from '../components/layout'
+import Videos from '../components/resourcesPage/videos'
 import SEO from '../components/seo'
 
-const ResourcePage = ({ data }) => (
-  <Layout>
-    <SEO title="Resource" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const ResourcePage = ({ data }) => {
+  const page = data.wordpressPage
+
+  return (
+    <Layout>
+      <SEO title="Resource" />
+      <Videos />
+    </Layout>
+  )
+}
 
 ResourcePage.propTypes = {
   data: PropTypes.object.isRequired, // TODO: greater specificity
 }
 
 export const pageQuery = graphql`
-  query ResourcePage {
-    wordpressPage(title: { eq: "Home" }) {
+  query ResourcesPage {
+    wordpressPage(title: { eq: "Resources" }) {
       acf {
-        working_groups
-        coalitions
-        resources
+        videos
+        podcasts
+        infographics
+        ifpa
+        ifpa_link
       }
+      content
     }
   }
 `
