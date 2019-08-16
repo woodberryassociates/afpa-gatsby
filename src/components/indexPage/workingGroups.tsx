@@ -27,13 +27,13 @@ const WorkingGroups = () => {
   return (
     <div className="flex flex-row flex-wrap justify-around">
       {data.allWordpressWpWorkingGroups.edges.map(({ key, node }) => (
-        <div className="w-1/3 my-5 flex flex-row items-center" key={key}>
+        <div className="my-5 w-1/3 flex flex-row items-center" key={key}>
           <Img
             className="min-w-91"
             fixed={node.featured_media.localFile.childImageSharp.fixed}
           />
           <p
-            className="ml-5 text-darkGray"
+            className="ml-5 max-w-2xs text-lg text-darkGray"
             dangerouslySetInnerHTML={{ __html: node.title }}
           />
         </div>

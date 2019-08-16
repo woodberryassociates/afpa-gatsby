@@ -36,13 +36,10 @@ const Resources = () => {
           key={key}
         >
           <div className="min-h-150 flex items-center">
-            <Img
-              className=""
-              fixed={node.featured_media.localFile.childImageSharp.fixed}
-            />
+            <Img fixed={node.featured_media.localFile.childImageSharp.fixed} />
           </div>
           <h5
-            className="m-5 text-darkBlue text-lg"
+            className="mt-5"
             dangerouslySetInnerHTML={{ __html: node.title }}
           />
           <p

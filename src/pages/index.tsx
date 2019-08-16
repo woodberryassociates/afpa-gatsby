@@ -16,36 +16,39 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Slider />
+
     <div className="flex flex-wrap">
       <FeaturedEvent />
       <FeaturedTweet />
     </div>
-    <div className="clipped absolute" />
-    <div className="flex flex-col items-center text-center ">
-      <div className="m-24 px-64 pb-0 pt-6 bg-white">
+
+    <div className="flex flex-col items-center text-center clipped">
+      <div className="m-24 mb-0 px-64 pt-6 bg-white flex flex-col items-center">
         <h4>AfPA in Action</h4>
         <h3 className="text-darkBlue">Working Groups</h3>
         <div
-          className="mb-3"
+          className="max-w-650 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: data.wordpressPage.acf.working_groups,
           }}
         />
         <WorkingGroups />
       </div>
-    </div>
-    <div className="my-16 flex flex-col items-center text-center">
-      <div className="mx-16 px-40 flex flex-col items-center text-center max-w-1200">
-        <h3 className="text-darkBlue">Coalitions</h3>
-        <div
-          className="my-3"
-          dangerouslySetInnerHTML={{
-            __html: data.wordpressPage.acf.coalitions,
-          }}
-        />
-        <Coalitions />
+
+      <div className="mx-24 px-64 pt-24 pb-16 flex flex-col items-center bg-white">
+        <div className="flex flex-col items-center">
+          <h3 className="text-darkBlue">Coalitions</h3>
+          <div
+            className="max-w-650 mb-6 text-md leading-relaxed font-light"
+            dangerouslySetInnerHTML={{
+              __html: data.wordpressPage.acf.coalitions,
+            }}
+          />
+          <Coalitions />
+        </div>
       </div>
     </div>
+
     <div className="p-16 flex flex-col items-center text-center bg-backgroundGray">
       <div className="flex flex-col items-center text-center">
         <h4>Online Resource Center</h4>

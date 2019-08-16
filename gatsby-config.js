@@ -71,6 +71,12 @@ module.exports = {
           '**/coalitions',
           '**/events',
           '**/home-resources',
+          '**/annual-reports',
+          '**/guiding-principles',
+          '**/leadership',
+          // '**/videos',
+          // '**/podcasts',
+          // '**/infographics',
 
           '**/pages',
           '**/media',
@@ -83,8 +89,6 @@ module.exports = {
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-tslint`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`, // To learn more, visit: https://gatsby.dev/offline
   ],
 }
