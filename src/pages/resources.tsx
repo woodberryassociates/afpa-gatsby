@@ -1,29 +1,70 @@
 import { graphql, Link } from 'gatsby'
 import React from 'react'
 
-import { PropTypes } from 'prop-types'
+import ReactPlayer from 'react-player'
 import Layout from '../components/layout'
 import Videos from '../components/resourcesPage/videos'
 import SEO from '../components/seo'
 
 const ResourcePage = ({ data }) => {
   const page = data.wordpressPage
+  const video = data.wordpressWpVideos
 
   return (
     <Layout>
       <SEO title="Resources" />
-      <Videos />
+      <div className="py-24 flex flex-wrap justify-around resourcePageHeaderClip">
+        <div className="lg:w-2/5">
+          <h4
+            className="text-white"
+            dangerouslySetInnerHTML={{ __html: page.title }}
+          />
+          <div
+            className="text-white font-light text-lg"
+            dangerouslySetInnerHTML={{ __html: page.content }}
+          />
+        </div>
+        <div>
+          <ReactPlayer
+            className="lg:mt-16"
+            url={video.acf.url}
+            light={true}
+            playing={true}
+          />
+          <div className=" -my-16">
+            <h5
+              className="text-textGreen"
+              dangerouslySetInnerHTML={{ __html: video.title }}
+            />
+            <h6
+              className="text-lg"
+              dangerouslySetInnerHTML={{
+                __html: video.acf.coalition + `, ` + video.date,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center bg-backgroundGray">
+        <h4>Video Center</h4>
+        <div
+          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          dangerouslySetInnerHTML={{
+            __html: page.acf.videos,
+          }}
+        />
+        <Videos />
+      </div>
     </Layout>
   )
-}
-
-ResourcePage.propTypes = {
-  data: PropTypes.object.isRequired, // TODO: greater specificity
 }
 
 export const pageQuery = graphql`
   query ResourcesPage {
     wordpressPage(title: { eq: "Resources" }) {
+      title
+      content
       acf {
         videos
         podcasts
@@ -31,7 +72,14 @@ export const pageQuery = graphql`
         ifpa
         ifpa_link
       }
-      content
+    }
+    wordpressWpVideos(tags: { elemMatch: { slug: { eq: "featured" } } }) {
+      title
+      acf {
+        coalition
+        url
+      }
+      date(formatString: "MMMM YYYY")
     }
   }
 `

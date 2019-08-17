@@ -86,10 +86,6 @@ const AboutPage = ({ data }) => {
   )
 }
 
-AboutPage.propTypes = {
-  data: PropTypes.object.isRequired, // TODO: greater specificity
-}
-
 export const pageQuery = graphql`
   query AboutPage {
     wordpressPage(title: { eq: "About" }) {

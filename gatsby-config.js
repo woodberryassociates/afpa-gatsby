@@ -66,23 +66,30 @@ module.exports = {
         //   replacementUrl: "",
         // },
         includedRoutes: [
+          // Home Page CPTs
           '**/sliders',
           '**/working-groups',
           '**/coalitions',
-          '**/events',
           '**/home-resources',
+
+          // About Page CPTs
           '**/annual-reports',
           '**/guiding-principles',
           '**/leadership',
+
+          // Resources Page CPTs
           '**/videos',
           // '**/podcasts',
           // '**/infographics',
 
+          // Events Page (+ Home Page)
+          '**/events',
+
+          // WP Core
           '**/pages',
           '**/media',
-
-          // '**/categories',
           '**/tags',
+          // '**/categories',
           // '**/taxonomies',
         ],
       },

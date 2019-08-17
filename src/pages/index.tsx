@@ -16,13 +16,11 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Slider />
-
     <div className="flex flex-wrap">
       <FeaturedEvent />
       <FeaturedTweet />
     </div>
-
-    <div className="flex flex-col items-center text-center clipped">
+    <div className="flex flex-col items-center text-center homePageWGClip">
       <div className="m-24 mb-0 px-64 pt-6 bg-white flex flex-col items-center">
         <h4>AfPA in Action</h4>
         <h3 className="text-darkBlue">Working Groups</h3>
@@ -48,7 +46,6 @@ const IndexPage = ({ data }) => (
         </div>
       </div>
     </div>
-
     <div className="p-16 flex flex-col items-center text-center bg-backgroundGray">
       <div className="flex flex-col items-center text-center">
         <h4>Online Resource Center</h4>
@@ -63,10 +60,6 @@ const IndexPage = ({ data }) => (
     </div>
   </Layout>
 )
-
-IndexPage.propTypes = {
-  data: PropTypes.object.isRequired, // TODO: greater specificity
-}
 
 export const pageQuery = graphql`
   query HomePage {

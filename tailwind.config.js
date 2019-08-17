@@ -20,19 +20,23 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
+      // 2xl: ''
     },
     extend: {
+      spacing: {},
       colors: {
         lightBlue: '#008FC3',
         darkBlue: '#242B5F',
+        textGray: '#a4a8b2',
         lightGray: '#9B9B9B', // 979797
         darkGray: '#4A4A4A',
         backgroundGray: '#F2F2F2',
         afpaGreen: '#008560',
+        textGreen: '#19AF6A',
       },
       height: {
         in: 'inherit',
-        '50': '50%',
+        '1/2': '50%',
       },
       maxHeight: {
         '200': '200px',
@@ -51,9 +55,12 @@ module.exports = {
         '1200': '1200px',
         '425': '425px',
         '650': '650px',
+        '1275': '1275px',
       },
       minWidth: {
         '91': '91px',
+        '200': '200px',
+        '300': '300px',
       },
       fontSize: {
         '7xl': '4.5rem',

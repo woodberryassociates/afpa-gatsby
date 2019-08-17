@@ -9,8 +9,9 @@ const Videos = () => {
         edges {
           node {
             title
+            date(formatString: "MMMM YYYY")
             acf {
-              description
+              coalition
               url
             }
           }
@@ -22,23 +23,35 @@ const Videos = () => {
   const videos = data.allWordpressWpVideos.edges
 
   return (
-    <div>
-      <div className="flex flex-wrap justify-between">
+    <div className="flex flex-col items-center">
+      <div className="max-w-1275 flex flex-wrap justify-center">
         {videos.map(({ key, node }) => (
-          <div key={key} className="lg:w-1/4 p-4 flex flex-col">
-            <ReactPlayer
-              url={node.acf.url}
-              light={true}
-              playing={true}
-              controls={false}
-              width="300px"
-              height="150px"
-            />
-            <h6 className="lg:w-300" dangerouslySetInnerHTML={{ __html: node.title }} />
-            <div className="lg:w-300" dangerouslySetInnerHTML={{ __html: node.acf.description }} />
+          <div key={key} className="flex justify-center">
+            <div className="w-300 m-2 flex flex-col bg-white shadow">
+              <ReactPlayer
+                url={node.acf.url}
+                light={true}
+                playing={true}
+                controls={false}
+                width="300px"
+                height="150px"
+                className=""
+              />
+              <div className="m-4">
+                <h6
+                  className="text-lg"
+                  dangerouslySetInnerHTML={{ __html: node.title }}
+                />
+                <div
+                  className="font-light text-textGray"
+                  dangerouslySetInnerHTML={{ __html: node.acf.coalition }}
+                />
+              </div>
+            </div>
           </div>
         ))}
       </div>
+      <h5>TODO: Pagination</h5>
     </div>
   )
 }
