@@ -13,7 +13,7 @@ const ResourcePage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Resources" />
-      <div className="py-24 flex flex-wrap justify-around resourcePageHeaderClip">
+      <div className="pb-24 pt-16 flex flex-wrap justify-around resourcePageHeaderClip">
         <div className="lg:w-2/5">
           <h4
             className="text-white"
@@ -30,18 +30,21 @@ const ResourcePage = ({ data }) => {
             url={video.acf.url}
             light={true}
             playing={true}
+            height={340}
           />
-          <div className=" -my-16">
-            <h5
-              className="text-textGreen"
-              dangerouslySetInnerHTML={{ __html: video.title }}
-            />
-            <h6
-              className="text-lg"
-              dangerouslySetInnerHTML={{
-                __html: video.acf.coalition + `, ` + video.date,
-              }}
-            />
+          <div className="relative bottom-15 linearGradient">
+            <div className="pt- relative bottom-1/4 left-1/6">
+              <h5
+                className="text-textGreen"
+                dangerouslySetInnerHTML={{ __html: video.title }}
+              />
+              <h6
+                className=""
+                dangerouslySetInnerHTML={{
+                  __html: video.acf.coalition + `, ` + video.date,
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

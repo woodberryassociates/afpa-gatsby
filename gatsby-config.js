@@ -19,6 +19,7 @@ module.exports = {
         postCssPlugins: [
           require(`tailwindcss`),
           require(`precss`),
+          require(`postcss-easing-gradients`),
           require(`postcss-preset-env`),
         ],
       },
