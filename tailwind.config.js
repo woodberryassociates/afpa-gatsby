@@ -43,6 +43,9 @@ module.exports = {
         '200': '200px',
         '400': '400px',
       },
+      width: {
+        '300': '300px',
+      },
       maxWidth: {
         '2xs': '12rem',
         '1200': '1200px',

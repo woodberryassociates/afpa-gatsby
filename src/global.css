@@ -13,6 +13,10 @@ h5 {
   @apply text-darkBlue text-2xl leading-loose;
 }
 
+h6 {
+  @apply text-darkGray text-xl;
+}
+
 button {
   @apply inline py-3 px-8 rounded text-white text-base bg-lightBlue;
 }

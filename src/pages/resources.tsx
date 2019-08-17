@@ -11,7 +11,7 @@ const ResourcePage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Resource" />
+      <SEO title="Resources" />
       <Videos />
     </Layout>
   )
