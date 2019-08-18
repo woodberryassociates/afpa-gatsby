@@ -1,14 +1,33 @@
 import { graphql, Link } from 'gatsby'
-import React from 'react'
+import React, { useState } from 'react'
 
 import ReactPlayer from 'react-player'
 import Layout from '../components/layout'
 import Videos from '../components/resourcesPage/videos'
 import SEO from '../components/seo'
 
+const FeaturedVideoGradient = ({ video, playing }) => {
+  return !playing ? (
+    <div className="relative pt-32 bottom-1/3 linearGradient">
+      <div className="relative left-1/20 bottom-1/3">
+        <h5
+          className="text-textGreen"
+          dangerouslySetInnerHTML={{ __html: video.title }}
+        />
+        <h6
+          dangerouslySetInnerHTML={{
+            __html: video.acf.coalition + `, ` + video.date,
+          }}
+        />
+      </div>
+    </div>
+  ) : null
+}
+
 const ResourcePage = ({ data }) => {
   const page = data.wordpressPage
   const video = data.wordpressWpVideos
+  const [isFeaturedPlaying, setIsFeaturedPlaying] = useState(false)
 
   return (
     <Layout>
@@ -31,21 +50,10 @@ const ResourcePage = ({ data }) => {
             light={true}
             playing={true}
             height={340}
+            onPlay={() => setIsFeaturedPlaying(true)}
+            onPause={() => setIsFeaturedPlaying(false)}
           />
-          <div className="relative bottom-15 linearGradient">
-            <div className="pt- relative bottom-1/4 left-1/6">
-              <h5
-                className="text-textGreen"
-                dangerouslySetInnerHTML={{ __html: video.title }}
-              />
-              <h6
-                className=""
-                dangerouslySetInnerHTML={{
-                  __html: video.acf.coalition + `, ` + video.date,
-                }}
-              />
-            </div>
-          </div>
+          <FeaturedVideoGradient video={video} playing={isFeaturedPlaying} />
         </div>
       </div>
 
