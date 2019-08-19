@@ -24,7 +24,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-purgecss`,
+    // `gatsby-plugin-purgecss`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

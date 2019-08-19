@@ -62,7 +62,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "WP_ENV=localhost/afpa GATSBY_CONCURRENT_DOWNLOAD=5 gatsby build",
     "develop": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
     "format": "prettier --write src/**/*.{tsx}",
     "local": "WP_ENV=localhost/afpa npm run develop",

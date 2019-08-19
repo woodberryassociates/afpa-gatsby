@@ -15,6 +15,7 @@ const FeaturedVideoGradient = ({ video, playing }) => {
           dangerouslySetInnerHTML={{ __html: video.title }}
         />
         <h6
+          className="text-white"
           dangerouslySetInnerHTML={{
             __html: video.acf.coalition + `, ` + video.date,
           }}

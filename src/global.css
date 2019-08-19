@@ -39,12 +39,7 @@ button {
 }
 
 .linearGradient {
-  background: linear-gradient(
-    to top,
-    black,
-    cubic-bezier(0.32, 0.59, 0.49, 0.73),
-    transparent
-  );
+  background: linear-gradient(to top, black, ease, transparent);
   pointer-events: none;
 }
 
