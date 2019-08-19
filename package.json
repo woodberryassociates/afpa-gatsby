@@ -62,11 +62,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "WP_ENV=localhost/afpa GATSBY_CONCURRENT_DOWNLOAD=5 gatsby build",
+    "build": "WP_ENV=afpadev.wpengine.com GATSBY_CONCURRENT_DOWNLOAD=5 gatsby build",
     "develop": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
     "format": "prettier --write src/**/*.{tsx}",
     "local": "WP_ENV=localhost/afpa npm run develop",
-    "staging": "WP_ENV=afpa.staging.wpengine.com npm run develop",
+    "dev": "WP_ENV=afpadev.wpengine.com npm run develop",
     "start": "WP_ENV=allianceforpatientaccess.org npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
