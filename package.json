@@ -32,6 +32,7 @@
     "react-helmet": "^5.2.1",
     "react-player": "^1.11.2",
     "react-twitter-widgets": "^1.7.1",
+    "rss-parser": "^3.7.2",
     "sugarss": "^2.0.0"
   },
   "devDependencies": {

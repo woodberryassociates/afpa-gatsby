@@ -26,7 +26,7 @@ const FeaturedEvent = () => {
 
   return (
     <BackgroundImage
-      className="featuredEventBackgroundImage" // TODO: tailwind classes aren't working
+      className="indexPageFeaturedEventBackgroundImage" // TODO: tailwind classes aren't working
       fluid={[
         data.wordpressWpEvents.featured_media.localFile.childImageSharp.fluid,
         `linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,

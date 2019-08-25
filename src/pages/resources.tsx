@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 
 import ReactPlayer from 'react-player'
 import Layout from '../components/layout'
+import Podcasts from '../components/resourcesPage/podcasts'
 import Videos from '../components/resourcesPage/videos'
 import SEO from '../components/seo'
+import Infographics from './../components/resourcesPage/infographics'
 
 const FeaturedVideoGradient = ({ video, playing }) => {
   return !playing ? (
@@ -33,6 +35,7 @@ const ResourcePage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Resources" />
+
       <div className="pb-24 pt-16 flex flex-wrap justify-around resourcePageHeaderClip">
         <div className="lg:w-2/5">
           <h4
@@ -58,7 +61,7 @@ const ResourcePage = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center bg-backgroundGray">
+      <div className="flex flex-col items-center bg-backgroundGray videoCenter">
         <h4>Video Center</h4>
         <div
           className="max-w-650 mb-6 text-md leading-relaxed font-light"
@@ -67,6 +70,41 @@ const ResourcePage = ({ data }) => {
           }}
         />
         <Videos />
+      </div>
+
+      <div className="flex flex-col items-center">
+        <h4>Patient Access Podcast</h4>
+        <div
+          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          dangerouslySetInnerHTML={{
+            __html: page.acf.podcasts,
+          }}
+        />
+        <Podcasts />
+      </div>
+
+      <div className="flex flex-col items-center">
+        <h4>Infographics</h4>
+        <div
+          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          dangerouslySetInnerHTML={{
+            __html: page.acf.infographics,
+          }}
+        />
+        <Infographics />
+      </div>
+
+      <div className="flex flex-col items-center">
+        <h4>Can't find it?</h4>
+        <div
+          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          dangerouslySetInnerHTML={{
+            __html: page.acf.ifpa,
+          }}
+        />
+        <a href="https://instituteforpatientaccess.org">
+          <button>{page.acf.ifpa_link}</button>
+        </a>
       </div>
     </Layout>
   )

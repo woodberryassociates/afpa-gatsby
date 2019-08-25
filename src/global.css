@@ -54,13 +54,18 @@ button {
   background: linear-gradient(-5deg, $backgroundGray 40%, $lightBlue 40%);
 }
 
+.videoCenter {
+  border-bottom: 100px solid transparent;
+  border-image: linear-gradient(-5deg, white, $backgroundGray 40%) 1 100%;
+}
+
 /* TODO: debug why tw classes aren't being applied inline */
-.featuredEventBackgroundImage {
+.indexPageFeaturedEventBackgroundImage {
   @apply w-full min-h-400;
 }
 
 @screen lg {
-  .featuredEventBackgroundImage {
+  .indexPageFeaturedEventBackgroundImage {
     @apply w-1/2;
   }
 }
