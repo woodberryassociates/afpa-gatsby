@@ -31,6 +31,7 @@ module.exports = {
         lightGray: '#9B9B9B', // 979797
         darkGray: '#4A4A4A',
         backgroundGray: '#F2F2F2',
+        backgroundLightGray: '#F3F5F9',
         afpaGreen: '#008560',
         textGreen: '#19AF6A',
       },

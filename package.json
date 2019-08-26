@@ -68,7 +68,7 @@
     "format": "prettier --write src/**/*.{tsx}",
     "local": "WP_ENV=localhost/afpa npm run develop",
     "dev": "WP_ENV=afpadev.wpengine.com npm run develop",
-    "start": "WP_ENV=allianceforpatientaccess.org npm run develop",
+    "start": "npm run local",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },

@@ -83,7 +83,7 @@ const ResourcePage = ({ data }) => {
         <Podcasts />
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center bg-backgroundLightGray">
         <h4>Infographics</h4>
         <div
           className="max-w-650 mb-6 text-md leading-relaxed font-light"
