@@ -2,7 +2,7 @@
 # https://www.netlify.com/docs/redirects/
 
 # wp-admin rewrite splat
-/wp-admin/*  https://afpadev.wpengine.com/wp-admin/:splat  200
+/wp-admin/*	https://afpadev.wpengine.com/:splat	200
 
 # wp-admin redirect
-/admin/* /wp-admin/:splat
+/admin/* /wp-admin/
