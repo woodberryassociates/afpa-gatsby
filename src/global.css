@@ -46,6 +46,10 @@ button {
 /**
  * Clipped backgrounds/borders
  */
+.footerClip {
+  clip-path: polygon(0 22%, 100% 0, 100% 100%, 0% 100%);
+}
+
 .homePageWGClip {
   background: linear-gradient(10deg, transparent 55%, $afpaGreen 55%);
 }

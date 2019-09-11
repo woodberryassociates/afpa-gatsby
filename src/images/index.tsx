@@ -1,5 +1,8 @@
 export { default as facebook } from './logo-facebook.svg'
 export { default as twitter } from './logo-twitter.svg'
 export { default as youtube } from './logo-youtube.svg'
+export { default as facebook_light } from './logo-facebook-light.svg'
+export { default as twitter_light } from './logo-twitter-light.svg'
+export { default as youtube_light } from './logo-youtube-light.svg'
 export { default as logo } from './logo.svg'
 export { default as search } from './search.svg'

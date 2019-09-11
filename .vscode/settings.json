@@ -1,3 +1,4 @@
 {
-	"languageStylus.useSeparator": false
+  "languageStylus.useSeparator": false,
+  "editor.formatOnSave": true
 }
