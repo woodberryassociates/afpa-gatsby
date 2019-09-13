@@ -81,8 +81,27 @@ button {
   clip-path: polygon(0 100px, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.guidingPrinciplesClip {
+/* Left Tilt Clips */
+.leftTilt {
+  clip-path: polygon(0 100px, 100% 0, 100% calc(100% - 100px), 0 100%);
+}
+
+.leftTopTilt {
+  clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
+}
+
+.leftBottomTilt {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%);
+}
+
+/* Right Tilt Clips */
+.rightTilt {
   clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
+}
+
+.rightTopTilt {
+}
+.rightBottomTilt {
 }
 
 .homePageWGClip {
@@ -90,13 +109,13 @@ button {
 }
 
 .resourcePageHeaderClip {
-  background: linear-gradient(-5deg, $backgroundGray 40%, $lightBlue 40%);
+  background: linear-gradient(-5deg, $backgroundGray 45%, $lightBlue 45%);
 }
 
-.videoCenter {
+/* .videoCenter {
   border-bottom: 100px solid transparent;
   border-image: linear-gradient(-5deg, white, $backgroundGray 40%) 1 100%;
-}
+} */
 
 /* Page/Post content formatting */
 .content {

@@ -85,7 +85,7 @@ const AboutPage = ({ data }) => {
       {/* Guiding Principles */}
       <div
         id="guiding-principles"
-        className="-my-48 py-40 flex flex-col items-center bg-backgroundGray guidingPrinciplesClip"
+        className="-my-48 py-40 flex flex-col items-center bg-backgroundGray rightTilt"
       >
         <h4>Guiding Principles</h4>
         <p

@@ -8,6 +8,7 @@ const Videos = () => {
       allWordpressWpVideos(sort: { fields: date }) {
         edges {
           node {
+            id
             title
             date(formatString: "MMMM YYYY")
             acf {
@@ -25,11 +26,11 @@ const Videos = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="max-w-1275 flex flex-wrap justify-center">
-        {videos.map(({ key, node }) => (
-          <div key={key} className="flex justify-center">
+        {videos.map(({ node: video }) => (
+          <div key={video.id} className="flex justify-center">
             <div className="w-300 m-2 flex flex-col bg-white shadow">
               <ReactPlayer
-                url={node.acf.url}
+                url={video.acf.url}
                 light={true}
                 playing={true}
                 controls={false}
@@ -40,11 +41,11 @@ const Videos = () => {
               <div className="m-4">
                 <h6
                   className="text-lg"
-                  dangerouslySetInnerHTML={{ __html: node.title }}
+                  dangerouslySetInnerHTML={{ __html: video.title }}
                 />
                 <div
                   className="font-light text-lighterGray"
-                  dangerouslySetInnerHTML={{ __html: node.acf.coalition }}
+                  dangerouslySetInnerHTML={{ __html: video.acf.coalition }}
                 />
               </div>
             </div>

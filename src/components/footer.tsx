@@ -50,7 +50,7 @@ const Footer = () => {
           <Img className="my-3 -mx-3" fluid={data.img.childImageSharp.fluid} />
           <p>SUBSCRIBE TO OUR NEWSLETTER</p>
           <div className="bg-white h-px w-10 my-5" />
-          <form className="flex flex-col" onSubmit={handleSubmit}>
+          <form className="flex flex-col text-darkGray" onSubmit={handleSubmit}>
             <input
               className="leading-loose p-2 rounded-lg mt-1 mb-4"
               type="text"

@@ -32,20 +32,41 @@ const ResourcePage = ({ data }) => {
   const video = data.wordpressWpVideos
   const [isFeaturedPlaying, setIsFeaturedPlaying] = useState(false)
 
+  // resource query functions
+  const [query, setQuery] = useState('')
+  const handleQuery = event => setQuery(event.target.value)
+  const handleSubmit = event => {
+    event.preventDefault()
+    alert('TODO')
+  }
+
   return (
     <Layout>
       <SEO title="Resources" />
 
-      <div className="pb-24 pt-16 flex flex-wrap justify-around resourcePageHeaderClip">
-        <div className="lg:w-2/5">
-          <h4
-            className="text-white"
-            dangerouslySetInnerHTML={{ __html: page.title }}
-          />
-          <div
-            className="text-white font-light text-lg"
-            dangerouslySetInnerHTML={{ __html: page.content }}
-          />
+      {/* Header & Featured Video */}
+      <div className="pb-32 pt-16 flex flex-wrap justify-around resourcePageHeaderClip">
+        <div className="flex flex-col justify-between lg:w-2/5">
+          <div>
+            <h4
+              className="text-white"
+              dangerouslySetInnerHTML={{ __html: page.title }}
+            />
+            <div
+              className="text-white font-light text-lg"
+              dangerouslySetInnerHTML={{ __html: page.content }}
+            />
+          </div>
+          {/* TODO: Resource search form */}
+          <form className="text-darkGray" onSubmit={handleSubmit}>
+            <input
+              className="p-2 pr-16 border-2 placeholder-darkGray border-lightGray rounded-lg leading-loose"
+              type="text"
+              value={query}
+              onChange={handleQuery}
+              placeholder="Search resources"
+            />
+          </form>
         </div>
         <div className="relative">
           <ReactPlayer
@@ -61,7 +82,8 @@ const ResourcePage = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center bg-backgroundGray videoCenter">
+      {/* Video Center */}
+      <div className="flex flex-col items-center bg-backgroundGray">
         <h4>Video Center</h4>
         <div
           className="max-w-700 mb-6 text-md leading-relaxed font-light"
