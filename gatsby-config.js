@@ -81,7 +81,7 @@ module.exports = {
           // Resources Page CPTs
           '**/videos',
           // '**/podcasts',
-          // '**/infographics',
+          '**/infographics',
 
           // Events Page (+ Home Page)
           '**/events',

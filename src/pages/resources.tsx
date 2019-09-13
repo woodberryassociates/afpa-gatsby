@@ -83,7 +83,7 @@ const ResourcePage = ({ data }) => {
       </div>
 
       {/* Video Center */}
-      <div className="flex flex-col items-center bg-backgroundGray">
+      <div className="pb-32 flex flex-col items-center bg-backgroundGray leftBottomTilt">
         <h4>Video Center</h4>
         <div
           className="max-w-700 mb-6 text-md leading-relaxed font-light"
@@ -96,8 +96,8 @@ const ResourcePage = ({ data }) => {
 
       <div className="flex flex-col items-center">
         <h4>Patient Access Podcast</h4>
-        <div
-          className="max-w-700 mb-6 text-md leading-relaxed font-light"
+        <p
+          className="max-w-700 sectionSubHead"
           dangerouslySetInnerHTML={{
             __html: page.acf.podcasts,
           }}
@@ -108,7 +108,7 @@ const ResourcePage = ({ data }) => {
       <div className="flex flex-col items-center bg-backgroundLightGray">
         <h4>Infographics</h4>
         <div
-          className="max-w-700 mb-6 text-md leading-relaxed font-light"
+          className="max-w-700 sectionSubHead"
           dangerouslySetInnerHTML={{
             __html: page.acf.infographics,
           }}
