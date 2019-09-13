@@ -8,6 +8,7 @@ const GuidingPrinciples = () => {
       allWordpressWpGuidingPrinciples {
         edges {
           node {
+            id
             content
             title
             featured_media {
@@ -26,17 +27,25 @@ const GuidingPrinciples = () => {
   `)
 
   return (
-    <div className="flex justify-between">
-      {data.allWordpressWpGuidingPrinciples.edges.map(
-        ({ node, key }, index) => (
-          <div key={key} className="flex flex-col bg-white">
-            <Img fixed={node.featured_media.localFile.childImageSharp.fixed} />
+    <div className="flex justify-around flex-wrap">
+      {data.allWordpressWpGuidingPrinciples.edges.map(({ node: gp }, index) => (
+        <div
+          key={gp.id}
+          className="mx-4 mb-4 max-w-400 flex flex-col bg-white guidingPrinciplesCard"
+        >
+          <Img fixed={gp.featured_media.localFile.childImageSharp.fixed} />
+          <div className="p-5">
             <h3>Pillar {index + 1}</h3>
-            <h5>{node.title}</h5>
-            <div dangerouslySetInnerHTML={{ __html: node.content }} />
+            <h5 className="-mt-3 mb-2 whitespace-no-wrap text-xl">
+              {gp.title}
+            </h5>
+            <div
+              className="text-darkGray leading-relaxed font-light"
+              dangerouslySetInnerHTML={{ __html: gp.content }}
+            />
           </div>
-        )
-      )}
+        </div>
+      ))}
     </div>
   )
 }

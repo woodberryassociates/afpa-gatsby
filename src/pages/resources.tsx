@@ -10,8 +10,8 @@ import Infographics from './../components/resourcesPage/infographics'
 
 const FeaturedVideoGradient = ({ video, playing }) => {
   return !playing ? (
-    <div className="relative pt-32 bottom-1/3 linearGradient">
-      <div className="relative left-1/20 bottom-1/3">
+    <div className="w-full h-full flex bottom-0 absolute linearGradient">
+      <div className="p-5 self-end">
         <h5
           className="text-textGreen"
           dangerouslySetInnerHTML={{ __html: video.title }}
@@ -47,7 +47,7 @@ const ResourcePage = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: page.content }}
           />
         </div>
-        <div>
+        <div className="relative">
           <ReactPlayer
             className="lg:mt-16"
             url={video.acf.url}
@@ -64,7 +64,7 @@ const ResourcePage = ({ data }) => {
       <div className="flex flex-col items-center bg-backgroundGray videoCenter">
         <h4>Video Center</h4>
         <div
-          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          className="max-w-700 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: page.acf.videos,
           }}
@@ -75,7 +75,7 @@ const ResourcePage = ({ data }) => {
       <div className="flex flex-col items-center">
         <h4>Patient Access Podcast</h4>
         <div
-          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          className="max-w-700 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: page.acf.podcasts,
           }}
@@ -86,7 +86,7 @@ const ResourcePage = ({ data }) => {
       <div className="flex flex-col items-center bg-backgroundLightGray">
         <h4>Infographics</h4>
         <div
-          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          className="max-w-700 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: page.acf.infographics,
           }}
@@ -97,7 +97,7 @@ const ResourcePage = ({ data }) => {
       <div className="flex flex-col items-center">
         <h4>Can't find it?</h4>
         <div
-          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          className="max-w-700 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: page.acf.ifpa,
           }}

@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
         <h4>AfPA in Action</h4>
         <h3 className="text-darkBlue">Working Groups</h3>
         <div
-          className="max-w-650 mb-6 text-md leading-relaxed font-light"
+          className="max-w-700 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: data.wordpressPage.acf.working_groups,
           }}
@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => (
         <div className="flex flex-col items-center">
           <h3 className="text-darkBlue">Coalitions</h3>
           <div
-            className="max-w-650 mb-6 text-md leading-relaxed font-light"
+            className="max-w-700 mb-6 text-md leading-relaxed font-light"
             dangerouslySetInnerHTML={{
               __html: data.wordpressPage.acf.coalitions,
             }}
@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => (
       <div className="flex flex-col items-center text-center">
         <h4>Online Resource Center</h4>
         <div
-          className="max-w-425 mb-6 text-md leading-relaxed font-light"
+          className="max-w-425 mb-6 leading-relaxed font-light"
           dangerouslySetInnerHTML={{
             __html: data.wordpressPage.acf.resources,
           }}

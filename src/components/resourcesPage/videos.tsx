@@ -43,7 +43,7 @@ const Videos = () => {
                   dangerouslySetInnerHTML={{ __html: node.title }}
                 />
                 <div
-                  className="font-light text-textGray"
+                  className="font-light text-lighterGray"
                   dangerouslySetInnerHTML={{ __html: node.acf.coalition }}
                 />
               </div>

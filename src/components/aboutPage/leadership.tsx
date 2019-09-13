@@ -2,7 +2,10 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 
-const Leadership = ({ associateMembership: membership }) => {
+const Leadership = ({
+  associateMembership: membership,
+  associateMembershipLink: membershipLink,
+}) => {
   const data = useStaticQuery(graphql`
     query Leadership {
       wordpressWpLeadership(tags: { elemMatch: { slug: { eq: "chairman" } } }) {
@@ -26,6 +29,7 @@ const Leadership = ({ associateMembership: membership }) => {
       ) {
         edges {
           node {
+            id
             title
             content
             acf {
@@ -45,13 +49,19 @@ const Leadership = ({ associateMembership: membership }) => {
       }
     }
   `)
-
   const chairman = data.wordpressWpLeadership
   const leadership = data.allWordpressWpLeadership.edges
 
   return (
-    <div className="p-32 flex flex-col justify-between items-center">
-      <h5 className="text-afpaGreen">About the Chairman</h5>
+    <div className="flex flex-col justify-between items-center">
+      <div
+        id="chairman"
+        className="my-10 flex justify-center items-center w-full"
+      >
+        <div className="h-px w-2/5 bg-lighterGray" />
+        <h5 className="text-afpaGreen mx-4">About the Chairman</h5>
+        <div className="h-px w-2/5 bg-lighterGray" />
+      </div>
       <div className="mx-32 flex justify-between bg-white">
         <div className="w-2/3 p-20 flex flex-col justify-center">
           <h5 className="leading-snug">{chairman.title}</h5>
@@ -66,10 +76,17 @@ const Leadership = ({ associateMembership: membership }) => {
         <Img fixed={chairman.featured_media.localFile.childImageSharp.fixed} />
       </div>
 
-      <h5 className="text-afpaGreen">AfPA Leadership</h5>
+      <div className="mx-10 mt-16 mb-10 flex justify-center items-center w-full">
+        <div className="h-px w-2/5 bg-lighterGray" />
+        <h5 className="text-afpaGreen mx-4">AfPA Leadership</h5>
+        <div className="h-px w-2/5 bg-lighterGray" />
+      </div>
       <div className="flex flex-wrap justify-between">
-        {leadership.map(({ key, node: member }) => (
-          <div key={key} className="flex lg:w-1/2">
+        {leadership.map(({ node: member }) => (
+          <div
+            key={member.id}
+            className="my-5 max-h-335 flex lg:w-1/2 leading-relaxed leadershipCard"
+          >
             <Img
               fixed={member.featured_media.localFile.childImageSharp.fixed}
             />
@@ -86,11 +103,24 @@ const Leadership = ({ associateMembership: membership }) => {
           </div>
         ))}
       </div>
-      <h5>Associate Membership in the AfPA</h5>
+
+      <div
+        id="membership"
+        className="mx-10 mt-10 flex justify-center items-center w-full"
+      >
+        <div className="h-px w-1/3 bg-lighterGray" />
+        <h5 className="text-afpaGreen mx-4">
+          Associate Membership in the AfPA
+        </h5>
+        <div className="h-px w-1/3 bg-lighterGray" />
+      </div>
       <p
-        className="lg:w-2/3 text-white font-light text-center"
+        className="lg:w-2/3 my-10 text-white font-light text-sm leading-relaxed text-center"
         dangerouslySetInnerHTML={{ __html: membership }}
       />
+      <a className="mb-16 text-lightBlue" href={membershipLink}>
+        Financial support of AfPA and IfPA is acknowledged here.
+      </a>
     </div>
   )
 }

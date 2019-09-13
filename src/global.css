@@ -3,12 +3,17 @@
 
 $lightBlue: #008fc3;
 $darkBlue: #242b5f;
-$textGray: #a4a8b2;
+$lighterGray: #a4a8b2;
 $lightGray: #9b9b9b; /* 979797 */
 $darkGray: #4a4a4a;
 $backgroundGray: #f2f2f2;
 $afpaGreen: #008560;
 $textGreen: #19af6a;
+
+/* apply montserrat family */
+body {
+  @apply font-mont;
+}
 
 h3 {
   @apply mb-1 text-lightGray uppercase tracking-widest leading-loose;
@@ -44,10 +49,40 @@ button {
 }
 
 /**
+ * Styling for specific sections
+ */
+.guidingPrinciplesCard {
+  box-shadow: 0px 2px 27px rgba(0, 0, 0, 0.11645);
+
+  p {
+    @apply my-4;
+
+    strong {
+      @apply font-semibold;
+    }
+  }
+}
+
+.leadershipCard {
+  p {
+    @apply my-4;
+  }
+}
+
+/* underneath h4s on pages */
+.sectionSubHead {
+  @apply mb-6 leading-relaxed font-light text-center;
+}
+
+/**
  * Clipped backgrounds/borders
  */
 .footerClip {
-  clip-path: polygon(0 22%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 100px, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.guidingPrinciplesClip {
+  clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
 }
 
 .homePageWGClip {
@@ -63,7 +98,39 @@ button {
   border-image: linear-gradient(-5deg, white, $backgroundGray 40%) 1 100%;
 }
 
-/* TODO: debug why tw classes aren't being applied inline */
+/* Page/Post content formatting */
+.content {
+  > p {
+    @apply text-darkBlue font-light text-lg leading-relaxed;
+  }
+
+  strong {
+    @apply font-bold text-darkGray;
+  }
+
+  ul {
+    @apply mt-5 mb-6 ml-6 list-disc font-light text-darkGray;
+
+    > li {
+      @apply my-2;
+    }
+  }
+
+  /* images, etc */
+  figure {
+    @apply my-6;
+  }
+}
+
+/**
+ * sets the dark blue bold text on the about page
+ * TODO: make more dynamic
+ */
+.lastChildBoldDarkBlue > p:last-child > strong {
+  @apply text-darkBlue !important;
+}
+
+/* TODO: tw classes aren't being applied inline. applying here is a fix */
 .indexPageFeaturedEventBackgroundImage {
   @apply w-full min-h-400;
 }

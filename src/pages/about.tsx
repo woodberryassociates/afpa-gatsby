@@ -1,6 +1,5 @@
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { PropTypes } from 'prop-types'
 import React from 'react'
 
 import AnnualReports from '../components/aboutPage/annualReports'
@@ -17,34 +16,41 @@ const AboutPage = ({ data }) => {
       <SEO title="About" />
       <Img fluid={page.featured_media.localFile.childImageSharp.fluid} />
 
-      <div className="mx-64 flex flex-row">
-        <div>
+      <div className="mt-10 my-16 lg:mx-32 xl:mx-64 flex flex-row">
+        {/* Quick Links */}
+        <div className="pt-2 mr-20 self-start top-0 hidden sm:block sticky whitespace-no-wrap">
           <h5>Quick Links</h5>
+          <div className="h-1 mt-3 mb-4 w-full bg-darkBlue" />
           <ul>
             <li>
               <a href="#about">
                 <h3>About AFPA</h3>
               </a>
+              <div className="h-px my-4 w-full bg-backgroundGray" />
             </li>
             <li>
               <a href="#annual-reports">
                 <h3>Annual Reports</h3>
               </a>
+              <div className="h-px my-4 w-full bg-backgroundGray" />
             </li>
             <li>
               <a href="#guiding-principles">
                 <h3>Guiding Principles</h3>
               </a>
+              <div className="h-px my-4 w-full bg-backgroundGray" />
             </li>
             <li>
               <a href="#chairman">
                 <h3>Chairman</h3>
               </a>
+              <div className="h-px my-4 w-full bg-backgroundGray" />
             </li>
             <li>
               <a href="#leadership">
                 <h3>Leadership</h3>
               </a>
+              <div className="h-px my-4 w-full bg-backgroundGray" />
             </li>
             <li>
               <a href="#membership">
@@ -54,10 +60,15 @@ const AboutPage = ({ data }) => {
           </ul>
         </div>
 
-        <div>
+        {/* About AfPA */}
+        <div id="about" className="max-w-6xl">
           <h4>About AfPA</h4>
-          <div dangerouslySetInnerHTML={{ __html: page.content }} />
+          <div
+            className="content lastChildBoldDarkBlue"
+            dangerouslySetInnerHTML={{ __html: page.content }}
+          />
           <p
+            className="my-10 italic text-darkBlue text-sm"
             dangerouslySetInnerHTML={{
               __html: page.acf.fine_print,
             }}
@@ -65,21 +76,32 @@ const AboutPage = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center">
+      {/* Annual Reports */}
+      <div id="annual-reports" className="pb-64 flex flex-col items-center">
         <h4>Annual Reports</h4>
         <AnnualReports />
-        <button>See More</button>
       </div>
 
-      <div className="flex flex-col items-center bg-backgroundGray">
+      {/* Guiding Principles */}
+      <div
+        id="guiding-principles"
+        className="-my-48 py-40 flex flex-col items-center bg-backgroundGray guidingPrinciplesClip"
+      >
         <h4>Guiding Principles</h4>
-        <p dangerouslySetInnerHTML={{ __html: page.acf.guiding_principles }} />
+        <p
+          className="sectionSubHead max-w-650"
+          dangerouslySetInnerHTML={{ __html: page.acf.guiding_principles }}
+        />
         <GuidingPrinciples />
       </div>
 
-      <div className="flex flex-col items-center bg-darkBlue">
-        <h4>Leadership</h4>
-        <Leadership associateMembership={page.acf.associate_membership} />
+      {/* Leadership & Membership */}
+      <div className="pt-64 px-32 flex flex-col items-center bg-darkBlue">
+        <h4 id="leadership">Leadership</h4>
+        <Leadership
+          associateMembership={page.acf.associate_membership}
+          associateMembershipLink={page.acf.associate_membership_link}
+        />
       </div>
       <Img fluid={page.acf.membership_photo.localFile.childImageSharp.fluid} />
     </Layout>
@@ -95,6 +117,7 @@ export const pageQuery = graphql`
         guiding_principles
         leadership
         associate_membership
+        associate_membership_link
         membership_photo {
           localFile {
             childImageSharp {

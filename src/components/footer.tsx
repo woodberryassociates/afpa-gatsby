@@ -26,7 +26,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footerClip bg-lightBlue text-white text-sm font-light tracking-wider -mt-32">
+    <footer className="footerClip bg-lightBlue text-white text-sm font-light tracking-wider -mt-64">
       <div className="flex justify-between mx-32 py-12 min-h-250">
         <div className="flex flex-col justify-end leading-loose">
           <a className="" href="https://gafpa.org/">

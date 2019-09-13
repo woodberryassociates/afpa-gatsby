@@ -33,7 +33,8 @@
     "react-player": "^1.11.2",
     "react-twitter-widgets": "^1.7.1",
     "rss-parser": "^3.7.2",
-    "sugarss": "^2.0.0"
+    "sugarss": "^2.0.0",
+    "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
     "@types/node": "^12.7.0",

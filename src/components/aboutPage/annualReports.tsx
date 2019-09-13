@@ -8,6 +8,7 @@ const AnnualReports = () => {
       allWordpressWpAnnualReports {
         edges {
           node {
+            id
             featured_media {
               localFile {
                 childImageSharp {
@@ -24,14 +25,18 @@ const AnnualReports = () => {
   `)
 
   return (
-    <div className="flex justify-around">
-      {data.allWordpressWpAnnualReports.edges.map(({ key, node }) => (
-        <Img
-          key={key}
-          className="m-10 shadow-lg"
-          fixed={node.featured_media.localFile.childImageSharp.fixed}
-        />
-      ))}
+    <div className="flex flex-col">
+      <div className="flex justify-around">
+        {data.allWordpressWpAnnualReports.edges.map(({ node: report }) => (
+          <Img
+            key={report.id}
+            className="m-10 shadow-lg"
+            fixed={report.featured_media.localFile.childImageSharp.fixed}
+          />
+        ))}
+      </div>
+
+      <button className="self-center mt-10">See More</button>
     </div>
   )
 }
