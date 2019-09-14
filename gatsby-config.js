@@ -92,7 +92,7 @@ module.exports = {
           '**/pages',
           '**/media',
           '**/tags',
-          // '**/categories',
+          '**/categories',
           // '**/taxonomies',
         ],
       },

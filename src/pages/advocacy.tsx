@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import React from 'react'
 
 import Layout from '../components/layout'
@@ -12,5 +12,29 @@ const AdvocacyPage = () => (
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
+
+export const pageQuery = graphql`
+  query LegislativeAdvocacy {
+    allWordpressWpLegislativeAdvocacy {
+      edges {
+        node {
+          title
+          tags {
+            name
+            slug
+          }
+          categories {
+            name
+            slug
+          }
+          acf {
+            link_legislator
+            link_bill
+          }
+        }
+      }
+    }
+  }
+`
 
 export default AdvocacyPage
