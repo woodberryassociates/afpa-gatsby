@@ -105,10 +105,11 @@ const ResourcePage = ({ data }) => {
         <Podcasts />
       </div>
 
-      <div className="flex flex-col items-center bg-backgroundLightGray">
+      {/* Infographics */}
+      <div className="-mb-32 pt-16 pb-32 flex flex-col items-center bg-backgroundLightGray">
         <h4>Infographics</h4>
-        <div
-          className="max-w-700 sectionSubHead"
+        <p
+          className="mb-12 max-w-700 sectionSubHead"
           dangerouslySetInnerHTML={{
             __html: page.acf.infographics,
           }}
@@ -116,10 +117,10 @@ const ResourcePage = ({ data }) => {
         <Infographics />
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="mb-12 pb-64 pt-32 flex flex-col items-center bg-white leftTopTilt">
         <h4>Can't find it?</h4>
         <div
-          className="max-w-700 mb-6 text-md leading-relaxed font-light"
+          className="max-w-425 mb-6 text-md leading-relaxed font-light text-center"
           dangerouslySetInnerHTML={{
             __html: page.acf.ifpa,
           }}

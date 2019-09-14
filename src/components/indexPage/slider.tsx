@@ -35,6 +35,7 @@ const Slider = () => {
       allWordpressWpSliders {
         edges {
           node {
+            id
             content
             title
             featured_media {
@@ -60,8 +61,8 @@ const Slider = () => {
       isPlaying={true}
     >
       <CarouselSlider>
-        {data.allWordpressWpSliders.edges.map(({ key, node }) => (
-          <Slide key={key} data={node} />
+        {data.allWordpressWpSliders.edges.map(({ node }) => (
+          <Slide key={node.id} data={node} />
         ))}
       </CarouselSlider>
       {/* <ButtonBack>Back</ButtonBack>

@@ -117,6 +117,20 @@ button {
   border-image: linear-gradient(-5deg, white, $backgroundGray 40%) 1 100%;
 } */
 
+.pagedSlider {
+  .carousel__inner-slide {
+    display: grid;
+    grid-template-rows: repeat(2, 40%);
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 2rem;
+    justify-content: center;
+
+    img {
+      object-fit: fill !important;
+    }
+  }
+}
+
 /* Page/Post content formatting */
 .content {
   > p {
@@ -161,7 +175,7 @@ button {
 }
 
 /* Circle Media Player */
-/* from  https://github.com/souporserious/react-media-player/blob/master/example/main.scss */
+/* from https://github.com/souporserious/react-media-player/blob/master/example/main.scss */
 .circle-media-player {
   display: inline-block;
   padding: 0;

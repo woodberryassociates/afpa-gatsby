@@ -80,11 +80,13 @@ module.exports = {
 
           // Resources Page CPTs
           '**/videos',
-          // '**/podcasts',
           '**/infographics',
 
           // Events Page (+ Home Page)
           '**/events',
+
+          // Advocacy Page
+          '**/legislative-advocacy',
 
           // WP Core
           '**/pages',
