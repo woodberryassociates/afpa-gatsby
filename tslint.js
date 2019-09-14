@@ -15,4 +15,7 @@ module.exports = {
     'no-boolean-literal-compare': false,
     'object-literal-sort-keys': false,
   },
+  linterOptions: {
+    exclude: ['node_modules/**'],
+  },
 }
