@@ -133,8 +133,10 @@ button {
 
 /* Page/Post content formatting */
 .content {
+  @apply text-darkBlue font-light text-lg leading-relaxed;
+
   > p {
-    @apply text-darkBlue font-light text-lg leading-relaxed;
+    @apply mb-4;
   }
 
   strong {

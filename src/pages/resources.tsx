@@ -32,7 +32,7 @@ const ResourcePage = ({ data }) => {
   const video = data.wordpressWpVideos
   const [isFeaturedPlaying, setIsFeaturedPlaying] = useState(false)
 
-  // resource query functions
+  // resource search query functions
   const [query, setQuery] = useState('')
   const handleQuery = event => setQuery(event.target.value)
   const handleSubmit = event => {

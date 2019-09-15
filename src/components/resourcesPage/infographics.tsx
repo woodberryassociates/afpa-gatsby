@@ -21,9 +21,9 @@ const pagination = (data, NUM_PER_PAGE) => {
   const tempArr: object[] = data
   const pagedArr: object[] = []
 
-  for (let i = 0; i < tempArr.length; i += NUM_PER_PAGE) {
+  // TODO: drop the for loop for a declarative/HO model
+  for (let i = 0; i < tempArr.length; i += NUM_PER_PAGE)
     pagedArr.push(tempArr.slice(i, i + NUM_PER_PAGE))
-  }
   return pagedArr
 }
 

@@ -38,6 +38,7 @@ module.exports = {
       height: {
         in: 'inherit',
         '1/2': '50%',
+        '2px': '2px',
       },
       maxHeight: {
         '200': '200px',

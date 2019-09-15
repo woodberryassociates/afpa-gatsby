@@ -82,11 +82,12 @@ module.exports = {
           '**/videos',
           '**/infographics',
 
-          // Events Page (+ Home Page)
+          // Events Page (+ Home Page) CPT
           '**/events',
 
-          // Advocacy Page
+          // Advocacy Page CPT
           '**/legislative-advocacy',
+          '**/regulatory-advocacy',
 
           // WP Core
           '**/pages',
