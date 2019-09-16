@@ -1,9 +1,30 @@
 {
   "name": "afpa-wordpress",
-  "private": true,
+  "private": false,
   "description": "AfPA's WordPress website",
   "version": "0.0.1",
   "author": "Avi Nerenberg <avinerenberg@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "WP_ENV=afpadev.wpengine.com GATSBY_CONCURRENT_DOWNLOAD=5 gatsby build",
+    "develop": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
+    "format": "prettier --write src/**/*.{tsx}",
+    "local": "WP_ENV=localhost/afpa npm run develop",
+    "dev": "WP_ENV=afpadev.wpengine.com npm run develop",
+    "start": "npm run local",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "keywords": [
+    "gatsby"
+  ],
   "dependencies": {
     "@types/react-helmet": "^5.0.9",
     "autoprefixer": "^9.6.1",
@@ -59,26 +80,5 @@
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.3"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "WP_ENV=afpadev.wpengine.com GATSBY_CONCURRENT_DOWNLOAD=5 gatsby build",
-    "develop": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
-    "format": "prettier --write src/**/*.{tsx}",
-    "local": "WP_ENV=localhost/afpa npm run develop",
-    "dev": "WP_ENV=afpadev.wpengine.com npm run develop",
-    "start": "npm run local",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
