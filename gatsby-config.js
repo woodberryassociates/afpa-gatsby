@@ -59,7 +59,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: process.env.WP_ENV, // localhost or the remote URL
-        protocol: process.env.WP_ENV === 'localhost/afpa' ? 'http' : 'https',
+        protocol: 'http',
         hostingWPCOM: false,
         useACF: true, // TODO(?)
         // searchAndReplaceContentUrls: {
