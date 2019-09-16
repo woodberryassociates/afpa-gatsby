@@ -31,7 +31,7 @@ const GuidingPrinciples = () => {
       {data.allWordpressWpGuidingPrinciples.edges.map(({ node: gp }, index) => (
         <div
           key={gp.id}
-          className="mx-4 mb-4 max-w-400 flex flex-col bg-white guidingPrinciplesCard"
+          className="mx-4 mb-4 max-w-400 flex flex-col bg-white guidingPrinciplesCard cardShadow"
         >
           <Img fixed={gp.featured_media.localFile.childImageSharp.fixed} />
           <div className="p-5">

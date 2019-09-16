@@ -5,11 +5,13 @@ import React from 'react'
 const FeaturedEvent = () => {
   const data = useStaticQuery(graphql`
     query FeaturedEvent {
-      wordpressWpEvents(tags: { elemMatch: { slug: { eq: "featured" } } }) {
+      wordpressWpEvents(
+        tags: { elemMatch: { slug: { eq: "featured-event" } } }
+      ) {
         title
-        content
         acf {
-          registration_link
+          blurb
+          link
         }
         featured_media {
           localFile {
@@ -41,7 +43,9 @@ const FeaturedEvent = () => {
           />
           <div
             className="text-white leading-relaxed mb-4"
-            dangerouslySetInnerHTML={{ __html: data.wordpressWpEvents.content }}
+            dangerouslySetInnerHTML={{
+              __html: data.wordpressWpEvents.acf.blurb,
+            }}
           />
           <button>Register Now</button>
         </div>

@@ -39,6 +39,7 @@ module.exports = {
         in: 'inherit',
         '1/2': '50%',
         '2px': '2px',
+        '400': '400px',
       },
       maxHeight: {
         '200': '200px',
@@ -50,9 +51,11 @@ module.exports = {
         '200': '200px',
         '250': '250px',
         '400': '400px',
+        '500': '500px',
       },
       width: {
         '300': '300px',
+        '500': '500px',
       },
       maxWidth: {
         '2xs': '12rem',
@@ -69,6 +72,7 @@ module.exports = {
         '120': '120px',
         '200': '200px',
         '300': '300px',
+        '450': '450px',
       },
       fontSize: {
         '7xl': '4.5rem',

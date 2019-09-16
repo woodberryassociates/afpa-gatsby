@@ -68,7 +68,7 @@ const AboutPage = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: page.content }}
           />
           <p
-            className="my-10 italic text-darkBlue text-sm"
+            className="mt-10 italic text-darkBlue text-sm"
             dangerouslySetInnerHTML={{
               __html: page.acf.fine_print,
             }}
