@@ -86,26 +86,28 @@ module.exports = {
     {
       /**
        * getNode is OK (vs getNodeAndSavePathDependency) b/c
-       * the data is external and only updated only on build
+       * the data is external and updated only on build
        * https://www.gatsbyjs.org/packages/@tsimons/gatsby-plugin-elasticlunr-search/
        * https://www.gatsbyjs.org/docs/node-api-helpers/#getNode
        */
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: [`title`, `link`, `tags`],
+        fields: [`title`, `img`, `link`, `tags`],
         resolvers: {
-          // Site-wide
+          // only site-wide queries
           wordpress__wp_annual_reports: {
             title: node => node.title,
             link: node => node.acf.link,
+            img: (node, getNode) => getNode(node.featured_media___NODE),
           },
           wordpress__wp_events: {
             title: node => node.title,
             link: node => node.acf.link,
             tags: (node, getNode) =>
-              node.tags___NODE // ignore empty tag arrays
+              node.tags___NODE // ignore if empty (e.g. regular event)
                 ? node.tags___NODE.map(id => getNode(id).name)
                 : null,
+            img: (node, getNode) => getNode(node.featured_media___NODE),
           },
           wordpress__wp_legislative_advocacy: {
             title: node => node.title,
@@ -113,16 +115,15 @@ module.exports = {
           wordpress__wp_regulatory_advocacy: {
             title: node => node.title,
           },
-          // Resources
+          // site-wide & resources queries
           wordpress__wp_infographics: {
             title: node => node.title,
+            img: (node, getNode) => getNode(node.featured_media___NODE),
           },
           wordpress__wp_videos: {
             title: node => node.title,
           },
         },
-        // Optional filter to limit indexed nodes
-        // filter: (node, getNode) => node.frontmatter.tags !== 'exempt',
       },
     },
     `gatsby-plugin-react-helmet`,
