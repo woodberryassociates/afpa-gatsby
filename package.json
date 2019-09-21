@@ -26,8 +26,10 @@
     "gatsby"
   ],
   "dependencies": {
+    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
     "@types/react-helmet": "^5.0.9",
     "autoprefixer": "^9.6.1",
+    "elasticlunr": "^0.9.5",
     "gatsby": "^2.13.45",
     "gatsby-background-image": "^0.8.3",
     "gatsby-cli": "^2.7.27",
@@ -55,6 +57,7 @@
     "react-player": "^1.11.2",
     "react-twitter-widgets": "^1.7.1",
     "rss-parser": "^3.7.2",
+    "smooth-scroll": "^16.1.0",
     "sugarss": "^2.0.0",
     "typeface-montserrat": "0.0.75"
   },

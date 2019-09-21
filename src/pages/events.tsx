@@ -2,59 +2,10 @@ import { graphql, Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
 
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-
-const EventCard = ({
-  key,
-  event: {
-    node: {
-      title,
-      acf: { link, start_date, end_date, blurb },
-      featured_media,
-    },
-  },
-}) => (
-  <div
-    key={key}
-    className="my-10 flex flex-wrap justify-between bg-white cardShadow"
-  >
-    <Img fixed={featured_media.localFile.childImageSharp.fixed} />
-
-    <div className="m-5 lg:w-1/2">
-      {/* Date */}
-      <div className="mb-6 inline text-darkBlue text-sm font-medium tracking-wider uppercase">
-        <span
-          dangerouslySetInnerHTML={{
-            __html: start_date,
-          }}
-        />
-        {end_date ? (
-          <>
-            {` - `}
-            <span
-              dangerouslySetInnerHTML={{
-                __html: end_date,
-              }}
-            />
-          </>
-        ) : null}
-      </div>
-      {/* Title */}
-      <p
-        dangerouslySetInnerHTML={{ __html: title }}
-        className="my-2 text-xl text-lightBlue"
-      />
-      {/* Blurb */}
-      <p dangerouslySetInnerHTML={{ __html: blurb }} className="text-sm" />
-    </div>
-
-    <a className="mr-10 self-center" href={link}>
-      <button>Register Today</button>
-    </a>
-  </div>
-)
+import PastEventsGallery from './../components/eventsPage/pastEvents'
+import UpcomingEvents from './../components/eventsPage/upcomingEvents'
 
 const PastEventCard = ({
   key,
@@ -123,7 +74,7 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
             <div className="mb-6 inline text-white text-sm font-light tracking-wider uppercase">
               <span
                 dangerouslySetInnerHTML={{
-                  __html: featured.acf.start_date,
+                  __html: featured.acf.start_date.substring(11),
                 }}
               />
               {featured.acf.end_date ? (
@@ -142,33 +93,22 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
         </div>
       </BackgroundImage>
 
-      {/* Upcoming Events */}
-      <div className="lg:px-64 pt-10 pb-32 bg-backgroundLightGray leftBottomTilt">
-        <h5>Upcoming Events</h5>
-        {current.edges.map(event => (
-          <EventCard key={event.node.id} event={event} />
-        ))}
-      </div>
+      <UpcomingEvents />
 
-      {/* Past Events Gallery */}
       <div className="-mt-32 lg:px-64 pt-32 pb-64 bg-darkBlue leftTopTilt flex flex-col items-center">
         <h4 className="text-white">Past Events Gallery</h4>
         <p
           className="mb-10 content text-white"
           dangerouslySetInnerHTML={{ __html: page.acf.past_events }}
         />
-        <div className="mb-10 flex flex-wrap content-center">
-          {past.edges.map(event => (
-            <PastEventCard key={event.node.id} event={event} />
-          ))}
-        </div>
+        <PastEventsGallery />
       </div>
     </div>
   </Layout>
 )
 
 export const pageQuery = graphql`
-  query EventsQuery {
+  query EventsPageQuery {
     page: wordpressPage(title: { eq: "Events" }) {
       acf {
         header_text
@@ -191,56 +131,6 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-    past: allWordpressWpEvents(
-      filter: { tags: { elemMatch: { slug: { eq: "past-event" } } } }
-    ) {
-      edges {
-        node {
-          id
-          title
-          acf {
-            link
-            start_date
-            end_date
-            blurb
-          }
-          featured_media {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    current: allWordpressWpEvents(
-      filter: { tags: { elemMatch: { slug: { ne: "past-event" } } } }
-    ) {
-      edges {
-        node {
-          id
-          title
-          acf {
-            link
-            start_date
-            end_date
-            blurb
-          }
-          featured_media {
-            localFile {
-              childImageSharp {
-                fixed(width: 300, height: 200) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
             }
           }
         }

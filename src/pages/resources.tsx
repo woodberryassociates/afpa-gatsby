@@ -27,9 +27,9 @@ const FeaturedVideoGradient = ({ video, playing }) => {
   ) : null
 }
 
-const ResourcePage = ({ data }) => {
-  const page = data.wordpressPage
-  const video = data.wordpressWpVideos
+const ResourcePage = ({
+  data: { wordpressPage: page, wordpressWpVideos: video },
+}) => {
   const [isFeaturedPlaying, setIsFeaturedPlaying] = useState(false)
 
   // resource search query functions
@@ -84,7 +84,7 @@ const ResourcePage = ({ data }) => {
 
       {/* Video Center */}
       <div className="pb-32 flex flex-col items-center bg-backgroundGray leftBottomTilt">
-        <h4>Video Center</h4>
+        <h4 id="videos">Video Center</h4>
         <div
           className="max-w-700 mb-6 text-md leading-relaxed font-light"
           dangerouslySetInnerHTML={{
@@ -95,7 +95,7 @@ const ResourcePage = ({ data }) => {
       </div>
 
       <div className="flex flex-col items-center">
-        <h4>Patient Access Podcast</h4>
+        <h4 id="podcasts">Patient Access Podcast</h4>
         <p
           className="max-w-700 sectionSubHead"
           dangerouslySetInnerHTML={{
@@ -107,7 +107,7 @@ const ResourcePage = ({ data }) => {
 
       {/* Infographics */}
       <div className="-mb-32 pt-16 pb-32 flex flex-col items-center bg-backgroundLightGray">
-        <h4>Infographics</h4>
+        <h4 id="infographics">Infographics</h4>
         <p
           className="mb-12 max-w-700 sectionSubHead"
           dangerouslySetInnerHTML={{
@@ -146,7 +146,7 @@ export const pageQuery = graphql`
         ifpa_link
       }
     }
-    wordpressWpVideos(tags: { elemMatch: { slug: { eq: "featured" } } }) {
+    wordpressWpVideos(tags: { elemMatch: { slug: { eq: "featured-video" } } }) {
       title
       acf {
         coalition

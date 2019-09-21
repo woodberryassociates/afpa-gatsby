@@ -78,6 +78,7 @@ module.exports = {
         '7xl': '4.5rem',
       },
       inset: {
+        '50px': '50px',
         '100': '100px',
         full: '100%',
         '3/4': '75%',

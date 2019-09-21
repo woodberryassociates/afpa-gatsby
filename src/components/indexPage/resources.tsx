@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 
@@ -11,6 +11,7 @@ const Resources = () => {
             acf {
               resource_url
             }
+            id
             title
             content
             featured_media {
@@ -30,10 +31,10 @@ const Resources = () => {
 
   return (
     <div className="px-64 flex flex-row flex-wrap justify-center pb-64">
-      {data.allWordpressWpHomeResources.edges.map(({ key, node }) => (
+      {data.allWordpressWpHomeResources.edges.map(({ node }) => (
         <div
           className="md:w-1/3 lg:w-1/4 max-w-425 m-px p-5 bg-white flex flex-col items-center visible"
-          key={key}
+          key={node.id}
         >
           <div className="min-h-150 flex items-center">
             <Img fixed={node.featured_media.localFile.childImageSharp.fixed} />
@@ -46,9 +47,16 @@ const Resources = () => {
             className="min-h-200 font-light"
             dangerouslySetInnerHTML={{ __html: node.content }}
           />
-          <a href={node.acf.resource_url}>
-            <button className="darkButton">Explore More</button>
-          </a>
+          {/* gatsby Link if local, otherwise anchor */}
+          {node.acf.resource_url.substring(1) === '/' ? (
+            <Link to={node.acf.resource_url}>
+              <button className="darkButton">Explore More</button>
+            </Link>
+          ) : (
+            <a href={node.acf.resource_url}>
+              <button className="darkButton">Explore More</button>
+            </a>
+          )}
         </div>
       ))}
     </div>

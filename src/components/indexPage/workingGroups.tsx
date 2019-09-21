@@ -8,6 +8,7 @@ const WorkingGroups = () => {
       allWordpressWpWorkingGroups {
         edges {
           node {
+            id
             title
             featured_media {
               localFile {
@@ -26,8 +27,8 @@ const WorkingGroups = () => {
 
   return (
     <div className="flex flex-row flex-wrap justify-around">
-      {data.allWordpressWpWorkingGroups.edges.map(({ key, node }) => (
-        <div className="my-5 w-1/3 flex flex-row items-center" key={key}>
+      {data.allWordpressWpWorkingGroups.edges.map(({ node }) => (
+        <div className="my-5 w-1/3 flex flex-row items-center" key={node.id}>
           <Img
             className="min-w-91"
             fixed={node.featured_media.localFile.childImageSharp.fixed}

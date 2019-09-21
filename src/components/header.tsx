@@ -1,9 +1,9 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 
-import { facebook, search, twitter, youtube } from '../images'
+import { facebook, search, twitter, youtube } from '../images' // TODO: use fontawesome here
+import Search from './search'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -17,6 +17,7 @@ const Header = () => {
       }
     }
   `)
+  const [showSearch, setShow] = useState(false)
 
   return (
     <header className="xl:px-32 text-darkBlue bg-white flex flex-wrap">
@@ -89,18 +90,13 @@ const Header = () => {
           </a>
         </div>
 
-        <div>
-          <a href="/">
-            <img src={search} />
-          </a>
+        <div className="relative">
+          <img src={search} onClick={() => setShow(!showSearch)} />
+          {showSearch ? <Search /> : null}
         </div>
       </section>
     </header>
   )
 }
-
-// Header.propTypes = {
-//   data: PropTypes.object.isRequired,
-// }
 
 export default Header
