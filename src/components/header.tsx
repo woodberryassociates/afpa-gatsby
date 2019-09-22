@@ -17,7 +17,7 @@ const Header = () => {
       }
     }
   `)
-  const [showSearch, setShow] = useState(false)
+  const [showSearch, setShowSearch] = useState(false)
 
   return (
     <header className="xl:px-32 text-darkBlue bg-white flex flex-wrap">
@@ -91,8 +91,8 @@ const Header = () => {
         </div>
 
         <div className="relative">
-          <img src={search} onClick={() => setShow(!showSearch)} />
-          {showSearch ? <Search /> : null}
+          <img src={search} onClick={() => setShowSearch(!showSearch)} />
+          <Search show={showSearch} setShow={setShowSearch} />
         </div>
       </section>
     </header>

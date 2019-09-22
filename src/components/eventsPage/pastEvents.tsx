@@ -73,7 +73,7 @@ const PastEventsGallery = () => {
   `)
 
   return (
-    <div className="mb-10 flex flex-wrap content-center">
+    <div className="mb-10 flex flex-wrap justify-center">
       {data.past.edges.map(event => (
         <PastEventCard key={event.node.id} event={event} />
       ))}

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { Component, useEffect, useState } from 'react'
 
 // https://www.gatsbyjs.org/packages/@tsimons/gatsby-plugin-elasticlunr-search/
-const Search = () => {
+const Search = ({ show, setShow }) => {
   const data = useStaticQuery(graphql`
     query SearchIndexExampleQuery {
       siteSearchIndex {
@@ -28,19 +28,24 @@ const Search = () => {
     )
   }
 
+  // focus on each render
   useEffect(() => inputRef.focus())
 
   return (
     <div
-      className="z-50 absolute rounded border-2 border-lightGray bg-white text-darkBlue text-xl"
-      style={{ transform: 'translate(-100%)' }}
+      className={`z-50 absolute rounded border-2 border-lightGray bg-white text-darkBlue text-xl ${
+        show ? `opacity-100` : `opacity-0`
+      }`}
+      style={{ transform: 'translate(-100%)', transition: 'all .25s ease-in' }}
     >
       <input
         type="text"
+        placeholder="Search..."
         value={query}
         onChange={search}
         ref={input => (inputRef = input)}
-        className="lg:w-500 rounded border-b"
+        onBlur={() => setShow(false)} // hide on blur, TODO: avoid clashing with onClick() in Header
+        className="lg:w-500 p-2 rounded border-b"
       />
       <ul>
         {results
