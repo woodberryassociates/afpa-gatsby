@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import React, { useState } from 'react'
 
 import { facebook, search, twitter, youtube } from '../images' // TODO: use fontawesome here
-import Search from './search'
+import Search from './headerSearch'
 
 const Header = () => {
   const data = useStaticQuery(graphql`

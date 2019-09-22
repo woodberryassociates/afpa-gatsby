@@ -1,11 +1,11 @@
 import { Index } from 'elasticlunr'
 import { graphql, useStaticQuery } from 'gatsby'
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // https://www.gatsbyjs.org/packages/@tsimons/gatsby-plugin-elasticlunr-search/
 const Search = ({ show, setShow }) => {
   const data = useStaticQuery(graphql`
-    query SearchIndexExampleQuery {
+    query SearchIndexQuery {
       siteSearchIndex {
         index
       }
@@ -28,8 +28,8 @@ const Search = ({ show, setShow }) => {
     )
   }
 
-  // focus on each render
-  useEffect(() => inputRef.focus())
+  // focus on show
+  useEffect(() => inputRef.focus(), [show])
 
   return (
     <div
@@ -40,10 +40,10 @@ const Search = ({ show, setShow }) => {
     >
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Type to search..."
         value={query}
         onChange={search}
-        ref={input => (inputRef = input)}
+        ref={input => (inputRef = input)} // focus on show
         onBlur={() => setShow(false)} // hide on blur, TODO: avoid clashing with onClick() in Header
         className="lg:w-500 p-2 rounded border-b"
       />

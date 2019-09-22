@@ -1,12 +1,14 @@
 import { graphql, Link } from 'gatsby'
 import React, { useState } from 'react'
-
 import ReactPlayer from 'react-player'
+
 import Layout from '../components/layout'
-import Podcasts from '../components/resourcesPage/podcasts'
-import Videos from '../components/resourcesPage/videos'
 import SEO from '../components/seo'
-import Infographics from './../components/resourcesPage/infographics'
+
+import Infographics from '../components/resourcesPage/infographics'
+import Podcasts from '../components/resourcesPage/podcasts'
+import Search from '../components/resourcesPage/resourcesSearch'
+import Videos from '../components/resourcesPage/videos'
 
 const FeaturedVideoGradient = ({ video, playing }) => {
   return !playing ? (
@@ -46,7 +48,7 @@ const ResourcePage = ({
 
       {/* Header & Featured Video */}
       <div className="pb-32 pt-16 flex flex-wrap justify-around resourcePageHeaderClip">
-        <div className="flex flex-col justify-between lg:w-2/5">
+        <div className="relative flex flex-col justify-between lg:w-2/5">
           <div>
             <h4
               className="text-white"
@@ -57,17 +59,10 @@ const ResourcePage = ({
               dangerouslySetInnerHTML={{ __html: page.content }}
             />
           </div>
-          {/* TODO: Resource search form */}
-          <form className="text-darkGray" onSubmit={handleSubmit}>
-            <input
-              className="p-2 pr-16 border-2 placeholder-darkGray border-lightGray rounded-lg leading-loose"
-              type="text"
-              value={query}
-              onChange={handleQuery}
-              placeholder="Search resources"
-            />
-          </form>
+
+          <Search />
         </div>
+
         <div className="relative">
           <ReactPlayer
             className="lg:mt-16"
