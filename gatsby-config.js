@@ -18,25 +18,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-stylus-resources`,
-    //   options: {
-    //     resources: ['./src/global.styl'],
-    //     postCssPlugins: [require('tailwindcss')],
-    //   },
-    // },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [
-          require(`tailwindcss`),
-          require(`precss`),
-          require(`postcss-easing-gradients`),
-          require(`postcss-preset-env`),
-        ],
-      },
-    },
-    // `gatsby-plugin-purgecss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -130,6 +111,25 @@ module.exports = {
         },
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-stylus-resources`,
+    //   options: {
+    //     resources: ['./src/global.styl'],
+    //     postCssPlugins: [require('tailwindcss')],
+    //   },
+    // },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`),
+          require(`precss`),
+          require(`postcss-easing-gradients`),
+          require(`postcss-preset-env`),
+        ],
+      },
+    },
+    // `gatsby-plugin-purgecss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
