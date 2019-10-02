@@ -43,7 +43,7 @@ const Resources = () => {
             className="mt-5"
             dangerouslySetInnerHTML={{ __html: node.title }}
           />
-          <p
+          <div
             className="min-h-200 font-light"
             dangerouslySetInnerHTML={{ __html: node.content }}
           />

@@ -48,7 +48,7 @@ const ResourcePage = ({
 
       {/* Header & Featured Video */}
       <div className="pb-32 pt-16 flex flex-wrap justify-around resourcePageHeaderClip">
-        <div className="relative flex flex-col justify-between lg:w-2/5">
+        <div className="flex flex-col justify-between lg:w-2/5">
           <div>
             <h4
               className="text-white"

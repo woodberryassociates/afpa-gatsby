@@ -92,9 +92,11 @@ module.exports = {
           },
           wordpress__wp_legislative_advocacy: {
             title: node => node.title,
+            // link: node => node.acf.link_bill,
           },
           wordpress__wp_regulatory_advocacy: {
             title: node => node.title,
+            // link: node => node.acf.link_bill,
           },
           // RESOURCES
           wordpress__wp_infographics: {
