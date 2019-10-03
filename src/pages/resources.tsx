@@ -34,14 +34,6 @@ const ResourcePage = ({
 }) => {
   const [isFeaturedPlaying, setIsFeaturedPlaying] = useState(false)
 
-  // resource search query functions
-  const [query, setQuery] = useState('')
-  const handleQuery = event => setQuery(event.target.value)
-  const handleSubmit = event => {
-    event.preventDefault()
-    alert('TODO')
-  }
-
   return (
     <Layout>
       <SEO title="Resources" />

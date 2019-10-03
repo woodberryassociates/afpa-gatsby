@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Parser from 'rss-parser'
 
-import CircleMediaPlayer from './../circlePlayer'
+import CircleMediaPlayer from './circlePlayer'
 
 // TODO: make this a graphql query & pagination
 const parser = new Parser()

@@ -52,7 +52,7 @@ button {
   box-shadow: 0px 2px 27px rgba(0, 0, 0, 0.11645);
 }
 
-.guidingPrinciplesCard > p {
+.guidingPrinciplesCard p {
   @apply my-4;
 
   strong {
@@ -123,7 +123,7 @@ button {
     justify-content: center;
 
     img {
-      object-fit: fill !important;
+      object-fit: cover !important;
     }
   }
 }

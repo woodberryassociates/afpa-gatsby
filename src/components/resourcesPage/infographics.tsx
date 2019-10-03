@@ -10,22 +10,7 @@ import {
 } from 'pure-react-carousel'
 import React from 'react'
 
-/**
- * PAGINATION
- *
- * @TODO may be able to move this to gatsby-node & use graphql's
- * native functionality
- * https://nickymeuleman.netlify.com/blog/gatsby-pagination
- */
-const pagination = (data, NUM_PER_PAGE) => {
-  const tempArr: object[] = data
-  const pagedArr: object[] = []
-
-  // TODO: drop the for loop for a declarative/HO model
-  for (let i = 0; i < tempArr.length; i += NUM_PER_PAGE)
-    pagedArr.push(tempArr.slice(i, i + NUM_PER_PAGE))
-  return pagedArr
-}
+import pagination from './pagination'
 
 const Infographics = () => {
   const data = useStaticQuery(graphql`
@@ -41,7 +26,7 @@ const Infographics = () => {
             featured_media {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 300) {
+                  fluid(maxWidth: 500) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -74,7 +59,7 @@ const Infographics = () => {
             {(page as any).map(infographic => {
               infographic = infographic.node
               return (
-                <div className="" key={infographic.id}>
+                <a key={infographic.id} href={infographic.acf.link}>
                   <Img
                     className="max-h-335"
                     fluid={
@@ -85,7 +70,7 @@ const Infographics = () => {
                     className="text-darkGray"
                     dangerouslySetInnerHTML={{ __html: infographic.title }}
                   />
-                </div>
+                </a>
               )
             })}
           </CarouselSlide>

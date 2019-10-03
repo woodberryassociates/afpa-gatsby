@@ -85,7 +85,7 @@ module.exports = {
             title: node => node.title,
             link: node => node.acf.link,
             tags: (node, getNode) =>
-              node.tags___NODE // ignore if empty (e.g. regular event)
+              node.tags___NODE // ignore if empty (e.g. regular event) TODO?: add default tag
                 ? node.tags___NODE.map(id => getNode(id).name)
                 : null,
             img: (node, getNode) => getNode(node.featured_media___NODE),

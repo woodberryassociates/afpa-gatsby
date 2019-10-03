@@ -20,7 +20,7 @@ const Header = () => {
   const [showSearch, setShowSearch] = useState(false)
 
   return (
-    <header className="xl:px-32 text-darkBlue bg-white flex flex-wrap">
+    <header className="xl:px-32 text-darkBlue bg-white flex flex-wrap justify-around">
       <div className="w-1/4">
         <h6>
           <Link to="/">
@@ -29,7 +29,7 @@ const Header = () => {
         </h6>
       </div>
 
-      <section className="mx-6 w-1/2 flex flex-wrap justify-around items-center font-semibold">
+      <section className="w-1/2 flex flex-wrap justify-around items-center font-semibold">
         <div>
           <h6>
             <Link className="" to="/about">
@@ -90,7 +90,7 @@ const Header = () => {
           </a>
         </div>
 
-        <div className="relative">
+        <div className="relative cursor-pointer">
           <img src={search} onClick={() => setShowSearch(!showSearch)} />
           <Search show={showSearch} setShow={setShowSearch} />
         </div>
