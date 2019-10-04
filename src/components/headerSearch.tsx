@@ -33,8 +33,8 @@ const Search = ({ show, setShow }) => {
 
   return (
     <div
-      className={`absolute rounded border-2 border-lightGray bg-white text-darkBlue text-xl ${
-        show ? `z-50 opacity-100` : `z-0 opacity-0`
+      className={`z-50 absolute rounded border-2 border-lightGray bg-white text-darkBlue text-xl ${
+        show ? `visible opacity-100` : `invisible opacity-0`
       }`}
       style={{ transform: 'translate(-100%)', transition: 'all .25s ease-in' }}
     >
@@ -44,10 +44,8 @@ const Search = ({ show, setShow }) => {
         value={query}
         onChange={search}
         ref={input => (inputRef = input)} // focus on show
-        onBlur={() => setShow(false)} // hide on blur, TODO: avoid clashing with onClick() in Header
-        className={`lg:w-500 p-2 rounded border-b ${
-          show ? `cursor-auto` : `cursor-default`
-        }`}
+        // onBlur={() => setShow(false)} // hide on blur, TODO: avoid clashing with onClick() in Header
+        className={`lg:w-500 p-2 rounded border-b`}
       />
       <ul>
         {results
