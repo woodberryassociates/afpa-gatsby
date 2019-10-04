@@ -15,4 +15,16 @@ const pagination = (data, NUM_PER_PAGE) => {
   return pagedArr
 }
 
-export default pagination
+const goUp = (pageNum, arrLength, setPage) => {
+  pageNum++
+  if (pageNum === arrLength) pageNum = 0
+  setPage(pageNum)
+}
+
+const goDown = (pageNum, arrLength, setPage) => {
+  pageNum--
+  if (pageNum === -1) pageNum = arrLength - 1
+  setPage(pageNum)
+}
+
+export { pagination, goUp, goDown }

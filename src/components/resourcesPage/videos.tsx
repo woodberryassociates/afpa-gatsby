@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
-import pagination from './pagination'
+import { goDown, goUp, pagination } from './pagination'
 
 const Videos = () => {
   const data = useStaticQuery(graphql`
@@ -24,22 +24,13 @@ const Videos = () => {
   const videos = pagination(data.allWordpressWpVideos.edges, 8)
   const [selectedPage, setSelectedPage] = useState(0)
 
-  const goUp = (pageNum, arrLength, setPage) => {
-    pageNum++
-    if (pageNum === arrLength) pageNum = 0
-    setPage(pageNum)
-  }
-
-  const goDown = (pageNum, arrLength, setPage) => {
-    pageNum--
-    if (pageNum === -1) pageNum = arrLength - 1
-    setPage(pageNum)
-  }
-
   return (
     <div className="flex flex-col items-center">
-      <div className="max-w-1275 flex flex-wrap justify-center">
-        {videos[selectedPage].map(({ node: video }) => (
+      <div
+        className="lg:min-w-1275 max-w-1275 flex flex-wrap justify-start items-start"
+        style={{ minHeight: '579px' }}
+      >
+        {(videos[selectedPage] as any).map(({ node: video }) => (
           <div key={video.id} className="flex justify-center">
             <div className="w-300 m-2 flex flex-col bg-white shadow">
               <ReactPlayer

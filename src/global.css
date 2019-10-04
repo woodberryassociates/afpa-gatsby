@@ -109,25 +109,6 @@ button {
   background: linear-gradient(-5deg, $backgroundGray 45%, $lightBlue 45%);
 }
 
-/* .videoCenter {
-  border-bottom: 100px solid transparent;
-  border-image: linear-gradient(-5deg, white, $backgroundGray 40%) 1 100%;
-} */
-
-.pagedSlider {
-  .carousel__inner-slide {
-    display: grid;
-    grid-template-rows: repeat(2, 40%);
-    grid-template-columns: repeat(3, 30%);
-    grid-gap: 2rem;
-    justify-content: center;
-
-    img {
-      object-fit: cover !important;
-    }
-  }
-}
-
 /* Page/Post content formatting */
 .content {
   @apply text-darkBlue font-light text-lg leading-relaxed;
