@@ -31,7 +31,7 @@ const Videos = () => {
         style={{ minHeight: '579px' }}
       >
         {(videos[selectedPage] as any).map(({ node: video }) => (
-          <div key={video.id} className="flex justify-center">
+          <div key={video.id} className="h-1/2 flex">
             <div className="w-300 m-2 flex flex-col bg-white shadow">
               <ReactPlayer
                 url={video.acf.url}

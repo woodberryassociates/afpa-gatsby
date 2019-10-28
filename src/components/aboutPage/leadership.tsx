@@ -59,11 +59,11 @@ const Leadership = ({
         className="my-10 flex justify-center items-center w-full"
       >
         <div className="h-px w-2/5 bg-lighterGray" />
-        <h5 className="text-afpaGreen mx-4">About the Chairman</h5>
+        <h5 className="mx-4 text-afpaGreen text-center">About the Chairman</h5>
         <div className="h-px w-2/5 bg-lighterGray" />
       </div>
-      <div className="mx-32 flex justify-between bg-white">
-        <div className="w-2/3 p-20 flex flex-col justify-center">
+      <div className="sm:mx-32 flex flex-col-reverse xl:flex-row justify-between items-center bg-white">
+        <div className="w-2/3 p-2 xl:p-20 flex flex-col justify-center">
           <h5 className="leading-snug">{chairman.title}</h5>
           <h3 className="text-lightBlue leading-snug">
             {chairman.acf.location}
@@ -73,19 +73,22 @@ const Leadership = ({
             dangerouslySetInnerHTML={{ __html: chairman.content }}
           />
         </div>
-        <Img fixed={chairman.featured_media.localFile.childImageSharp.fixed} />
+        <Img
+          className="responsiveChairmanImg"
+          fixed={chairman.featured_media.localFile.childImageSharp.fixed}
+        />
       </div>
 
       <div className="mx-10 mt-16 mb-10 flex justify-center items-center w-full">
         <div className="h-px w-2/5 bg-lighterGray" />
-        <h5 className="text-afpaGreen mx-4">AfPA Leadership</h5>
+        <h5 className="text-afpaGreen mx-4 text-center">AfPA Leadership</h5>
         <div className="h-px w-2/5 bg-lighterGray" />
       </div>
       <div className="flex flex-wrap justify-between">
         {leadership.map(({ node: member }) => (
           <div
             key={member.id}
-            className="my-5 max-h-335 flex lg:w-1/2 leading-relaxed leadershipCard"
+            className="my-5 flex flex-wrap md:flex-no-wrap justify-center xl:w-1/2 leading-relaxed leadershipCard"
           >
             <Img
               fixed={member.featured_media.localFile.childImageSharp.fixed}
@@ -109,7 +112,7 @@ const Leadership = ({
         className="mx-10 mt-10 flex justify-center items-center w-full"
       >
         <div className="h-px w-1/3 bg-lighterGray" />
-        <h5 className="text-afpaGreen mx-4">
+        <h5 className="text-afpaGreen text-center mx-4">
           Associate Membership in the AfPA
         </h5>
         <div className="h-px w-1/3 bg-lighterGray" />

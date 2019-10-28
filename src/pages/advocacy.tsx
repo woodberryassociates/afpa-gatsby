@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import React from 'react'
 
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -38,7 +38,7 @@ const AdvocacyPage = ({ data }) => {
       <SEO title="Advocacy" />
       <Img fluid={page.featured_media.localFile.childImageSharp.fluid} />
 
-      <div className="lg:mx-64 mt-10 pb-64">
+      <div className="mx-2 lg:mx-32 xl:mx-64 mt-10 pb-64">
         <header className="mb-12">
           <h4>Take Action</h4>
           <p
@@ -49,8 +49,8 @@ const AdvocacyPage = ({ data }) => {
 
         <section>
           {/* Federal */}
-          <div className="flex">
-            <div className="w-1/4 pr-5">
+          <div className="flex flex-wrap justify-center md:justify-end">
+            <div className="w-1/2 mb-4 md:mb-0 md:w-1/4 pr-5">
               <Img fluid={data.imgLegislative.childImageSharp.fluid} />
             </div>
             <div className="w-3/4">
@@ -61,7 +61,7 @@ const AdvocacyPage = ({ data }) => {
 
               <div className="flex items-start">
                 {fedIssueArr.map(el => (
-                  <div key={el} className="w-5/12 mt-4">
+                  <div key={el} className="md:w-5/12 mt-4">
                     <h5>{el}</h5>
                     <div className="h-px w-full bg-backgroundGray" />
                     {fedIssues[el].map((issue: any) => (
@@ -94,7 +94,7 @@ const AdvocacyPage = ({ data }) => {
           </div>
 
           {/* State */}
-          <div className="mt-10 flex justify-end">
+          <div className="mt-10 flex justify-center md:justify-end">
             <div className="w-3/4">
               <div className="flex items-center">
                 <p className="mr-4 text-textGreen font-medium">STATE</p>
@@ -103,7 +103,7 @@ const AdvocacyPage = ({ data }) => {
 
               <div className="flex flex-wrap items-start justify-between">
                 {stateIssueArr.map(el => (
-                  <div key={el} className="w-5/12 mt-4">
+                  <div key={el} className="md:w-5/12 mt-4">
                     <h5>{el}</h5>
                     <div className="h-px w-full bg-backgroundGray" />
                     {stateIssues[el].map((issue: any) => (
@@ -136,8 +136,8 @@ const AdvocacyPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="mt-10 flex">
-          <div className="w-1/4 pr-5">
+        <section className="mt-10 flex flex-wrap justify-center md:justify-end">
+          <div className="w-1/2 mb-4 md:mb-0 md:w-1/4 pr-5">
             <Img fluid={data.imgRegulatory.childImageSharp.fluid} />
           </div>
 

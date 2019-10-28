@@ -14,11 +14,14 @@ const UpcomingEventCard = ({
 }) => (
   <div
     key={key}
-    className="my-10 flex flex-wrap justify-between bg-white cardShadow"
+    className="my-10 flex flex-wrap justify-around curEventCard:justify-between bg-white cardShadow curEventCard"
   >
-    <Img fixed={featured_media.localFile.childImageSharp.fixed} />
+    <Img
+      className="curEventCardImg"
+      fixed={featured_media.localFile.childImageSharp.fixed}
+    />
 
-    <div className="m-5 lg:w-1/2">
+    <div className="m-5 curEventCard:w-1/2">
       {/* Date */}
       <div className="mb-6 inline text-darkBlue text-sm font-medium tracking-wider uppercase">
         <span
@@ -46,7 +49,8 @@ const UpcomingEventCard = ({
       <p dangerouslySetInnerHTML={{ __html: blurb }} className="text-sm" />
     </div>
 
-    <a className="mr-10 self-center" href={link}>
+    {/* Registration button */}
+    <a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={link}>
       <button>Register Today</button>
     </a>
   </div>
@@ -85,7 +89,7 @@ const UpcomingEvents = () => {
   `)
 
   return (
-    <div className="lg:px-64 pt-10 pb-32 bg-backgroundLightGray leftBottomTilt">
+    <div className="px-2 md:px-32 lg:px-64 pt-10 pb-32 bg-backgroundLightGray leftBottomTilt">
       <h5>Upcoming Events</h5>
       {data.upcoming.edges.map(event => (
         <UpcomingEventCard key={event.node.id} event={event} />

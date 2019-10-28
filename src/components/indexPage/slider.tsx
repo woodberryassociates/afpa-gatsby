@@ -1,14 +1,15 @@
+// tslint:disable-next-line:no-submodule-imports
+import 'pure-react-carousel/dist/react-carousel.es.css'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import {
-  ButtonBack,
-  ButtonNext,
-  CarouselProvider,
-  Slide as CarouselSlide,
-  Slider as CarouselSlider,
+	ButtonBack,
+	ButtonNext,
+	CarouselProvider,
+	Slide as CarouselSlide,
+	Slider as CarouselSlider,
 } from 'pure-react-carousel'
-// tslint:disable-next-line:no-submodule-imports
-import 'pure-react-carousel/dist/react-carousel.es.css'
 import React from 'react'
 
 const Slide = ({ slide }) => (
@@ -17,7 +18,7 @@ const Slide = ({ slide }) => (
       className="h-in max-h-3/4"
       fluid={slide.featured_media.localFile.childImageSharp.fluid}
     />
-    <div className="absolute left-0 xs:left-1/10 top-0 xs:top-1/6 lg:top-1/10 xl:top-1/6 max-w-xl">
+    <div className="absolute left-0 pl-2 sm:pl-0 xs:left-1/10 top-0 xs:top-1/6 lg:top-1/10 xl:top-1/6 max-w-xl">
       <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-darkBlue my-3">
         {slide.title}
       </h1>

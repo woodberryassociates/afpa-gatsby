@@ -3,12 +3,11 @@ import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
-
 import Infographics from '../components/resourcesPage/infographics'
 import Podcasts from '../components/resourcesPage/podcasts'
 import Search from '../components/resourcesPage/resourcesSearch'
 import Videos from '../components/resourcesPage/videos'
+import SEO from '../components/seo'
 
 const FeaturedVideoGradient = ({ video, playing }) => {
   return !playing ? (

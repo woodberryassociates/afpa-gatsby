@@ -34,8 +34,8 @@ const FeaturedEvent = () => {
         `linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,
       ].reverse()}
     >
-      <div className="h-full w-full flex flex-col justify-center items-center">
-        <div className="h-1/2 max-h-200 mr-24 max-w-md flex flex-col justify-between items-start">
+      <div className="h-full w-full px-2 flex flex-col justify-center items-center">
+        <div className="max-w-md mr-0 lg:mr-24 flex flex-col justify-between items-start">
           <h3>Coming up</h3>
           <h2
             className="text-white text-2xl leading-relaxed my-2"

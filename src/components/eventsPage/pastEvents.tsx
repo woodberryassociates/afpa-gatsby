@@ -14,7 +14,7 @@ const PastEventCard = ({
 }) => (
   <div key={key} className="">
     <BackgroundImage
-      className="m-6 h-400 w-500 flex items-end"
+      className="m-6 h-400 w-500 flex items-end responsiveFixedImg"
       fluid={[
         featured_media.localFile.childImageSharp.fluid,
         `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))`,

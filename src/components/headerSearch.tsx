@@ -33,7 +33,7 @@ const Search = ({ show, setShow }) => {
 
   return (
     <div
-      className={`z-50 absolute rounded border-2 border-lightGray bg-white text-darkBlue text-xl ${
+      className={`z-50 absolute rounded border-2 border-lightGray bg-white text-darkBlue text-xl searchBar  ${
         show ? `visible opacity-100` : `invisible opacity-0`
       }`}
       style={{ transform: 'translate(-100%)', transition: 'all .25s ease-in' }}

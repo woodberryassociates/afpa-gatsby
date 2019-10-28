@@ -12,7 +12,8 @@ $textGreen: #19af6a;
 
 /* apply montserrat family */
 body {
-  @apply font-mont;
+  @apply font-mont overflow-x-hidden;
+  /* TODO: overflow-x-hidden is used to fix some uncontained mobile display overflow */
 }
 
 h3 {
@@ -71,6 +72,48 @@ button {
   @apply mb-6 leading-relaxed font-light text-center;
 }
 
+/* styles for the responsive header menu */
+.headerNav {
+  transform: translateY(100%);
+
+  h6 {
+    @apply px-2;
+  }
+  a {
+  }
+}
+
+@media (min-width: 1024px) {
+  .headerNav {
+    transform: translateY(0);
+  }
+}
+
+/* search bar responsiveness */
+@media (max-width: 767px) {
+  .searchBar {
+    transform: translateX(-67%) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsiveChairmanImg {
+    width: 300px !important;
+    height: 350px !important;
+  }
+  .responsiveGPImg {
+    width: 280 !important;
+    height: 240 !important;
+  }
+}
+
+/* current event card responsiveness */
+@media (max-width: 1636px) {
+  .curEventCardImg {
+    display: none !important;
+  }
+}
+
 /**
  * Clipped backgrounds/borders
  */
@@ -104,6 +147,9 @@ button {
 .homePageWGClip {
   background: linear-gradient(10deg, transparent 55%, $afpaGreen 55%);
 }
+/* @media (max-width: 640px) {
+  background: 0;
+} */
 
 .resourcePageHeaderClip {
   background: linear-gradient(-5deg, $backgroundGray 45%, $lightBlue 45%);

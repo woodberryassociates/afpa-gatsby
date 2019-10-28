@@ -2,48 +2,10 @@ import { graphql, Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
 
+import PastEventsGallery from '../components/eventsPage/pastEvents'
+import UpcomingEvents from '../components/eventsPage/upcomingEvents'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import PastEventsGallery from './../components/eventsPage/pastEvents'
-import UpcomingEvents from './../components/eventsPage/upcomingEvents'
-
-const PastEventCard = ({
-  key,
-  event: {
-    node: {
-      title,
-      acf: { link, start_date: date },
-      featured_media,
-    },
-  },
-}) => (
-  <div key={key} className="">
-    <BackgroundImage
-      className="m-6 h-400 w-500 flex items-end"
-      fluid={[
-        featured_media.localFile.childImageSharp.fluid,
-        `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))`,
-      ].reverse()}
-    >
-      <div className="m-4 flex flex-col text-white">
-        {/*  Date */}
-        <p
-          dangerouslySetInnerHTML={{ __html: date }}
-          className="text-sm font-medium tracking-wider uppercase"
-        />
-        {/* Title */}
-        <p
-          dangerouslySetInnerHTML={{ __html: title }}
-          className="my-2 text-xl"
-        />
-        {/* Link */}
-        <a href={link} className="text-xs">
-          See photos >>
-        </a>
-      </div>
-    </BackgroundImage>
-  </div>
-)
 
 const EventsPage = ({ data: { page, featured, current, past } }) => (
   <Layout>
@@ -58,7 +20,7 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
         ].reverse()}
       >
         <div>
-          <div className="lg:ml-64 max-w-md flex flex-col justify-between items-start">
+          <div className="mx-2 lg:ml-64 max-w-md flex flex-col justify-between items-start">
             <h4
               className="text-white leading-normal"
               dangerouslySetInnerHTML={{ __html: featured.title }}
@@ -98,7 +60,7 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
       <div className="-mt-32 lg:px-64 pt-32 pb-64 bg-darkBlue leftTopTilt flex flex-col items-center">
         <h4 className="text-white">Past Events Gallery</h4>
         <p
-          className="mb-10 content text-white"
+          className="mx-2 mb-10 content text-white"
           dangerouslySetInnerHTML={{ __html: page.acf.past_events }}
         />
         <PastEventsGallery />

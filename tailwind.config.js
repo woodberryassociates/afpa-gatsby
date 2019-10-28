@@ -15,12 +15,15 @@ module.exports = {
     },
     screens: {
       // TODO: overrides all defaults (unexpected)
+      xxs: '350px',
       xs: '450px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      // 2xl: ''
+      xxl: '1440px',
+      xxxl: '1500px',
+      curEventCard: '1036px',
     },
     extend: {
       spacing: {},
@@ -40,6 +43,7 @@ module.exports = {
         '1/2': '50%',
         '2px': '2px',
         '400': '400px',
+        '600': '600px',
       },
       maxHeight: {
         '200': '200px',
@@ -47,6 +51,7 @@ module.exports = {
         '3/4': '75vh',
       },
       minHeight: {
+        '65': '65px',
         '150': '150px',
         '200': '200px',
         '250': '250px',

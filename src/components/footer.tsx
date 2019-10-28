@@ -27,7 +27,7 @@ const Footer = () => {
 
   return (
     <footer className="footerClip bg-lightBlue text-white text-sm font-light tracking-wider -mt-64">
-      <div className="flex justify-between mx-32 py-12 min-h-250">
+      <div className="mx-2 md:mx-32 py-12 pt-24 min-h-250 flex flex-col xs:flex-row justify-between items-center xs:items-end">
         <div className="flex flex-col justify-end leading-loose">
           <a className="" href="https://gafpa.org/">
             GAFPA
@@ -65,15 +65,15 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-darkBlue h-16 text-xs flex justify-between items-center">
-        <div className="ml-32">
+      <div className="px-2 sm:px-32 bg-darkBlue h-16 text-xs flex justify-between items-center">
+        <div className="pr-3">
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>.{` `}Theme by{` `}
           <a href="https://www.avinerenberg.com">Avi Nerenberg</a>.
         </div>
 
-        <div className="mr-32 flex justify-between items-center min-w-120 fill-current">
+        <div className="flex justify-between items-center min-w-120 fill-current">
           <a>
             <img className="h-4" src={facebook_light} />
           </a>

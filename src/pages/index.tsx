@@ -2,15 +2,14 @@ import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Slider from '../components/indexPage/slider'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-
+import Coalitions from '../components/indexPage/coalitions'
 import FeaturedEvent from '../components/indexPage/featuredEvent'
 import FeaturedTweet from '../components/indexPage/featuredTweet'
-import Coalitions from './../components/indexPage/coalitions'
-import Resources from './../components/indexPage/resources'
-import WorkingGroups from './../components/indexPage/workingGroups'
+import Resources from '../components/indexPage/resources'
+import Slider from '../components/indexPage/slider'
+import WorkingGroups from '../components/indexPage/workingGroups'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -21,7 +20,7 @@ const IndexPage = ({ data }) => (
       <FeaturedTweet />
     </div>
     <div className="flex flex-col items-center text-center homePageWGClip">
-      <div className="m-24 mb-0 px-64 pt-6 bg-white flex flex-col items-center">
+      <div className="m-4 md:m-24 -mb-64 md:-mb-64 px-2 sm:px-20 md:px-16 lg:px-32 pt-6 bg-white flex flex-col items-center">
         <h4>AfPA in Action</h4>
         <h3 className="text-darkBlue">Working Groups</h3>
         <div
@@ -33,7 +32,7 @@ const IndexPage = ({ data }) => (
         <WorkingGroups />
       </div>
 
-      <div className="mx-24 px-64 pt-24 pb-16 flex flex-col items-center bg-white">
+      <div className="m-4 md:mx-24 mt-64 px-2 lg:px-32 xl:px-64 pt-24 pb-16 flex flex-col items-center bg-white">
         <div className="flex flex-col items-center">
           <h3 className="text-darkBlue">Coalitions</h3>
           <div

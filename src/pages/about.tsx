@@ -16,7 +16,7 @@ const AboutPage = ({ data }) => {
       <SEO title="About" />
       <Img fluid={page.featured_media.localFile.childImageSharp.fluid} />
 
-      <div className="mt-10 my-16 lg:mx-32 xl:mx-64 flex flex-row">
+      <div className="mt-10 my-16 mx-2 lg:mx-32 xl:mx-64 flex flex-row">
         {/* Quick Links */}
         <div className="pt-2 mr-20 self-start top-0 hidden sm:block sticky whitespace-no-wrap">
           <h5>Quick Links</h5>
@@ -54,7 +54,7 @@ const AboutPage = ({ data }) => {
             </li>
             <li>
               <a href="#membership">
-                <h3>Membership</h3>
+                <h3>Transparency</h3>
               </a>
             </li>
           </ul>
@@ -85,7 +85,7 @@ const AboutPage = ({ data }) => {
       {/* Guiding Principles */}
       <div
         id="guiding-principles"
-        className="-my-48 py-40 flex flex-col items-center bg-backgroundGray rightTilt"
+        className="-my-48 px-2 py-40 flex flex-col items-center bg-backgroundGray rightTilt"
       >
         <h4>Guiding Principles</h4>
         <p
@@ -103,6 +103,7 @@ const AboutPage = ({ data }) => {
           associateMembershipLink={page.acf.associate_membership_link}
         />
       </div>
+
       <Img fluid={page.acf.membership_photo.localFile.childImageSharp.fluid} />
     </Layout>
   )

@@ -12,8 +12,8 @@ const AnnualReports = () => {
             featured_media {
               localFile {
                 childImageSharp {
-                  fixed(width: 635, height: 821) {
-                    ...GatsbyImageSharpFixed
+                  fluid(maxWidth: 635) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -26,17 +26,17 @@ const AnnualReports = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-around">
+      <div className="flex flex-wrap justify-around">
         {data.allWordpressWpAnnualReports.edges.map(({ node: report }) => (
           <Img
             key={report.id}
-            className="m-10 shadow-lg"
-            fixed={report.featured_media.localFile.childImageSharp.fixed}
+            className="w-56 h-64 md:w-500 md:h-600 m-10 shadow-lg"
+            fixed={report.featured_media.localFile.childImageSharp.fluid}
           />
         ))}
       </div>
 
-      <button className="self-center mt-10">See More</button>
+      {/* <button className="self-center mt-10">See More</button> */}
     </div>
   )
 }

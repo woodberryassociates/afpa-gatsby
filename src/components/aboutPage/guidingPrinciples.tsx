@@ -14,8 +14,8 @@ const GuidingPrinciples = () => {
             featured_media {
               localFile {
                 childImageSharp {
-                  fixed(width: 400, height: 281) {
-                    ...GatsbyImageSharpFixed
+                  fluid(maxHeight: 281) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -28,14 +28,17 @@ const GuidingPrinciples = () => {
 
   return (
     <div className="flex justify-around flex-wrap">
-      {data.allWordpressWpGuidingPrinciples.edges.map(({ node: gp }, index) => (
+      {data.allWordpressWpGuidingPrinciples.edges.map(({ node: gp }, i) => (
         <div
           key={gp.id}
-          className="mx-4 mb-4 max-w-400 flex flex-col bg-white guidingPrinciplesCard cardShadow"
+          className="sm:mx-4 mb-4 w-full max-w-400 flex flex-col bg-white guidingPrinciplesCard cardShadow"
         >
-          <Img fixed={gp.featured_media.localFile.childImageSharp.fixed} />
-          <div className="p-5">
-            <h3>Pillar {index + 1}</h3>
+          <Img
+            className="w-full h-64 responsiveGPImg"
+            fixed={gp.featured_media.localFile.childImageSharp.fluid}
+          />
+          <div className="py-5 px-2 sm:p-5">
+            <h3>Pillar {i + 1}</h3>
             <h5 className="-mt-3 mb-2 whitespace-no-wrap text-xl">
               {gp.title}
             </h5>
