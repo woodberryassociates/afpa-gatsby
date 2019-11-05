@@ -37,17 +37,14 @@ const Infographics = () => {
 
 	return (
 		<div className="flex flex-col items-center">
-			<div
-				className="lg:min-w-10/12 lg:w-10/12 flex flex-wrap justify-start items-start"
-				style={{ minHeight: '894px' }}
-			>
+			<div className="max-w-1275 flex flex-wrap justify-start items-start">
 				{(infographics[selectedPage] as any).map(infographic => {
 					infographic = infographic.node
 					return (
 						<a
 							key={infographic.id}
 							href={infographic.acf.link}
-							className="w-1/3 h-1/2 p-2"
+							className="w-full sm:w-1/2 lg:w-1/3 p-2"
 						>
 							<Img
 								className="max-h-335"

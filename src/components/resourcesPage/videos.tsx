@@ -27,12 +27,9 @@ const Videos = () => {
 
 	return (
 		<div className="flex flex-col items-center">
-			<div
-				className="lg:min-w-1275 max-w-1275 flex flex-wrap justify-start items-start"
-				style={{ minHeight: '579px' }}
-			>
+			<div className="max-w-1275 flex flex-wrap justify-center items-stretch">
 				{(videos[selectedPage] as any).map(({ node: video }) => (
-					<div key={video.id} className="h-1/2 flex">
+					<div key={video.id} className="flex">
 						<div className="w-300 m-2 flex flex-col bg-white shadow">
 							<ReactPlayer
 								url={video.acf.url}

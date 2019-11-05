@@ -38,7 +38,7 @@ const ResourcePage = ({
 			<SEO title="Resources" />
 
 			{/* Header & Featured Video */}
-			<div className="pb-32 pt-16 flex flex-wrap justify-around resourcePageHeaderClip">
+			<div className="pb-64 lg:pb-32 pt-16 flex flex-wrap justify-around px-2 lg:px-0 resourcePageHeaderClip">
 				<div className="flex flex-col justify-between lg:w-2/5">
 					<div>
 						<h4
@@ -54,7 +54,7 @@ const ResourcePage = ({
 					<Search />
 				</div>
 
-				<div className="relative">
+				<div className="hidden sm:block relative">
 					<ReactPlayer
 						className="lg:mt-16"
 						url={video.acf.url}
@@ -80,10 +80,13 @@ const ResourcePage = ({
 				<Videos />
 			</div>
 
+			{/* Podcasts */}
 			<div className="flex flex-col items-center">
-				<h4 id="podcasts">Patient Access Podcast</h4>
+				<h4 className="text-center" id="podcasts">
+					Patient Access Podcast
+				</h4>
 				<p
-					className="max-w-700 sectionSubHead"
+					className="mx-2 max-w-700 sectionSubHead"
 					dangerouslySetInnerHTML={{
 						__html: page.acf.podcasts,
 					}}
@@ -95,7 +98,7 @@ const ResourcePage = ({
 			<div className="-mb-32 pt-16 pb-32 flex flex-col items-center bg-backgroundLightGray">
 				<h4 id="infographics">Infographics</h4>
 				<p
-					className="mb-12 max-w-700 sectionSubHead"
+					className="mx-2 mb-12 max-w-700 sectionSubHead"
 					dangerouslySetInnerHTML={{
 						__html: page.acf.infographics,
 					}}

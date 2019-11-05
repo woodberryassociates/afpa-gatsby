@@ -34,7 +34,7 @@ const Search = () => {
 	}
 
 	return (
-		<div className="z-50 relative rounded border-2 border-lightGray bg-white text-lightBlue text-xl">
+		<div className="z-50 relative rounded border-2 border-lightGray bg-white text-lightBlue text-xl my-5 xl:my-0 mx-2 lg:mx-0">
 			<input
 				type="text"
 				placeholder="Type to search resources..."
@@ -45,7 +45,9 @@ const Search = () => {
 				className="w-full p-2 rounded border-b"
 			/>
 			<ul
-				className={`absolute bg-white ${focus ? `opacity-100` : `opacity-0`}`}
+				className={`absolute bg-white ${
+					focus ? `visible opacity-100` : `invisible opacity-0`
+				}`}
 				style={{ transition: 'all .25s ease-in' }}
 			>
 				{results

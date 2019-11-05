@@ -26,7 +26,7 @@ const Podcasts = () => {
 	}, [])
 
 	return (
-		<div className="mb-16 flex flex-col">
+		<div className="mb-16 mx-2 sm:mx-0 flex flex-col">
 			{podcasts
 				? podcasts.map((podcast, i) =>
 						// only print the first 5
@@ -35,7 +35,7 @@ const Podcasts = () => {
 							<div className="my-5 flex items-start" key={podcast.guid}>
 								<CircleMediaPlayer src={podcast.enclosure.url} />
 								<div className="max-w-2xl overflow-hidden">
-									<h5 className="whitespace-no-wrap">{podcast.title}</h5>
+									<h5 className="">{podcast.title}</h5>
 									<p>{podcast.content}</p>
 									<p className="my-1 text-sm text-darkGray">
 										{podcast.pubDate.slice(0, 17)}
@@ -46,7 +46,7 @@ const Podcasts = () => {
 				  )
 				: null}
 			<a
-				className="self-end"
+				className="self-center sm:self-end mr-2"
 				href="https://podcasts.apple.com/us/podcast/afpas-patient-access-podcast/id1432624094"
 			>
 				<h5 className="text-xl">See More & Subscribe Here</h5>

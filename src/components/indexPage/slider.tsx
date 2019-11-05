@@ -22,7 +22,7 @@ const Slide = ({ slide }) => (
 			<h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-darkBlue my-3">
 				{slide.title}
 			</h1>
-			<p
+			<div
 				className="text-base sm:text-lg lg:text-xl xl:text-2xl font-light leading-snug"
 				dangerouslySetInnerHTML={{ __html: slide.content }}
 			/>
