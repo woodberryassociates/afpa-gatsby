@@ -1,25 +1,26 @@
+import '../global.css'
+
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import '../global.css'
 import Footer from './footer'
 import Header from './header'
 
 const Layout = ({ children }) => {
-  // smooth scrolling for anchor links
-  if (typeof window !== 'undefined') require('smooth-scroll')('a[href*="#"]')
+	// smooth scrolling for anchor links
+	if (typeof window !== 'undefined') require('smooth-scroll')('a[href*="#"]')
 
-  return (
-    <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </>
-  )
+	return (
+		<>
+			<Header />
+			<main>{children}</main>
+			<Footer />
+		</>
+	)
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+	children: PropTypes.node.isRequired,
 }
 
 export default Layout
