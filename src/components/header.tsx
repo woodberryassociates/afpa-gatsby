@@ -69,7 +69,7 @@ const Header = () => {
 
 					<div>
 						<h6>
-							<Link className="" to="#">
+							<Link className="" to="/default">
 								{/* TODO: State chapters page? */}
 								STATE CHAPTERS
 							</Link>

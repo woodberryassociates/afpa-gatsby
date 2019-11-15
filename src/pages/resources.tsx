@@ -69,7 +69,7 @@ const ResourcePage = ({
 			</div>
 
 			{/* Video Center */}
-			<div className="pb-32 flex flex-col items-center bg-backgroundGray leftBottomTilt">
+			<div className="-mt-40 lg:mt-0 pb-32 flex flex-col items-center bg-backgroundGray leftBottomTilt">
 				<h4 id="videos">Video Center</h4>
 				<div
 					className="max-w-700 mb-6 text-md leading-relaxed font-light"
