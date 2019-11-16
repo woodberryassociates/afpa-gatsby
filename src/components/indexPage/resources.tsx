@@ -30,7 +30,7 @@ const Resources = () => {
 	`)
 
 	return (
-		<div className="px-2 sm:px-6 xxxl:px-56 flex flex-row flex-wrap justify-center pb-64">
+		<div className="px-2 sm:px-6 xxxl:px-32 flex flex-row flex-wrap justify-center pb-64">
 			{data.allWordpressWpHomeResources.edges.map(({ node }) => (
 				<div
 					className="xs:w-5/12 md:w-1/3 lg:w-1/4 max-w-425 m-px p-5 bg-white flex flex-col items-center justify-between visible"

@@ -12,131 +12,131 @@ $textGreen: #19af6a;
 
 /* apply montserrat family */
 body {
-  @apply font-mont overflow-x-hidden;
-  /* TODO: overflow-x-hidden is used to fix some uncontained mobile display overflow */
+	@apply font-mont overflow-x-hidden;
+	/* TODO: overflow-x-hidden is used to fix some uncontained mobile display overflow */
 }
 
 h3 {
-  @apply mb-1 text-lightGray uppercase tracking-widest leading-loose;
+	@apply mb-1 text-lightGray uppercase tracking-widest leading-loose;
 }
 
 h4 {
-  @apply mb-2 text-lightBlue text-3xl leading-loose;
+	@apply mb-2 text-lightBlue text-3xl leading-loose;
 }
 
 h5 {
-  @apply text-darkBlue text-2xl leading-loose;
+	@apply text-darkBlue text-2xl leading-loose;
 }
 
 h6 {
-  @apply text-darkGray text-xl;
+	@apply text-darkGray text-lg;
 }
 
 button {
-  @apply inline py-3 px-8 rounded text-white text-base bg-lightBlue;
+	@apply inline py-3 px-8 rounded text-white text-base bg-lightBlue;
 }
 
 .darkButton {
-  @apply bg-white border border-lightGray text-darkGray;
+	@apply bg-white border border-lightGray text-darkGray;
 }
 
 .darkButton:hover {
-  @apply bg-darkBlue text-white;
+	@apply bg-darkBlue text-white;
 }
 
 .linearGradient {
-  background: linear-gradient(to top, black, ease, transparent);
-  pointer-events: none;
+	background: linear-gradient(to top, black, ease, transparent);
+	pointer-events: none;
 }
 
 .cardShadow {
-  box-shadow: 0px 2px 27px rgba(0, 0, 0, 0.11645);
+	box-shadow: 0px 2px 27px rgba(0, 0, 0, 0.11645);
 }
 
 .guidingPrinciplesCard p {
-  @apply my-4;
+	@apply my-4;
 
-  strong {
-    @apply font-semibold;
-  }
+	strong {
+		@apply font-semibold;
+	}
 }
 
 .leadershipCard {
-  p {
-    @apply my-4;
-  }
+	p {
+		@apply my-4;
+	}
 }
 
 /* underneath h4s on pages */
 .sectionSubHead {
-  @apply mb-6 leading-relaxed font-light text-center;
+	@apply mb-6 leading-relaxed font-light text-center;
 }
 
 /* styles for the responsive header menu */
 .headerNav {
-  transform: translateY(100%);
+	transform: translateY(100%);
 
-  h6 {
-    @apply px-2;
-  }
-  a {
-  }
+	h6 {
+		@apply px-2;
+	}
+	a {
+	}
 }
 
 @media (min-width: 1024px) {
-  .headerNav {
-    transform: translateY(0);
-  }
+	.headerNav {
+		transform: translateY(0);
+	}
 }
 
 /* search bar responsiveness */
 @media (max-width: 767px) {
-  .searchBar {
-    transform: translateX(-67%) !important;
-  }
+	.searchBar {
+		transform: translateX(-67%) !important;
+	}
 }
 
 @media (max-width: 640px) {
-  .responsiveChairmanImg {
-    width: 300px !important;
-    height: 350px !important;
-  }
-  .responsiveGPImg {
-    width: 280 !important;
-    height: 240 !important;
-  }
+	.responsiveChairmanImg {
+		width: 300px !important;
+		height: 350px !important;
+	}
+	.responsiveGPImg {
+		width: 280 !important;
+		height: 240 !important;
+	}
 }
 
 /* current event card responsiveness */
 @media (max-width: 1636px) {
-  .curEventCardImg {
-    display: none !important;
-  }
+	.curEventCardImg {
+		display: none !important;
+	}
 }
 
 /**
  * Clipped backgrounds/borders
  */
 .footerClip {
-  clip-path: polygon(0 100px, 100% 0%, 100% 100%, 0% 100%);
+	clip-path: polygon(0 100px, 100% 0%, 100% 100%, 0% 100%);
 }
 
 /* Left Tilt Clips */
 .leftTilt {
-  clip-path: polygon(0 100px, 100% 0, 100% calc(100% - 100px), 0 100%);
+	clip-path: polygon(0 100px, 100% 0, 100% calc(100% - 100px), 0 100%);
 }
 
 .leftTopTilt {
-  clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
+	clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
 }
 
 .leftBottomTilt {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%);
 }
 
 /* Right Tilt Clips */
 .rightTilt {
-  clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
+	clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
 }
 
 .rightTopTilt {
@@ -145,40 +145,40 @@ button {
 }
 
 .homePageWGClip {
-  background: linear-gradient(10deg, transparent 55%, $afpaGreen 55%);
+	background: linear-gradient(10deg, transparent 40%, $afpaGreen 40%);
 }
 /* @media (max-width: 640px) {
   background: 0;
 } */
 
 .resourcePageHeaderClip {
-  background: linear-gradient(-5deg, $backgroundGray 45%, $lightBlue 45%);
+	background: linear-gradient(-5deg, $backgroundGray 45%, $lightBlue 45%);
 }
 
 /* Page/Post content formatting */
 .content {
-  @apply text-darkBlue font-light text-lg leading-relaxed;
+	@apply text-darkBlue font-light text-lg leading-relaxed;
 
-  > p {
-    @apply mb-4;
-  }
+	> p {
+		@apply mb-4;
+	}
 
-  strong {
-    @apply font-bold text-darkGray;
-  }
+	strong {
+		@apply font-bold text-darkGray;
+	}
 
-  ul {
-    @apply mt-5 mb-6 ml-6 list-disc font-light text-darkGray;
+	ul {
+		@apply mt-5 mb-6 ml-6 list-disc font-light text-darkGray;
 
-    > li {
-      @apply my-2;
-    }
-  }
+		> li {
+			@apply my-2;
+		}
+	}
 
-  /* images, etc */
-  figure {
-    @apply my-6;
-  }
+	/* images, etc */
+	figure {
+		@apply my-6;
+	}
 }
 
 /**
@@ -186,45 +186,45 @@ button {
  * TODO: make more dynamic
  */
 .lastChildBoldDarkBlue > p:last-child > strong {
-  @apply text-darkBlue !important;
+	@apply text-darkBlue !important;
 }
 
 /* TODO: tw classes aren't being applied inline. applying here is a fix */
 .indexPageFeaturedEventBackgroundImage {
-  @apply w-full min-h-400;
+	@apply w-full min-h-400;
 }
 
 @screen lg {
-  .indexPageFeaturedEventBackgroundImage {
-    @apply w-1/2;
-  }
+	.indexPageFeaturedEventBackgroundImage {
+		@apply w-1/2;
+	}
 }
 
 /* Circle Media Player */
 /* from https://github.com/souporserious/react-media-player/blob/master/example/main.scss */
 .circle-media-player {
-  display: inline-block;
-  padding: 0;
-  margin: 1rem 1rem 0 0;
-  border: 0;
-  line-height: 0;
-  background-color: transparent;
+	display: inline-block;
+	padding: 0;
+	margin: 1rem 1rem 0 0;
+	border: 0;
+	line-height: 0;
+	background-color: transparent;
 
-  fill: none;
-  stroke: #d7dbdc; /* $lighterGray */
-  stroke-width: 3;
+	fill: none;
+	stroke: #d7dbdc; /* $lighterGray */
+	stroke-width: 3;
 
-  cursor: pointer;
-  outline: 0;
+	cursor: pointer;
+	outline: 0;
 }
 
 .circle-media-player__foreground {
-  stroke: $darkBlue;
-  transition: 350ms stroke-dashoffset;
+	stroke: $darkBlue;
+	transition: 350ms stroke-dashoffset;
 
-  /* position the start of the circle at the top */
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
+	/* position the start of the circle at the top */
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
 }
 
 .circle-media-player__background {
@@ -232,8 +232,8 @@ button {
 
 .circle-media-player__play,
 .circle-media-player__pause {
-  fill: $darkBlue;
-  stroke-width: 0;
+	fill: $darkBlue;
+	stroke-width: 0;
 }
 
 @tailwind utilities;

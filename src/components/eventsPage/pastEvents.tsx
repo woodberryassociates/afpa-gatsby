@@ -3,7 +3,6 @@ import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
 
 const PastEventCard = ({
-	key,
 	event: {
 		node: {
 			title,
@@ -12,7 +11,7 @@ const PastEventCard = ({
 		},
 	},
 }) => (
-	<div key={key} className="">
+	<div className="">
 		<BackgroundImage
 			className="m-6 h-400 w-500 flex items-end responsiveFixedImg"
 			fluid={[
