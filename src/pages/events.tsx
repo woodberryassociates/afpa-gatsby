@@ -28,9 +28,9 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 						<p
 							className="text-white leading-relaxed my-4 content"
 							dangerouslySetInnerHTML={
-								featured.acf.excerpt
-									? { __html: featured.acf.excerpt }
-									: { __html: featured.acf.blurb }
+								featured.acf.blurb
+									? { __html: featured.acf.blurb }
+									: { __html: '' }
 							}
 						/>
 						<div className="mb-6 inline text-white text-sm font-light tracking-wider uppercase">
@@ -57,10 +57,10 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 
 			<UpcomingEvents />
 
-			<div className="-mt-32 lg:px-64 pt-32 pb-64 bg-darkBlue leftTopTilt flex flex-col items-center">
+			<div className="-mt-32 pt-32 pb-64 xxxxl:px-64 bg-darkBlue leftTopTilt flex flex-col items-center">
 				<h4 className="text-white">Past Events Gallery</h4>
 				<p
-					className="mx-2 mb-10 content text-white"
+					className="mx-2 mb-10 content text-white text-center"
 					dangerouslySetInnerHTML={{ __html: page.acf.past_events }}
 				/>
 				<PastEventsGallery />
@@ -86,7 +86,6 @@ export const pageQuery = graphql`
 				start_date
 				end_date
 				blurb
-				excerpt
 			}
 			featured_media {
 				localFile {

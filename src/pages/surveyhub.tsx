@@ -2,10 +2,9 @@ import { graphql, Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
 
-// import PastSurveysGallery from '../components/eventsPage/pastSurveys'
-// import UpcomingSurveys from '../components/eventsPage/upcomingSurveys'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Surveys from '../components/surveysPage/surveys'
 
 const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 	<Layout>
@@ -28,77 +27,59 @@ const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 						<p
 							className="text-white leading-relaxed my-4 content"
 							dangerouslySetInnerHTML={
-								featured.acf.excerpt
-									? { __html: featured.acf.excerpt }
-									: { __html: featured.acf.blurb }
+								featured.acf.blurb
+									? { __html: featured.acf.blurb }
+									: { __html: '' }
 							}
 						/>
 						<div className="mb-6 inline text-white text-sm font-light tracking-wider uppercase">
 							<span
 								dangerouslySetInnerHTML={{
-									__html: featured.acf.start_date.substring(11),
+									__html: featured.acf.date.substring(11),
 								}}
 							/>
-							{featured.acf.end_date ? (
-								<>
-									{` - `}
-									<span
-										dangerouslySetInnerHTML={{
-											__html: featured.acf.end_date,
-										}}
-									/>
-								</>
-							) : null}
 						</div>
-						<button>Register Now</button>
+
+						{/* Survey Link*/}
+						<a className="mr-10 mb-2" href={featured.acf.link}>
+							<button>View Survey</button>
+						</a>
 					</div>
 				</div>
 			</BackgroundImage>
 
-			{/* <UpcomingSurveys /> */}
-
-			<div className="-mt-32 lg:px-64 pt-32 pb-64 bg-darkBlue leftTopTilt flex flex-col items-center">
-				<h4 className="text-white">Past Surveys Gallery</h4>
-				<p
-					className="mx-2 mb-10 content text-white"
-					dangerouslySetInnerHTML={{ __html: page.acf.past_events }}
-				/>
-				{/* <PastSurveysGallery /> */}
-			</div>
+			<Surveys />
 		</div>
 	</Layout>
 )
 
-// export const pageQuery = graphql`
-// 	query SurveyHubPageQuery {
-// 		page: wordpressPage(title: { eq: "Surveys" }) {
-// 			acf {
-// 				header_text
-// 				past_events
-// 			}
-// 		}
-// 		featured: wordpressWpSurveys(
-// 			tags: { elemMatch: { slug: { eq: "featured-event" } } }
-// 		) {
-// 			title
-// 			acf {
-// 				link
-// 				start_date
-// 				end_date
-// 				blurb
-// 				excerpt
-// 			}
-// 			featured_media {
-// 				localFile {
-// 					childImageSharp {
-// 						fluid(maxWidth: 1920) {
-// 							...GatsbyImageSharpFluid
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// `
+export const pageQuery = graphql`
+	query SurveyHubPageQuery {
+		page: wordpressPage(title: { eq: "Surveys" }) {
+			acf {
+				header_text
+			}
+		}
+		featured: wordpressWpSurveys(
+			tags: { elemMatch: { slug: { eq: "featured-survey" } } }
+		) {
+			title
+			acf {
+				link
+				date
+				blurb
+			}
+			featured_media {
+				localFile {
+					childImageSharp {
+						fluid(maxWidth: 1920) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
+			}
+		}
+	}
+`
 
 export default SurveyHubPage

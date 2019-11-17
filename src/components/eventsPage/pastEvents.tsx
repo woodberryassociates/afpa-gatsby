@@ -11,32 +11,27 @@ const PastEventCard = ({
 		},
 	},
 }) => (
-	<div className="">
-		<BackgroundImage
-			className="m-6 h-400 w-500 flex items-end responsiveFixedImg"
-			fluid={[
-				featured_media.localFile.childImageSharp.fluid,
-				`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))`,
-			].reverse()}
-		>
-			<div className="m-4 flex flex-col text-white">
-				{/*  Date */}
-				<p
-					dangerouslySetInnerHTML={{ __html: date.substring(11).split('@')[0] }}
-					className="text-sm font-medium tracking-wider uppercase"
-				/>
-				{/* Title */}
-				<p
-					dangerouslySetInnerHTML={{ __html: title }}
-					className="my-2 text-xl"
-				/>
-				{/* Link */}
-				<a href={link} className="text-xs">
-					See photos >>
-				</a>
-			</div>
-		</BackgroundImage>
-	</div>
+	<BackgroundImage
+		className="m-6 flex items-end responsiveFixedImg cardBackgroundImage"
+		fluid={[
+			featured_media.localFile.childImageSharp.fluid,
+			`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))`,
+		].reverse()}
+	>
+		<div className="m-4 flex flex-col text-white">
+			{/*  Date */}
+			<p
+				dangerouslySetInnerHTML={{ __html: date.substring(11).split('@')[0] }}
+				className="text-sm font-medium tracking-wider uppercase"
+			/>
+			{/* Title */}
+			<p dangerouslySetInnerHTML={{ __html: title }} className="my-2 text-xl" />
+			{/* Link */}
+			<a href={link} className="text-xs">
+				See photos >>
+			</a>
+		</div>
+	</BackgroundImage>
 )
 
 const PastEventsGallery = () => {
