@@ -5,7 +5,7 @@ import React from 'react'
 const WorkingGroups = () => {
 	const data = useStaticQuery(graphql`
 		query WorkingGroups {
-			allWordpressWpWorkingGroups {
+			allWordpressWpWorkingGroups(sort: { order: ASC, fields: title }) {
 				edges {
 					node {
 						id

@@ -10,10 +10,10 @@ const Resources = () => {
 					node {
 						acf {
 							resource_url
+							blurb
 						}
 						id
 						title
-						content
 						featured_media {
 							localFile {
 								childImageSharp {
@@ -48,7 +48,7 @@ const Resources = () => {
 						/>
 						<div
 							className="min-h-200 font-light"
-							dangerouslySetInnerHTML={{ __html: node.content }}
+							dangerouslySetInnerHTML={{ __html: node.acf.blurb }}
 						/>
 					</div>
 					{/* gatsby Link if local, otherwise anchor */}

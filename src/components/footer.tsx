@@ -22,7 +22,19 @@ const Footer = () => {
 	const handleEmail = event => setEmail(event.target.value)
 	const handleSubmit = event => {
 		event.preventDefault()
-		alert('TODO')
+
+		const Http = new XMLHttpRequest()
+		const url = 'https://allianceforpatientaccess.org/wp-json/gf/v2/entries'
+
+		Http.onreadystatechange = () => console.log(Http.responseText)
+		Http.open('POST', url)
+		Http.setRequestHeader('Content-Type', 'application/json')
+		Http.send(
+			JSON.stringify({
+				form_id: 1,
+				1: email,
+			})
+		)
 	}
 
 	return (

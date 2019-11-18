@@ -24,7 +24,7 @@ const Slide = ({ slide }) => (
 			</h1>
 			<div
 				className="text-base sm:text-lg lg:text-xl xl:text-2xl font-light leading-snug"
-				dangerouslySetInnerHTML={{ __html: slide.content }}
+				dangerouslySetInnerHTML={{ __html: slide.acf.blurb }}
 			/>
 		</div>
 	</CarouselSlide>
@@ -37,8 +37,10 @@ const Slider = () => {
 				edges {
 					node {
 						id
-						content
 						title
+						acf {
+							blurb
+						}
 						featured_media {
 							localFile {
 								childImageSharp {
