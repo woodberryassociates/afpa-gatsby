@@ -50,6 +50,7 @@ module.exports = {
 			maxHeight: {
 				'200': '200px',
 				'335': '335px',
+				'500': '500px',
 				'3/4': '75vh',
 			},
 			minHeight: {

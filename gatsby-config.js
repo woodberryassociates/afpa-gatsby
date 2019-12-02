@@ -52,9 +52,11 @@ module.exports = {
 					'**/events',
 					// Surveys Page CPT
 					'**/surveys',
-					// Advocacy Page CPT
+					// Advocacy Page CPTs
 					'**/legislative-advocacy',
 					'**/regulatory-advocacy',
+					// Custom Backpage CPT
+					'**/backpages',
 					// WP Core
 					'**/pages',
 					'**/media',

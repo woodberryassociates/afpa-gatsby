@@ -69,7 +69,7 @@ const Header = () => {
 
 					<div>
 						<h6>
-							<Link className="" to="/default">
+							<Link className="whitespace-no-wrap" to="/default">
 								{/* TODO: State chapters page? */}
 								STATE CHAPTERS
 							</Link>
