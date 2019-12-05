@@ -69,8 +69,7 @@ const Header = () => {
 
 					<div>
 						<h6>
-							<Link className="whitespace-no-wrap" to="/default">
-								{/* TODO: State chapters page? */}
+							<Link className="whitespace-no-wrap" to="/afpa-state-chapters">
 								STATE CHAPTERS
 							</Link>
 						</h6>

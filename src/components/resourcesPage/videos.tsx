@@ -22,7 +22,7 @@ const Videos = () => {
 			}
 		}
 	`)
-	const videos = pagination(data.allWordpressWpVideos.edges, 8)
+	const videos = pagination(data.allWordpressWpVideos.edges, 6)
 	const [selectedPage, setSelectedPage] = useState(0)
 
 	return (
@@ -30,14 +30,14 @@ const Videos = () => {
 			<div className="max-w-1275 w-screen flex flex-wrap justify-center items-stretch">
 				{(videos[selectedPage] as any).map(({ node: video }) => (
 					<div key={video.id} className="flex">
-						<div className="w-300 m-2 flex flex-col bg-white shadow">
+						<div className="w-350 m-2 flex flex-col bg-white shadow">
 							<ReactPlayer
 								url={video.acf.url}
 								light={true}
 								playing={true}
 								controls={false}
-								width="300px"
-								height="150px"
+								width="350px"
+								height="195px"
 								className=""
 							/>
 							<div className="m-4">
