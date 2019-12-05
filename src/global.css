@@ -108,7 +108,7 @@ button {
 }
 
 /* current event card responsiveness */
-@media (max-width: 1636px) {
+@media (max-width: 1100px) {
 	.curEventCardImg {
 		display: none !important;
 	}
