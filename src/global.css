@@ -246,4 +246,17 @@ button {
 	stroke-width: 0;
 }
 
+/**
+ * WP content classes
+ * (classes applied to formatted items in the WP editor)
+ */
+.alignright {
+	float: right;
+	margin: 0.25rem !important;
+}
+.alignleft {
+	float: left;
+	margin: 0.25rem !important;
+}
+
 @tailwind utilities;

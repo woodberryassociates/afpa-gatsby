@@ -25,7 +25,7 @@ const Header = () => {
 	}
 
 	return (
-		<header className="relative xl:px-32 min-h-65 text-darkBlue bg-white flex flex-wrap justify-around items-center">
+		<header className="relative xxl:px-32 min-h-65 text-darkBlue bg-white flex flex-wrap justify-around items-center">
 			{/* HAMBURGER MENU */}
 			<a
 				className="block lg:hidden text-darkBlue cursor-pointer"
