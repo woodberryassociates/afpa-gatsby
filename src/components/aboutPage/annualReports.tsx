@@ -5,7 +5,7 @@ import React from 'react'
 const AnnualReports = () => {
 	const data = useStaticQuery(graphql`
 		query AnnualReports {
-			allWordpressWpAnnualReports {
+			allWordpressWpAnnualReports(sort: { fields: title, order: DESC }) {
 				edges {
 					node {
 						id
