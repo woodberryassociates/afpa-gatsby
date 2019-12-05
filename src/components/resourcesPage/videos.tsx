@@ -27,7 +27,7 @@ const Videos = () => {
 
 	return (
 		<div className="flex flex-col items-center">
-			<div className="max-w-1275 flex flex-wrap justify-center items-stretch">
+			<div className="max-w-1275 w-screen flex flex-wrap justify-center items-stretch">
 				{(videos[selectedPage] as any).map(({ node: video }) => (
 					<div key={video.id} className="flex">
 						<div className="w-300 m-2 flex flex-col bg-white shadow">
@@ -42,11 +42,11 @@ const Videos = () => {
 							/>
 							<div className="m-4">
 								<h6
-									className="text-lg"
+									className="text-sm"
 									dangerouslySetInnerHTML={{ __html: video.title }}
 								/>
 								<div
-									className="font-light text-lighterGray"
+									className="text-sm font-light text-lighterGray"
 									dangerouslySetInnerHTML={{ __html: video.acf.coalition }}
 								/>
 							</div>
