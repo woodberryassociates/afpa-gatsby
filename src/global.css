@@ -258,5 +258,9 @@ button {
 	float: left;
 	margin: 0.25rem !important;
 }
+.aligncenter {
+	display: flex;
+	justify-content: center;
+}
 
 @tailwind utilities;
