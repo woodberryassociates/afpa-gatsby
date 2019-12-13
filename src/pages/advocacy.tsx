@@ -68,20 +68,20 @@ const AdvocacyPage = ({ data }) => {
 											<div key={issue.id} className="my-3">
 												<p>{issue.title}</p>
 												<div className="flex justify-between">
-													{issue.acf.link_bill ? (
+													{issue.acf.link_1 ? (
 														<a
-															href={issue.acf.link_bill}
+															href={issue.acf.link_1}
 															className="text-sm text-lightBlue"
 														>
-															Read the Bill
+															{issue.acf.link_1_text}
 														</a>
 													) : null}
-													{issue.acf.link_legislator ? (
+													{issue.acf.link_2 ? (
 														<a
-															href={issue.acf.link_legislator}
+															href={issue.acf.link_2}
 															className="text-sm text-lightBlue"
 														>
-															Contact Your Legislator
+															{issue.acf.link_2_text}
 														</a>
 													) : null}
 												</div>
@@ -110,20 +110,20 @@ const AdvocacyPage = ({ data }) => {
 											<div key={issue.id} className="my-5">
 												<p>{issue.title}</p>
 												<div className="flex justify-between">
-													{issue.acf.link_bill ? (
+													{issue.acf.link_1 ? (
 														<a
-															href={issue.acf.link_bill}
+															href={issue.acf.link_1}
 															className="text-sm text-lightBlue"
 														>
-															Read the Bill
+															{issue.acf.link_1_text}
 														</a>
 													) : null}
-													{issue.acf.link_legislator ? (
+													{issue.acf.link_2 ? (
 														<a
-															href={issue.acf.link_legislator}
+															href={issue.acf.link_2}
 															className="text-sm text-lightBlue"
 														>
-															Contact Your Legislator
+															{issue.acf.link_2_text}
 														</a>
 													) : null}
 												</div>
@@ -177,8 +177,10 @@ export const pageQuery = graphql`
 						slug
 					}
 					acf {
-						link_legislator
-						link_bill
+						link_2
+						link_1
+						link_1_text
+						link_2_text
 					}
 				}
 			}
