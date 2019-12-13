@@ -10,9 +10,6 @@ const WorkingGroups = () => {
 					node {
 						id
 						title
-						acf {
-							link
-						}
 						featured_media {
 							localFile {
 								childImageSharp {
@@ -31,13 +28,14 @@ const WorkingGroups = () => {
 	return (
 		<div className="flex flex-row flex-wrap justify-around">
 			{data.allWordpressWpWorkingGroups.edges.map(({ node }) => (
-				<Link
-					to={node.acf.link}
-					key={node.id}
-					className="my-5 w-full lg:w-1/2 xl:w-1/3"
-				>
-					<Img fixed={node.featured_media.localFile.childImageSharp.fixed} />
-				</Link>
+				<div key={node.id} />
+				// <Link
+				// 	to={node.acf.link}
+				// 	key={node.id}
+				// 	className="my-5 w-full lg:w-1/2 xl:w-1/3"
+				// >
+				// 	{/* <Img fixed={node.featured_media.localFile.childImageSharp.fixed} /> */}
+				// </Link>
 			))}
 		</div>
 	)
