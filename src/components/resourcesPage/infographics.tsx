@@ -37,7 +37,10 @@ const Infographics = () => {
 
 	return (
 		<div className="flex flex-col items-center">
-			<div className="max-w-1275 w-screen min-w-full flex flex-wrap justify-start items-start">
+			<div
+				className="max-w-1275 min-w-full flex flex-wrap justify-start items-start"
+				style={{ width: '90vw' }}
+			>
 				{(infographics[selectedPage] as any).map(infographic => {
 					infographic = infographic.node
 					return (
