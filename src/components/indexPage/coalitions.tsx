@@ -3,7 +3,7 @@ import React from 'react'
 
 const Coalitions = () => {
 	const data = useStaticQuery(graphql`
-		query Coalitions {
+		query CoalitionsOld {
 			allWordpressWpCoalitions {
 				edges {
 					node {
