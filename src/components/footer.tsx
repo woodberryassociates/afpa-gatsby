@@ -41,7 +41,7 @@ const Footer = () => {
 		<footer className="footerClip bg-lightBlue text-white text-sm font-light tracking-wider -mt-64">
 			<div className="mx-2 md:mx-32 py-12 pt-24 min-h-250 flex flex-col xs:flex-row justify-between items-center xs:items-end">
 				<div className="flex flex-col justify-end leading-loose">
-					<Link to="coaltions">COALITIONS</Link>
+					<Link to="coalitions">COALITIONS</Link>
 					<a className="" href="https://gafpa.org/">
 						GAFPA
 					</a>

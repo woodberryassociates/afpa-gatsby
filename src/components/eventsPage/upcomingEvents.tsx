@@ -7,7 +7,7 @@ const UpcomingEventCard = ({
 	event: {
 		node: {
 			title,
-			acf: { link, start_date, end_date, blurb },
+			acf: { link, link_text, start_date, end_date, blurb },
 			featured_media,
 		},
 	},
@@ -56,7 +56,7 @@ const UpcomingEventCard = ({
 
 		{/* Registration button */}
 		<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={link}>
-			<button>Register Today</button>
+			<button>{link_text}</button>
 		</a>
 	</div>
 )
@@ -74,6 +74,7 @@ const UpcomingEvents = () => {
 						title
 						acf {
 							link
+							link_text
 							start_date
 							end_date
 							blurb
