@@ -70,8 +70,14 @@ module.exports = {
 			options: {
 				baseUrl: `http://${process.env.WP_ENV}` /** @TODO conditionally determine http/s */,
 				api: {
-					key: 'ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0',
-					secret: 'cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544',
+					key:
+						process.env.WP_ENV === 'localhost/afpa'
+							? 'ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0'
+							: 'ck_34f32e6a2a3685bf3af8a6df364893af5150bcba',
+					secret:
+						process.env.WP_ENV === 'localhost/afpa'
+							? 'cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544'
+							: 'cs_ca032e610110bde9cf232b9c58eb15f59886d889',
 				},
 			},
 		},
