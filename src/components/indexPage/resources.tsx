@@ -47,7 +47,7 @@ const Resources = () => {
 							dangerouslySetInnerHTML={{ __html: node.title }}
 						/>
 						<div
-							className="h-24 font-light"
+							className="min-h-24 font-light"
 							dangerouslySetInnerHTML={{ __html: node.acf.blurb }}
 						/>
 					</div>

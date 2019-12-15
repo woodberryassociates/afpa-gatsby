@@ -64,7 +64,6 @@ const Footer = () => {
 					<Img className="my-3 -mx-3" fluid={data.img.childImageSharp.fluid} />
 					<p>SUBSCRIBE TO OUR NEWSLETTER</p>
 					<div className="bg-white h-px w-10 my-5" />
-					{console.log(process.env.GATSBY_LAMBDA_ENDPOINT)}
 					<GravityFormForm
 						id={1}
 						formData={allGravityData()}
