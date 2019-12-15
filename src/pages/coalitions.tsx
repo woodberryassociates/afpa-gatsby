@@ -14,16 +14,22 @@ const Coalitions = ({
 			<h4>{page.title}</h4>
 			<p dangerouslySetInnerHTML={{ __html: page.acf.header_text }} />
 			{coalitions.edges.map(({ node: coalition }) => (
-				<div key={coalition.id} className="mt-2 flex">
+				<div
+					key={coalition.id}
+					className="mt-2 flex flex-col sm:flex-row justify-center"
+				>
 					{coalition.featured_media ? (
-						<a href={coalition.acf.coalition_link}>
+						<a href={coalition.acf.coalition_link} className="self-center">
 							<Img
-								className="min-w-200 mx-5"
+								className="sm:mr-6 my-5 sm:my-0"
 								fixed={coalition.featured_media.localFile.childImageSharp.fixed}
 							/>
 						</a>
 					) : null}
-					<p dangerouslySetInnerHTML={{ __html: coalition.acf.blurb }} />
+					<p
+						dangerouslySetInnerHTML={{ __html: coalition.acf.blurb }}
+						className="text-center sm:text-left"
+					/>
 				</div>
 			))}
 		</div>
