@@ -6,16 +6,13 @@
 	"author": "Avi Nerenberg <avinerenberg@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "WP_ENV=afpadev.wpengine.com gatsby build",
-		"build:lambda": "netlify-lambda build src/lambda",
-		"develop": "WP_ENV=localhost/afpa gatsby develop",
-		"format": "prettier --write src/**/*.{tsx}",
-		"dev": "WP_ENV=afpadev.wpengine.com npm run develop",
-		"lint": "tslint src",
-		"start": "npm run develop",
+		"start": "gatsby develop",
 		"start:lambda": "netlify-lambda serve src/lambda",
+		"build": "gatsby build",
+		"build:lambda": "netlify-lambda build src/lambda",
 		"serve": "gatsby serve",
-		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+		"format": "prettier --write src/**/*.{tsx}",
+		"lint": "tslint src"
 	},
 	"repository": {
 		"type": "git",

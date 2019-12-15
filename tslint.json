@@ -17,6 +17,6 @@
 		// "indent": [true, "tabs", 2]
 	},
 	"linterOptions": {
-		"exclude": ["node_modules"] // TODO: not working for imported modules
+		"exclude": ["node_modules"]
 	}
 }
