@@ -66,9 +66,19 @@ module.exports = {
 			},
 		},
 		{
+			resolve: 'gatsby-source-gravityforms',
+			options: {
+				baseUrl: `http://${process.env.WP_ENV}` /** @TODO conditionally determine http/s */,
+				api: {
+					key: 'ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0',
+					secret: 'cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544',
+				},
+			},
+		},
+		{
 			/**
-			 * getNode is OK (vs getNodeAndSavePathDependency) b/c
-			 * the data is external and updated only on build
+			 * getNode is OK (vs getNodeAndSavePathDependency) b/c the data is external and
+			 * updated only on build, not dynamically
 			 * https://www.gatsbyjs.org/packages/@tsimons/gatsby-plugin-elasticlunr-search/
 			 * https://www.gatsbyjs.org/docs/node-api-helpers/#getNode
 			 */

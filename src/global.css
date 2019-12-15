@@ -247,6 +247,20 @@ button {
 }
 
 /**
+ * Styling for the GravityFormForm component elements
+ * (currently, just the email subscription.)
+ */
+.gravityform__label {
+	@apply hidden;
+}
+.gravityform__button {
+	@apply border border-white rounded-lg w-full;
+}
+.gravityform__field {
+	@apply p-0 !important;
+}
+
+/**
  * WP content classes
  * (classes applied to formatted items in the WP editor)
  */

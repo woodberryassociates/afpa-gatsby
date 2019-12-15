@@ -1,8 +1,9 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
+import GravityFormForm from 'gatsby-gravityforms-component'
 import Img from 'gatsby-image'
-import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
+import { allGravityData } from '../hooks/gravityForms'
 import { facebook_light, twitter_light, youtube_light } from '../images'
 
 const Footer = () => {
@@ -63,18 +64,11 @@ const Footer = () => {
 					<Img className="my-3 -mx-3" fluid={data.img.childImageSharp.fluid} />
 					<p>SUBSCRIBE TO OUR NEWSLETTER</p>
 					<div className="bg-white h-px w-10 my-5" />
-					<form className="flex flex-col text-darkGray" onSubmit={handleSubmit}>
-						<input
-							className="leading-loose p-2 rounded-lg mt-1 mb-4"
-							type="text"
-							value={email}
-							onChange={handleEmail}
-							placeholder="Your email"
-						/>
-						<button className="border border-white rounded-lg" type="submit">
-							Subscribe Now
-						</button>
-					</form>
+					<GravityFormForm
+						id={1}
+						formData={allGravityData()}
+						lambda={process.env.LAMBDA_ENDPOINT}
+					/>
 				</div>
 			</div>
 
