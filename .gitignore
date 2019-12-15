@@ -54,7 +54,7 @@ typings/
 
 # dotenv environment variables files
 .env.*
-netlify.toml
+# netlify.toml
 
 # gatsby files
 .cache/
