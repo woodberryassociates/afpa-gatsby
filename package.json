@@ -1,7 +1,7 @@
 {
 	"name": "afpa-wordpress",
 	"private": false,
-	"description": "AfPA's WordPress website",
+	"description": "AfPA's WordPress website with Gatsby",
 	"version": "0.0.1",
 	"author": "Avi Nerenberg <avinerenberg@gmail.com>",
 	"license": "MIT",
@@ -14,15 +14,26 @@
 		"format": "prettier --write src/**/*.{tsx}",
 		"lint": "tslint src"
 	},
+	"prettier": {
+		"endOfLine": "lf",
+		"semi": false,
+		"singleQuote": true,
+		"useTabs": true,
+		"trailingComma": "es5"
+	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gatsbyjs/gatsby-starter-default"
+		"url": "https://github.com/avinoamsn/afpa-gatsby"
 	},
 	"bugs": {
-		"url": "https://github.com/gatsbyjs/gatsby/issues"
+		"url": "https://github.com/avinoamsn/afpa-gatsby/issues"
 	},
 	"keywords": [
-		"gatsby"
+		"gatsby",
+		"AfPA",
+		"Alliance",
+		"Patient",
+		"Access"
 	],
 	"dependencies": {
 		"@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
