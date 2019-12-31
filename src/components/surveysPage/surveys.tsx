@@ -16,10 +16,12 @@ const SurveyCard = ({
 		key={key}
 		className="my-10 flex flex-wrap justify-around curEventCard:justify-between bg-white cardShadow curEventCard"
 	>
-		<Img
-			className="curEventCardImg"
-			fixed={featured_media.localFile.childImageSharp.fixed}
-		/>
+		{featured_media ? (
+			<Img
+				className="curEventCardImg"
+				fixed={featured_media.localFile.childImageSharp.fixed}
+			/>
+		) : null}
 
 		<div className="m-5 curEventCard:w-1/2">
 			{/* Date */}
