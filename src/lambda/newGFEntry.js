@@ -15,8 +15,6 @@ const secretData = {
 	gfSecret: process.env.GF_CONSUMER_SECRET,
 }
 
-console.log(secretData)
-
 // For those requests
 // Update with correct origin when on production!
 const headers = {
