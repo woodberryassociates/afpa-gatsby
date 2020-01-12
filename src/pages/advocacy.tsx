@@ -66,7 +66,7 @@ const AdvocacyPage = ({ data }) => {
 										<div className="h-px w-full bg-backgroundGray" />
 										{fedIssues[el].map((issue: any) => (
 											<div key={issue.id} className="my-3">
-												<p>{issue.title}</p>
+												<p dangerouslySetInnerHTML={{ __html: issue.title }} />
 												<div className="flex justify-between">
 													{issue.acf.link_1 ? (
 														<a
@@ -108,7 +108,7 @@ const AdvocacyPage = ({ data }) => {
 										<div className="h-px w-full bg-backgroundGray" />
 										{stateIssues[el].map((issue: any) => (
 											<div key={issue.id} className="my-5">
-												<p>{issue.title}</p>
+												<p dangerouslySetInnerHTML={{ __html: issue.title }} />
 												<div className="flex justify-between">
 													{issue.acf.link_1 ? (
 														<a
@@ -177,10 +177,9 @@ export const pageQuery = graphql`
 						slug
 					}
 					acf {
-						link_2
 						link_1
 						link_1_text
-						link_2_text
+						link_2
 					}
 				}
 			}
