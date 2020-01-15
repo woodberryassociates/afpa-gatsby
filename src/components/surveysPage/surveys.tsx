@@ -7,7 +7,11 @@ const SurveyCard = ({
 	event: {
 		node: {
 			title,
-			acf: { link, date, blurb },
+			acf: {
+				link: { link },
+				date,
+				blurb,
+			},
 			featured_media,
 		},
 	},
@@ -59,7 +63,9 @@ const Surveys = () => {
 						id
 						title
 						acf {
-							link
+							link {
+								link
+							}
 							date
 							blurb
 						}
