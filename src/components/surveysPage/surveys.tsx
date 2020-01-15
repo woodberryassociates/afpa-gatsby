@@ -7,11 +7,7 @@ const SurveyCard = ({
 	event: {
 		node: {
 			title,
-			acf: {
-				link: { link },
-				date,
-				blurb,
-			},
+			acf: { link, date, blurb },
 			featured_media,
 		},
 	},
@@ -46,9 +42,11 @@ const SurveyCard = ({
 		</div>
 
 		{/* Survey Link*/}
-		<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={link}>
-			<button>View Survey</button>
-		</a>
+		{link ? (
+			<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={link}>
+				<button>View Survey</button>
+			</a>
+		) : null}
 	</div>
 )
 

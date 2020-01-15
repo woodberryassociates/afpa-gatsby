@@ -41,9 +41,11 @@ const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 						</div>
 
 						{/* Survey Link*/}
-						<a className="mr-10 mb-2" href={featured.acf.link.link}>
-							<button>View Survey</button>
-						</a>
+						{featured.acf.link ? (
+							<a className="mr-10 mb-2" href={featured.acf.link.link}>
+								<button>View Survey</button>
+							</a>
+						) : null}
 					</div>
 				</div>
 			</BackgroundImage>
