@@ -13,9 +13,9 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 		<div>
 			{/* Featured Event Header */}
 			<BackgroundImage
-				className="min-h-500 flex items-center"
+				className="min-h-500 flex items-center imgTop"
 				fluid={[
-					featured.featured_media.localFile.childImageSharp.fluid,
+					page.featured_media.localFile.childImageSharp.fluid,
 					`linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,
 				].reverse()}
 			>
@@ -76,6 +76,15 @@ export const pageQuery = graphql`
 				header_text
 				past_events
 			}
+			featured_media {
+				localFile {
+					childImageSharp {
+						fluid(maxWidth: 1920) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
+			}
 		}
 		featured: wordpressWpEvents(
 			tags: { elemMatch: { slug: { eq: "featured-event" } } }
@@ -86,15 +95,6 @@ export const pageQuery = graphql`
 				start_date
 				end_date
 				blurb
-			}
-			featured_media {
-				localFile {
-					childImageSharp {
-						fluid(maxWidth: 1920) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
 			}
 		}
 	}

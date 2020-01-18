@@ -24,14 +24,6 @@ const SurveyCard = ({
 		) : null}
 
 		<div className="m-5 curEventCard:w-1/2">
-			{/* Date */}
-			<div className="mb-6 inline text-darkBlue text-sm font-medium tracking-wider uppercase">
-				<span
-					dangerouslySetInnerHTML={{
-						__html: date.substring(11),
-					}}
-				/>
-			</div>
 			{/* Title */}
 			<p
 				dangerouslySetInnerHTML={{ __html: title }}

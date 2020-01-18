@@ -25,7 +25,7 @@ h4 {
 }
 
 h5 {
-	@apply text-darkBlue text-2xl leading-loose;
+	@apply text-darkBlue text-2xl my-2;
 }
 
 h6 {
@@ -159,6 +159,10 @@ button {
 .content {
 	@apply text-darkBlue font-light text-lg leading-relaxed;
 
+	a {
+		@apply text-lightBlue;
+	}
+
 	> p {
 		@apply mb-4;
 	}
@@ -178,6 +182,22 @@ button {
 	/* images, etc */
 	figure {
 		@apply my-6;
+	}
+}
+
+/**
+ * sets the image crop origin to the top, so as to avoid
+ * chopping off people's heads
+ */
+.imgTop,
+.imgTop::before,
+.imgTop::after {
+	background-position: top !important;
+	object-position: top !important;
+
+	* {
+		background-position: top !important;
+		object-position: top !important;
 	}
 }
 

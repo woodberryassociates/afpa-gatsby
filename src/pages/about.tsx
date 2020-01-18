@@ -14,7 +14,11 @@ const AboutPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="About" />
-			<Img fluid={page.featured_media.localFile.childImageSharp.fluid} />
+			<Img
+				className="max-h-500"
+				imgStyle={{ objectPosition: 'top' }}
+				fluid={page.featured_media.localFile.childImageSharp.fluid}
+			/>
 
 			<div className="mt-10 my-16 mx-2 lg:mx-32 xl:mx-64 flex flex-row">
 				{/* Quick Links */}

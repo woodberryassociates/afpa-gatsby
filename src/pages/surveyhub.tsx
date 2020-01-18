@@ -12,9 +12,9 @@ const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 		<div>
 			{/* Featured Survey Header */}
 			<BackgroundImage
-				className="min-h-500 flex items-center"
+				className="min-h-500 flex items-center imgTop"
 				fluid={[
-					featured.featured_media.localFile.childImageSharp.fluid,
+					page.featured_media.localFile.childImageSharp.fluid,
 					`linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,
 				].reverse()}
 			>
@@ -32,13 +32,6 @@ const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 									: { __html: '' }
 							}
 						/>
-						<div className="mb-6 inline text-white text-sm font-light tracking-wider uppercase">
-							<span
-								dangerouslySetInnerHTML={{
-									__html: featured.acf.date.substring(11),
-								}}
-							/>
-						</div>
 
 						{/* Survey Link*/}
 						{featured.acf.link ? (
@@ -61,6 +54,15 @@ export const pageQuery = graphql`
 			acf {
 				header_text
 			}
+			featured_media {
+				localFile {
+					childImageSharp {
+						fluid(maxWidth: 1920) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
+			}
 		}
 		featured: wordpressWpSurveys(
 			tags: { elemMatch: { slug: { eq: "featured-survey" } } }
@@ -72,15 +74,6 @@ export const pageQuery = graphql`
 				}
 				date
 				blurb
-			}
-			featured_media {
-				localFile {
-					childImageSharp {
-						fluid(maxWidth: 1920) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
 			}
 		}
 	}

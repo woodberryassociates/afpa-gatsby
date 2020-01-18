@@ -11,6 +11,7 @@ const Backpage = ({ data: { wordpressWpBackpages: post } }) => (
 		{post.featured_media ? (
 			<Img
 				className="max-h-500"
+				imgStyle={{ objectPosition: 'top' }}
 				fluid={post.featured_media.localFile.childImageSharp.fluid}
 			/>
 		) : null}

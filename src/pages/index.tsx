@@ -2,7 +2,6 @@ import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Coalitions from '../components/indexPage/coalitions'
 import FeaturedEvent from '../components/indexPage/featuredEvent'
 import FeaturedTweet from '../components/indexPage/featuredTweet'
 import Resources from '../components/indexPage/resources'

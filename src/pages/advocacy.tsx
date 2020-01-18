@@ -36,7 +36,10 @@ const AdvocacyPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Advocacy" />
-			<Img fluid={page.featured_media.localFile.childImageSharp.fluid} />
+			<Img
+				imgStyle={{ objectPosition: 'top' }}
+				fluid={page.featured_media.localFile.childImageSharp.fluid}
+			/>
 
 			<div className="mx-2 lg:mx-32 xl:mx-64 mt-10 pb-64">
 				<header className="mb-12">
@@ -143,7 +146,7 @@ const AdvocacyPage = ({ data }) => {
 
 					<div className="w-3/4">
 						<div
-							className="content"
+							className="content mb-5"
 							dangerouslySetInnerHTML={{ __html: page.acf.regulatory_text }}
 						/>
 						{regFields.map(el => {

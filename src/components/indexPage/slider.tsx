@@ -13,7 +13,7 @@ import React from 'react'
 const Slide = ({ slide }) => (
 	<CarouselSlide index={slide.id}>
 		<Img
-			className="h-in max-h-3/4"
+			className="h-in imgTop"
 			fluid={slide.featured_media.localFile.childImageSharp.fluid}
 		/>
 		<div className="absolute left-0 pl-10 top-0 max-w-xl">

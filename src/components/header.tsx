@@ -69,16 +69,16 @@ const Header = () => {
 
 					<div>
 						<h6>
-							<Link className="whitespace-no-wrap" to="/afpa-state-chapters">
-								STATE CHAPTERS
+							<Link className="" to="/advocacy">
+								ADVOCACY
 							</Link>
 						</h6>
 					</div>
 
 					<div>
 						<h6>
-							<Link className="" to="/advocacy">
-								ADVOCACY
+							<Link className="whitespace-no-wrap" to="/afpa-state-chapters">
+								STATE CHAPTERS
 							</Link>
 						</h6>
 					</div>
