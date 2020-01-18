@@ -6,7 +6,7 @@
 	"author": "Avi Nerenberg <avinerenberg@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"start": "WP_ENV=afpadev.wpengine.com gatsby develop",
+		"start": "gatsby develop",
 		"start:lambda": "netlify-lambda serve src/lambda",
 		"build": "gatsby build",
 		"build:lambda": "netlify-lambda build src/lambda",
