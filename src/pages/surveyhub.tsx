@@ -35,7 +35,7 @@ const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 
 						{/* Survey Link*/}
 						{featured.acf.link ? (
-							<a className="mr-10 mb-2" href={featured.acf.link.link}>
+							<a className="mr-10 mb-2" href={featured.acf.link}>
 								<button>View Survey</button>
 							</a>
 						) : null}
@@ -69,9 +69,7 @@ export const pageQuery = graphql`
 		) {
 			title
 			acf {
-				link {
-					link
-				}
+				link
 				date
 				blurb
 			}

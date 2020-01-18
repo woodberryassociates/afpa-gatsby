@@ -12,35 +12,35 @@ const SurveyCard = ({
 		},
 	},
 }) => (
-	<div
-		key={key}
-		className="my-10 flex flex-wrap justify-around curEventCard:justify-between bg-white cardShadow curEventCard"
-	>
-		{featured_media ? (
-			<Img
-				className="curEventCardImg"
-				fixed={featured_media.localFile.childImageSharp.fixed}
-			/>
-		) : null}
+		<div
+			key={key}
+			className="my-10 flex flex-wrap justify-around curEventCard:justify-between bg-white cardShadow curEventCard"
+		>
+			{featured_media ? (
+				<Img
+					className="curEventCardImg"
+					fixed={featured_media.localFile.childImageSharp.fixed}
+				/>
+			) : null}
 
-		<div className="m-5 curEventCard:w-1/2">
-			{/* Title */}
-			<p
-				dangerouslySetInnerHTML={{ __html: title }}
-				className="my-2 text-xl text-lightBlue"
-			/>
-			{/* Blurb */}
-			<p dangerouslySetInnerHTML={{ __html: blurb }} className="text-sm" />
+			<div className="m-5 curEventCard:w-1/2">
+				{/* Title */}
+				<p
+					dangerouslySetInnerHTML={{ __html: title }}
+					className="my-2 text-xl text-lightBlue"
+				/>
+				{/* Blurb */}
+				<p dangerouslySetInnerHTML={{ __html: blurb }} className="text-sm" />
+			</div>
+
+			{/* Survey Link*/}
+			{link ? (
+				<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={link}>
+					<button>View Survey</button>
+				</a>
+			) : null}
 		</div>
-
-		{/* Survey Link*/}
-		{link ? (
-			<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={link}>
-				<button>View Survey</button>
-			</a>
-		) : null}
-	</div>
-)
+	)
 
 const Surveys = () => {
 	const data = useStaticQuery(graphql`
@@ -53,9 +53,7 @@ const Surveys = () => {
 						id
 						title
 						acf {
-							link {
-								link
-							}
+							link
 							date
 							blurb
 						}
