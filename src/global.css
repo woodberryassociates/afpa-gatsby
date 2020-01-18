@@ -168,11 +168,11 @@ button {
 	}
 
 	strong {
-		@apply font-bold text-darkGray;
+		@apply font-bold; /* text-darkGray */
 	}
 
 	ul {
-		@apply mt-5 mb-6 ml-6 list-disc font-light text-darkGray;
+		@apply mt-5 mb-6 ml-6 list-disc font-light; /* text-darkGray */
 
 		> li {
 			@apply my-2;

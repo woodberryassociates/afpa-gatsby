@@ -28,9 +28,8 @@ module.exports = {
 			resolve: `gatsby-source-wordpress`,
 			options: {
 				baseUrl: process.env.WP_ENV,
-				protocol: 'http',
+				protocol: 'https',
 				hostingWPCOM: false,
-				useACF: true, // TODO(?)
 				// searchAndReplaceContentUrls: {
 				//   sourceUrl: "",
 				//   replacementUrl: "",

@@ -17,7 +17,7 @@ const Leadership = ({
 				featured_media {
 					localFile {
 						childImageSharp {
-							fixed(height: 465, width: 400) {
+							fixed(width: 400) {
 								...GatsbyImageSharpFixed
 							}
 						}
@@ -75,6 +75,7 @@ const Leadership = ({
 				</div>
 				<Img
 					className="responsiveChairmanImg"
+					imgStyle={{ objectPosition: 'top' }}
 					fixed={chairman.featured_media.localFile.childImageSharp.fixed}
 				/>
 			</div>
