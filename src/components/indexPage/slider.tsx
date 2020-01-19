@@ -35,7 +35,7 @@ const Slide = ({ slide }) => (
 
 const Slider = () => {
 	const data = useStaticQuery(graphql`
-		query Sliders {
+		query HomepageSlider {
 			allWordpressWpSliders {
 				edges {
 					node {

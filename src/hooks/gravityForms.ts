@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 export const allGravityData = () => {
 	const { allGfForm } = useStaticQuery(
 		graphql`
-			query {
+			query GravityForms {
 				allGfForm {
 					edges {
 						node {

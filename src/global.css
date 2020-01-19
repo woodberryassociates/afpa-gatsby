@@ -168,11 +168,11 @@ button {
 	}
 
 	strong {
-		@apply font-bold text-darkGray;
+		@apply font-bold;
 	}
 
 	ul {
-		@apply mt-5 mb-6 ml-6 list-disc font-light text-darkGray;
+		@apply mt-5 mb-6 ml-6 list-disc font-light;
 
 		> li {
 			@apply my-2;
@@ -182,6 +182,14 @@ button {
 	/* images, etc */
 	figure {
 		@apply my-6;
+	}
+
+	/* Gravity Forms */
+	input {
+		@apply my-1 p-2 w-full leading-loose rounded-lg text-black border;
+	}
+	.gravityform__button {
+		@apply mt-1;
 	}
 }
 
