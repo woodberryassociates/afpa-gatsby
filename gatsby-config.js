@@ -95,7 +95,7 @@ module.exports = {
 					// SITE-WIDE
 					wordpress__wp_annual_reports: {
 						title: node => node.title,
-						link: node => node.acf.link,
+						// link: node => node.acf.link,
 						img: (node, getNode) => getNode(node.featured_media___NODE),
 					},
 					wordpress__wp_events: {
@@ -119,7 +119,7 @@ module.exports = {
 					wordpress__wp_infographics: {
 						type: () => 'resource', // for filtering in the resourcesSearch component
 						title: node => node.title,
-						link: node => node.acf.link,
+						// link: node => node.acf.link,
 						img: (node, getNode) => getNode(node.featured_media___NODE),
 					},
 					wordpress__wp_videos: {
