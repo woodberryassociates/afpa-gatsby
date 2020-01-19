@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import { node } from 'prop-types'
 import React from 'react'
 
 const AnnualReports = () => {
@@ -10,11 +9,7 @@ const AnnualReports = () => {
 				edges {
 					node {
 						id
-						acf {
-							link {
-								link
-							}
-						}
+
 						featured_media {
 							localFile {
 								childImageSharp {
@@ -34,7 +29,9 @@ const AnnualReports = () => {
 		<div className="flex flex-col">
 			<div className="flex flex-wrap justify-around">
 				{data.allWordpressWpAnnualReports.edges.map(({ node: report }) => (
-					<a href={report.acf.link} key={report.id}>
+					<a
+						// href={report.acf.link}
+						key={report.id}>
 						<Img
 							className="w-56 h-64 md:w-500 md:h-600 m-10 shadow-lg"
 							fixed={report.featured_media.localFile.childImageSharp.fluid}
@@ -42,8 +39,6 @@ const AnnualReports = () => {
 					</a>
 				))}
 			</div>
-
-			{/* <button className="self-center mt-10">See More</button> */}
 		</div>
 	)
 }

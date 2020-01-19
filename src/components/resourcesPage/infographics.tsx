@@ -11,9 +11,7 @@ const Infographics = () => {
 				edges {
 					node {
 						id
-						acf {
-							link
-						}
+
 						title
 						featured_media {
 							localFile {
@@ -46,7 +44,7 @@ const Infographics = () => {
 					return (
 						<a
 							key={infographic.id}
-							href={infographic.acf.link}
+							// href={infographic.acf.link}
 							className="w-full sm:w-1/2 lg:w-1/3 p-2"
 						>
 							<Img
