@@ -51,91 +51,92 @@ const AdvocacyPage = ({ data }) => {
 				</header>
 
 				<section>
-					{/* Federal */}
 					<div className="flex flex-wrap justify-center md:justify-end">
 						<div className="w-1/2 mb-4 md:mb-0 md:w-1/4 pr-5">
 							<Img fluid={data.imgLegislative.childImageSharp.fluid} />
 						</div>
-						<div className="w-3/4">
-							<div className="flex items-center">
-								<p className="mr-4 text-textGreen font-medium">FEDERAL</p>
-								<div className="h-2px w-full bg-textGreen" />
-							</div>
 
-							<div className="flex items-start">
-								{fedIssueArr.map(el => (
-									<div key={el} className="md:w-5/12 mt-4">
-										<h5>{el}</h5>
-										<div className="h-px w-full bg-backgroundGray" />
-										{fedIssues[el].map((issue: any) => (
-											<div key={issue.id} className="my-3">
-												<p dangerouslySetInnerHTML={{ __html: issue.title }} />
-												<div className="flex justify-between">
-													{issue.acf.link_1 ? (
-														<a
-															href={issue.acf.link_1}
-															className="text-sm text-lightBlue"
-														>
-															{issue.acf.link_1_text}
-														</a>
-													) : null}
-													{issue.acf.link_2 ? (
-														<a
-															href={issue.acf.link_2}
-															className="text-sm text-lightBlue"
-														>
-															{issue.acf.link_2_text}
-														</a>
-													) : null}
+						{/* Federal */}
+						{fedIssueArr.length ?
+							<div className="w-3/4">
+								<div className="flex items-center">
+									<p className="mr-4 text-textGreen font-medium">FEDERAL</p>
+									<div className="h-2px w-full bg-textGreen" />
+								</div>
+
+								<div className="flex items-start">
+									{fedIssueArr.map(el => (
+										<div key={el} className="md:w-5/12 mt-4">
+											<h5>{el}</h5>
+											<div className="h-px w-full bg-backgroundGray" />
+											{fedIssues[el].map((issue: any) => (
+												<div key={issue.id} className="my-3">
+													<p dangerouslySetInnerHTML={{ __html: issue.title }} />
+													<div className="flex justify-between">
+														{issue.acf.link_1 ? (
+															<a
+																href={issue.acf.link_1}
+																className="text-sm text-lightBlue"
+															>
+																{issue.acf.link_1_text}
+															</a>
+														) : null}
+														{issue.acf.link_2 ? (
+															<a
+																href={issue.acf.link_2}
+																className="text-sm text-lightBlue"
+															>
+																{issue.acf.link_2_text}
+															</a>
+														) : null}
+													</div>
 												</div>
-											</div>
-										))}
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
+											))}
+										</div>
+									))}
+								</div>
+							</div> : null}
 
-					{/* State */}
-					<div className="mt-10 flex justify-center md:justify-end">
-						<div className="w-3/4">
-							<div className="flex items-center">
-								<p className="mr-4 text-textGreen font-medium">STATE</p>
-								<div className="h-2px w-full bg-textGreen" />
-							</div>
+						{/* State */}
+						{stateIssueArr ?
+							<div className="w-3/4">
+								<div className="flex items-center">
+									<p className="mr-4 text-textGreen font-medium">STATE</p>
+									<div className="h-2px w-full bg-textGreen" />
+								</div>
 
-							<div className="flex flex-wrap items-start justify-between">
-								{stateIssueArr.map(el => (
-									<div key={el} className="md:w-5/12 mt-4">
-										<h5>{el}</h5>
-										<div className="h-px w-full bg-backgroundGray" />
-										{stateIssues[el].map((issue: any) => (
-											<div key={issue.id} className="my-5">
-												<p dangerouslySetInnerHTML={{ __html: issue.title }} />
-												<div className="flex justify-between">
-													{issue.acf.link_1 ? (
-														<a
-															href={issue.acf.link_1}
-															className="text-sm text-lightBlue"
-														>
-															{issue.acf.link_1_text}
-														</a>
-													) : null}
-													{issue.acf.link_2 ? (
-														<a
-															href={issue.acf.link_2}
-															className="text-sm text-lightBlue"
-														>
-															{issue.acf.link_2_text}
-														</a>
-													) : null}
+								<div className="flex flex-wrap items-start justify-between">
+									{stateIssueArr.map(el => (
+										<div key={el} className="md:w-5/12 mt-4">
+											<h5>{el}</h5>
+											<div className="h-px w-full bg-backgroundGray" />
+											{stateIssues[el].map((issue: any) => (
+												<div key={issue.id} className="my-5">
+													<p dangerouslySetInnerHTML={{ __html: issue.title }} />
+													<div className="flex justify-between">
+														{issue.acf.link_1 ? (
+															<a
+																href={issue.acf.link_1}
+																className="text-sm text-lightBlue"
+															>
+																{issue.acf.link_1_text}
+															</a>
+														) : null}
+														{issue.acf.link_2 ? (
+															<a
+																href={issue.acf.link_2}
+																className="text-sm text-lightBlue"
+															>
+																{issue.acf.link_2_text}
+															</a>
+														) : null}
+													</div>
 												</div>
-											</div>
-										))}
-									</div>
-								))}
-							</div>
-						</div>
+											))}
+										</div>
+									))}
+								</div>
+							</div> : null}
 					</div>
 				</section>
 
