@@ -53,7 +53,7 @@ const Surveys = () => {
 						id
 						title
 						acf {
-							link
+
 							date
 							blurb
 						}

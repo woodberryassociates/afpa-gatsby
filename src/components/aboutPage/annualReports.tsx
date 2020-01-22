@@ -5,7 +5,7 @@ import React from 'react'
 const AnnualReports = () => {
 	const data = useStaticQuery(graphql`
 		query AnnualReports {
-			allWordpressWpAnnualReports(sort: { fields: title, order: DESC }) {
+			reports: allWordpressWpAnnualReports(sort: { fields: title, order: DESC }) {
 				edges {
 					node {
 						id
@@ -28,7 +28,7 @@ const AnnualReports = () => {
 	return (
 		<div className="flex flex-col">
 			<div className="flex flex-wrap justify-around">
-				{data.allWordpressWpAnnualReports.edges.map(({ node: report }) => (
+				{data.reports.edges.map(({ node: report }) => (
 					<a
 						// href={report.acf.link}
 						key={report.id}>
