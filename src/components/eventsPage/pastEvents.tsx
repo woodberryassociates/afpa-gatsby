@@ -21,7 +21,7 @@ const PastEventCard = ({
 		<div className="m-4 flex flex-col text-white">
 			{/*  Date */}
 			<p
-				dangerouslySetInnerHTML={{ __html: date.substring(11).split('@')[0] }}
+				dangerouslySetInnerHTML={{ __html: date.substring(11).split(`@`)[0] }}
 				className="text-sm font-medium tracking-wider uppercase"
 			/>
 			{/* Title */}

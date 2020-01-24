@@ -16,7 +16,7 @@ const AboutPage = ({ data }) => {
 			<SEO title="About" />
 			<Img
 				className="max-h-500"
-				imgStyle={{ objectPosition: 'top' }}
+				imgStyle={{ objectPosition: `top` }}
 				fluid={page.featured_media.localFile.childImageSharp.fluid}
 			/>
 

@@ -8,7 +8,7 @@ import Header from './header'
 
 const Layout = ({ children }) => {
 	// smooth scrolling for anchor links
-	if (typeof window !== 'undefined') require('smooth-scroll')('a[href*="#"]')
+	if (typeof window !== `undefined`) require(`smooth-scroll`)(`a[href*="#"]`)
 
 	return (
 		<>

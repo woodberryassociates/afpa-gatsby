@@ -6,12 +6,12 @@ const FeaturedTweet = () => (
 		<div className="lg:mx-40 my-4">
 			<Timeline
 				dataSource={{
-					sourceType: 'profile',
-					screenName: 'patientaccess',
+					sourceType: `profile`,
+					screenName: `patientaccess`,
 				}}
 				options={{
 					tweetLimit: 1,
-					borderColor: '#008FC3',
+					borderColor: `#008FC3`,
 				}}
 			/>
 		</div>

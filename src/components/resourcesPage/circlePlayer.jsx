@@ -6,7 +6,7 @@ import { Media, Player } from 'react-media-player'
 class CircleProgress {
 	constructor(el) {
 		this.el = el
-		this.r = el.getAttribute('r')
+		this.r = el.getAttribute(`r`)
 		this.c = Math.PI * (this.r * 2)
 		this._init()
 	}

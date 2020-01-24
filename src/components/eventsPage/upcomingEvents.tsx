@@ -20,7 +20,7 @@ const UpcomingEventCard = ({
 			<Img
 				className="curEventCardImg self-center"
 				imgStyle={{
-					objectFit: 'contain',
+					objectFit: `contain`,
 				}}
 				fixed={featured_media.localFile.childImageSharp.fixed}
 			/>

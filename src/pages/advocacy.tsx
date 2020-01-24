@@ -20,7 +20,7 @@ const AdvocacyPage = ({ data }) => {
 	legFields.forEach(el => {
 		el = el.node
 
-		if (el.categories[0].slug === 'federal') {
+		if (el.categories[0].slug === `federal`) {
 			if (fedIssues[el.tags[0].name] === undefined)
 				fedIssues[el.tags[0].name] = []
 			fedIssues[el.tags[0].name].push(el)
@@ -37,7 +37,7 @@ const AdvocacyPage = ({ data }) => {
 		<Layout>
 			<SEO title="Advocacy" />
 			<Img
-				imgStyle={{ objectPosition: 'top' }}
+				imgStyle={{ objectPosition: `top` }}
 				fluid={page.featured_media.localFile.childImageSharp.fluid}
 			/>
 
@@ -50,6 +50,7 @@ const AdvocacyPage = ({ data }) => {
 					/>
 				</header>
 
+				{/* LEGISLATIVE ADVOCACY */}
 				<section>
 					<div className="flex flex-wrap justify-center md:justify-end">
 						<div className="w-1/2 mb-4 md:mb-0 md:w-1/4 pr-5">
@@ -57,7 +58,7 @@ const AdvocacyPage = ({ data }) => {
 						</div>
 
 						{/* Federal */}
-						{fedIssueArr.length ?
+						{fedIssueArr.length ? (
 							<div className="w-3/4">
 								<div className="flex items-center">
 									<p className="mr-4 text-textGreen font-medium">FEDERAL</p>
@@ -71,7 +72,9 @@ const AdvocacyPage = ({ data }) => {
 											<div className="h-px w-full bg-backgroundGray" />
 											{fedIssues[el].map((issue: any) => (
 												<div key={issue.id} className="my-3">
-													<p dangerouslySetInnerHTML={{ __html: issue.title }} />
+													<p
+														dangerouslySetInnerHTML={{ __html: issue.title }}
+													/>
 													<div className="flex justify-between">
 														{issue.acf.link_1 ? (
 															<a
@@ -95,10 +98,11 @@ const AdvocacyPage = ({ data }) => {
 										</div>
 									))}
 								</div>
-							</div> : null}
+							</div>
+						) : null}
 
 						{/* State */}
-						{stateIssueArr ?
+						{stateIssueArr ? (
 							<div className="w-3/4">
 								<div className="flex items-center">
 									<p className="mr-4 text-textGreen font-medium">STATE</p>
@@ -112,7 +116,9 @@ const AdvocacyPage = ({ data }) => {
 											<div className="h-px w-full bg-backgroundGray" />
 											{stateIssues[el].map((issue: any) => (
 												<div key={issue.id} className="my-5">
-													<p dangerouslySetInnerHTML={{ __html: issue.title }} />
+													<p
+														dangerouslySetInnerHTML={{ __html: issue.title }}
+													/>
 													<div className="flex justify-between">
 														{issue.acf.link_1 ? (
 															<a
@@ -136,10 +142,12 @@ const AdvocacyPage = ({ data }) => {
 										</div>
 									))}
 								</div>
-							</div> : null}
+							</div>
+						) : null}
 					</div>
 				</section>
 
+				{/* REGULATORY ADVOCACY */}
 				<section className="mt-10 flex flex-wrap justify-center md:justify-end">
 					<div className="w-1/2 mb-4 md:mb-0 md:w-1/4 pr-5">
 						<Img fluid={data.imgRegulatory.childImageSharp.fluid} />
@@ -150,14 +158,12 @@ const AdvocacyPage = ({ data }) => {
 							className="content mb-5"
 							dangerouslySetInnerHTML={{ __html: page.acf.regulatory_text }}
 						/>
-						{regFields.map(el => {
-							el = el.node
-							return (
-								<p key={el.id} className="my-2 text-lightBlue text-sm">
-									<a href={el.title}>{el.title}</a>
-								</p>
-							)
-						})}
+						{regFields.map(el => (
+							<p key={el.node.id} className="my-2 text-lightBlue text-sm">
+								<a href={el.node.acf.link}>{el.node.title}</a>
+							</p>
+						)
+						)}
 					</div>
 				</section>
 			</div>
@@ -184,6 +190,7 @@ export const pageQuery = graphql`
 						link_1
 						link_1_text
 						link_2
+						link_2_text
 					}
 				}
 			}

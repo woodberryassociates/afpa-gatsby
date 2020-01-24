@@ -11,7 +11,9 @@ const Infographics = () => {
 				edges {
 					node {
 						id
-
+						acf {
+							textLink
+						}
 						title
 						featured_media {
 							localFile {
@@ -37,14 +39,14 @@ const Infographics = () => {
 		<div className="flex flex-col items-center">
 			<div
 				className="max-w-1275 min-w-full flex flex-wrap justify-start items-start"
-				style={{ width: '90vw' }}
+				style={{ width: `90vw` }}
 			>
 				{(infographics[selectedPage] as any).map(infographic => {
 					infographic = infographic.node
 					return (
 						<a
 							key={infographic.id}
-							// href={infographic.acf.link}
+							href={infographic.acf.textLink}
 							className="w-full sm:w-1/2 lg:w-1/3 p-2"
 						>
 							<Img

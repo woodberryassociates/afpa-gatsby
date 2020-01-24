@@ -5,7 +5,7 @@ import CircleMediaPlayer from './circlePlayer'
 
 // TODO: make this a graphql query & pagination
 const parser = new Parser()
-const PROXY_URL = 'https://cors-anywhere.herokuapp.com/'
+const PROXY_URL = `https://cors-anywhere.herokuapp.com/`
 const podcastsResolver = async () => {
 	try {
 		const feed = await parser.parseURL(

@@ -29,16 +29,14 @@ const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 							dangerouslySetInnerHTML={
 								featured.acf.blurb
 									? { __html: featured.acf.blurb }
-									: { __html: '' }
+									: { __html: `` }
 							}
 						/>
 
-						{/* Survey Link*/}
-						{/* {featured.acf.link ? (
-							<a className="mr-10 mb-2" href={featured.acf.link}>
-								<button>View Survey</button>
-							</a>
-						) : null} */}
+						{/* Survey Link */}
+						<a className="mr-10 mb-2" href={featured.acf.textLink}>
+							<button>View Survey</button>
+						</a>
 					</div>
 				</div>
 			</BackgroundImage>
@@ -69,7 +67,7 @@ export const pageQuery = graphql`
 		) {
 			title
 			acf {
-
+				textLink
 				date
 				blurb
 			}

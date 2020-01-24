@@ -6,21 +6,22 @@ import { goDown, goUp, pagination } from './pagination'
 
 const Videos = () => {
 	const data = useStaticQuery(graphql`
-	query Videos {
-		allWordpressWpVideos(sort: {fields: date, order: DESC}) {
-			edges {
-				node {
-					id
-					title
-					date(formatString: "MMMM YYYY")
-					acf {
-						coalition
-						url
+		query Videos {
+			allWordpressWpVideos(sort: { fields: date, order: DESC }) {
+				edges {
+					node {
+						id
+						title
+						date(formatString: "MMMM YYYY")
+						acf {
+							coalition
+							url
+						}
 					}
 				}
 			}
 		}
-	}`)
+	`)
 	const videos = pagination(data.allWordpressWpVideos.edges, 6)
 	const [selectedPage, setSelectedPage] = useState(0)
 

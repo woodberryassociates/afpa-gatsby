@@ -63,6 +63,33 @@ module.exports = {
 					'**/tags',
 					'**/categories',
 				],
+				normalizers: normalizers => [
+					...normalizers,
+					{
+						// Normalizes the link format, so Gatsby doesn't drop one type (internal or external)
+						name: `AcfLinkNormalizer`,
+						normalizer: ({ entities }) => {
+							const media = entities.filter(
+								e => e.__type === `wordpress__wp_media`
+							)
+							return entities.map(e => {
+								if (
+									(e.__type === 'wordpress__wp_surveys') |
+									(e.__type === 'wordpress__wp_infographics') |
+									(e.__type === 'wordpress__wp_annual_reports')
+								) {
+									if (e.acf.link___NODE)
+										e.acf.textLink = media.find(
+											m => m.id === e.acf.link___NODE
+										).source_url
+									else e.acf.textLink = e.acf.link
+									console.log(e)
+								}
+								return e
+							})
+						},
+					},
+				],
 			},
 		},
 		{
@@ -107,6 +134,15 @@ module.exports = {
 								: null,
 						img: (node, getNode) => getNode(node.featured_media___NODE),
 					},
+					wordpress__wp_surveys: {
+						title: node => node.title,
+						link: node => node.acf.textLink,
+						tags: (node, getNode) =>
+							node.tags___NODE // ignore if empty
+								? node.tags___NODE.map(id => getNode(id).name)
+								: null,
+						img: (node, getNode) => getNode(node.featured_media___NODE),
+					},
 					wordpress__wp_legislative_advocacy: {
 						title: node => node.title,
 						// link: node => node.acf.link_bill,
@@ -119,7 +155,7 @@ module.exports = {
 					wordpress__wp_infographics: {
 						type: () => 'resource', // for filtering in the resourcesSearch component
 						title: node => node.title,
-						// link: node => node.acf.link,
+						link: node => node.acf.textLink,
 						img: (node, getNode) => getNode(node.featured_media___NODE),
 					},
 					wordpress__wp_videos: {

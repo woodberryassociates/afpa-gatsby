@@ -27,7 +27,7 @@ const Search = () => {
 			index
 				.search(tempQuery)
 				.filter(({ ref }) =>
-					index.documentStore.getDoc(ref).type === 'resource' ? true : false
+					index.documentStore.getDoc(ref).type === `resource` ? true : false
 				)
 				.map(({ ref }) => index.documentStore.getDoc(ref))
 		)
@@ -48,7 +48,7 @@ const Search = () => {
 				className={`absolute bg-white ${
 					focus ? `visible opacity-100` : `invisible opacity-0`
 				}`}
-				style={{ transition: 'all .25s ease-in' }}
+				style={{ transition: `all .25s ease-in` }}
 			>
 				{results
 					? results.map(el => (

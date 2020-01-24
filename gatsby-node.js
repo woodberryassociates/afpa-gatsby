@@ -29,21 +29,3 @@ exports.createPages = async ({ graphql, actions }) => {
 		})
 	})
 }
-
-/**
- * Explicit types
- * @TODO get ACF links to behave predictably
- */
-// exports.createSchemaCustomization = ({ actions }) => {
-// 	const { createTypes } = actions
-// 	const typeDefs = `
-// 		type acf implements Node {
-// 			link: String
-// 		}
-
-//     type wordpressWpInfographics implements Node {
-// 			 acf: acf
-//     }
-//   `
-// 	createTypes(typeDefs)
-// }

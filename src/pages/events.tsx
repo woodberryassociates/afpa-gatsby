@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
 
@@ -30,7 +30,7 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 							dangerouslySetInnerHTML={
 								featured.acf.blurb
 									? { __html: featured.acf.blurb }
-									: { __html: '' }
+									: { __html: `` }
 							}
 						/>
 						<div className="mb-6 inline text-white text-sm font-light tracking-wider uppercase">

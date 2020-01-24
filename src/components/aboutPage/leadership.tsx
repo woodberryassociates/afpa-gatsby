@@ -17,7 +17,7 @@ const Leadership = ({
 				featured_media {
 					localFile {
 						childImageSharp {
-							fixed(height: 465, width: 400) {
+							fixed(height: 600, width: 400) {
 								...GatsbyImageSharpFixed
 							}
 						}

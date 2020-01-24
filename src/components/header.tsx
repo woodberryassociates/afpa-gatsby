@@ -46,8 +46,8 @@ const Header = () => {
 			<div
 				className={`z-40 w-full lg:w-3/4 lg:visible lg:opacity-100 absolute bottom-0 lg:static flex flex-col lg:flex-row justify-between items-center bg-white leading-loose headerNav ${
 					showMenu ? `visible opacity-100` : `invisible opacity-0`
-					}`}
-				style={{ transition: 'all .25s ease-in' }}
+				}`}
+				style={{ transition: `all .25s ease-in` }}
 			>
 				{/* TEXT LINKS */}
 				<section className="px-10 xl:px-16 lg:w-5/6 flex flex-col lg:flex-row justify-around items-center text-base">

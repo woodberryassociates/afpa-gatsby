@@ -52,7 +52,7 @@ const Resources = () => {
 						/>
 					</div>
 					{/* gatsby Link if local, otherwise anchor */}
-					{node.acf.resource_url.substring(1) === '/' ? (
+					{node.acf.resource_url.substring(1) === `/` ? (
 						<Link to={node.acf.resource_url}>
 							<button className="mt-2 darkButton">Explore More</button>
 						</Link>
