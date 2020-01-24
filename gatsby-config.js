@@ -166,13 +166,6 @@ module.exports = {
 				},
 			},
 		},
-		// {
-		//   resolve: `gatsby-plugin-stylus-resources`,
-		//   options: {
-		//     resources: ['./src/global.styl'],
-		//     postCssPlugins: [require('tailwindcss')],
-		//   },
-		// },
 		{
 			resolve: `gatsby-plugin-postcss`,
 			options: {
@@ -184,12 +177,10 @@ module.exports = {
 				],
 			},
 		},
-		// `gatsby-plugin-purgecss`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-typescript`,
-		`gatsby-plugin-tslint`,
 		`gatsby-plugin-offline`,
 	],
 }

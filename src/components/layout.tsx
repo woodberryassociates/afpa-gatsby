@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Footer from './footer'
-import Header from './header'
+import Header from './header/header'
 
 const Layout = ({ children }) => {
 	// smooth scrolling for anchor links

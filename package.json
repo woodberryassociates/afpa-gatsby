@@ -86,6 +86,7 @@
 		"gatsby-source-gravityforms": "^1.0.15",
 		"gatsby-source-wordpress": "^3.1.58",
 		"gatsby-transformer-sharp": "^2.3.12",
+		"lint-staged": "^10.0.2",
 		"netlify-lambda": "^1.6.3",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-preset-env": "^6.7.0",

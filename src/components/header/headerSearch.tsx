@@ -35,7 +35,7 @@ const Search = ({ show, setShow }) => {
 		<div
 			className={`z-50 absolute rounded border-2 border-lightGray bg-white text-darkBlue text-xl searchBar  ${
 				show ? `visible opacity-100` : `invisible opacity-0`
-				}`}
+			}`}
 			style={{ transform: `translate(-100%)`, transition: `all .25s ease-in` }}
 		>
 			<input
@@ -50,24 +50,24 @@ const Search = ({ show, setShow }) => {
 			<ul>
 				{results
 					? results.map(el => (
-						<li key={el.id}>
-							<a
-								href={el.link}
-								className="my-2 flex items-stretch"
-							>
-								{/* TODO: query img for image-sharp */}
-								{el.img ? (
-									<img
-										className="w-24 object-cover"
-										src={el.img.source_url}
-									/>
-								) : null}
-								<div className="ml-4 w-2/3 flex items-center">
-									<p dangerouslySetInnerHTML={{ __html: el.title }} />
-								</div>
-							</a>
-						</li>
-					))
+							<li key={el.id}>
+								<a href={el.link} className="my-5 flex items-stretch">
+									{/* TODO: query img for image-sharp */}
+									{el.img ? (
+										<img
+											className="w-24 object-cover"
+											src={el.img.source_url}
+										/>
+									) : null}
+									<div className="ml-4 w-2/3 flex items-center">
+										<p
+											className="leading-snug"
+											dangerouslySetInnerHTML={{ __html: el.title }}
+										/>
+									</div>
+								</a>
+							</li>
+					  ))
 					: null}
 			</ul>
 		</div>
