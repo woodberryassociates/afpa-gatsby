@@ -27,12 +27,12 @@ const Header = () => {
 	return (
 		<header className="relative xxl:px-32 min-h-65 text-darkBlue bg-white flex flex-wrap justify-around items-center">
 			{/* HAMBURGER MENU */}
-			<a
-				className="block lg:hidden text-darkBlue cursor-pointer"
+			<button
+				className="block lg:hidden text-darkBlue bg-white cursor-pointer"
 				onClick={mobileMenu}
 			>
 				<img className="h-6 md:h-10" src={hamburger} alt="Menu" />
-			</a>
+			</button>
 
 			{/* LOGO */}
 			<div className="w-1/2 sm:1/3 lg:w-1/4">
@@ -96,24 +96,28 @@ const Header = () => {
 				<section className="xxs:w-1/2 lg:w-1/6 pb-2 lg:p-0 flex justify-around items-center">
 					<div>
 						<a href="https://facebook.com/patientaccess">
-							<img src={facebook} />
+							<img alt="Facebook" src={facebook} />
 						</a>
 					</div>
 
 					<div>
 						<a href="https://twitter.com/patientaccess">
-							<img src={twitter} />
+							<img alt="Twitter" src={twitter} />
 						</a>
 					</div>
 
 					<div>
 						<a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
-							<img src={youtube} />
+							<img alt="YouTube" src={youtube} />
 						</a>
 					</div>
 
 					<div className="relative cursor-pointer">
-						<img src={search} onClick={() => setShowSearch(!showSearch)} />
+						<img
+							alt="Search"
+							src={search}
+							onClick={() => setShowSearch(!showSearch)}
+						/>
 						<Search show={showSearch} setShow={setShowSearch} />
 					</div>
 				</section>

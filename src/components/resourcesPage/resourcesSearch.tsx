@@ -1,6 +1,6 @@
 import { Index } from 'elasticlunr'
 import { graphql, useStaticQuery } from 'gatsby'
-import React, { Component, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 // https://www.gatsbyjs.org/packages/@tsimons/gatsby-plugin-elasticlunr-search/
 const Search = () => {
@@ -58,6 +58,7 @@ const Search = () => {
 									{el.img ? (
 										<img
 											className="w-24 object-cover"
+											alt={el.img.title}
 											src={el.img.source_url}
 										/>
 									) : null}

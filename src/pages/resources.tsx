@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
 

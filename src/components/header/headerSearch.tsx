@@ -56,6 +56,7 @@ const Search = ({ show, setShow }) => {
 									{el.img ? (
 										<img
 											className="w-24 object-cover"
+											alt={el.img.title}
 											src={el.img.source_url}
 										/>
 									) : null}

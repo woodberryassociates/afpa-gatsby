@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
 
