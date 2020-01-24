@@ -1,9 +1,9 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import GravityFormForm from 'gatsby-gravityforms-component'
 import Img from 'gatsby-image'
-import React, { useState } from 'react'
+import React from 'react'
 
-import { allGravityData } from '../hooks/gravityForms'
+import { useGravityData } from '../hooks/gravityForms'
 import { facebook_light, twitter_light, youtube_light } from '../images'
 
 const Footer = () => {
@@ -18,25 +18,6 @@ const Footer = () => {
 			}
 		}
 	`)
-
-	const [email, setEmail] = useState(``)
-	const handleEmail = event => setEmail(event.target.value)
-	const handleSubmit = event => {
-		event.preventDefault()
-
-		const Http = new XMLHttpRequest()
-		const url = `https://allianceforpatientaccess.org/wp-json/gf/v2/entries`
-
-		// Http.onreadystatechange = () => console.log(Http.responseText)
-		Http.open(`POST`, url)
-		Http.setRequestHeader(`Content-Type`, `application/json`)
-		Http.send(
-			JSON.stringify({
-				form_id: 1,
-				1: email,
-			})
-		)
-	}
 
 	return (
 		<footer className="footerClip bg-lightBlue text-white text-sm font-light tracking-wider -mt-64">
@@ -66,7 +47,7 @@ const Footer = () => {
 					<div className="bg-white h-px w-10 my-5" />
 					<GravityFormForm
 						id={1}
-						formData={allGravityData()}
+						formData={useGravityData()}
 						lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
 					/>
 				</div>
@@ -82,15 +63,15 @@ const Footer = () => {
 
 				<div className="flex justify-between items-center min-w-120 fill-current">
 					<a>
-						<img className="h-4" src={facebook_light} />
+						<img className="h-4" alt="Facebook" src={facebook_light} />
 					</a>
 
 					<a href="https://twitter.com/patientaccess">
-						<img className="h-4" src={twitter_light} />
+						<img className="h-4" alt="Twitter" src={twitter_light} />
 					</a>
 
 					<a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
-						<img className="h-4" src={youtube_light} />
+						<img className="h-4" alt="YouTube" src={youtube_light} />
 					</a>
 				</div>
 			</div>

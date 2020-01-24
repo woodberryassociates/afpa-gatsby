@@ -83,7 +83,6 @@ module.exports = {
 											m => m.id === e.acf.link___NODE
 										).source_url
 									else e.acf.textLink = e.acf.link
-									console.log(e)
 								}
 								return e
 							})

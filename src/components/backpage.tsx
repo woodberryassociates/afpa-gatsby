@@ -5,37 +5,41 @@ import GravityFormForm from 'gatsby-gravityforms-component'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { allGravityData } from '../hooks/gravityForms'
+import { useGravityData } from '../hooks/gravityForms'
 
-const Backpage = ({ data: { post } }) => (
-	<Layout>
-		<SEO title={post.title} />
+const Backpage = ({ data: { post } }) => {
+	const formData = useGravityData() // can't use hooks conditionally, so assigning here
 
-		{post.featured_media ? (
-			<Img
-				className="max-h-500"
-				imgStyle={{ objectPosition: `top` }}
-				fluid={post.featured_media.localFile.childImageSharp.fluid}
-			/>
-		) : null}
+	return (
+		<Layout>
+			<SEO title={post.title} />
 
-		<div className="mt-2 lg:mt-10 mb-64 mx-2 md:mx-32 xl:mx-64 pb-10">
-			<h4 dangerouslySetInnerHTML={{ __html: post.title }} />
-			<div className="content flex flex-col">
-				<div dangerouslySetInnerHTML={{ __html: post.content }} />
-				{post.acf ? (
-					<div className="w-1/3 self-center">
-						<GravityFormForm
-							id={post.acf.form_id}
-							formData={allGravityData()}
-							lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
-						/>
-					</div>
-				) : null}
+			{post.featured_media ? (
+				<Img
+					className="max-h-500"
+					imgStyle={{ objectPosition: `top` }}
+					fluid={post.featured_media.localFile.childImageSharp.fluid}
+				/>
+			) : null}
+
+			<div className="mt-2 lg:mt-10 mb-64 mx-2 md:mx-32 xl:mx-64 pb-10">
+				<h4 dangerouslySetInnerHTML={{ __html: post.title }} />
+				<div className="content flex flex-col">
+					<div dangerouslySetInnerHTML={{ __html: post.content }} />
+					{post.acf ? (
+						<div className="w-1/3 self-center">
+							<GravityFormForm
+								id={post.acf.form_id}
+								formData={formData}
+								lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
+							/>
+						</div>
+					) : null}
+				</div>
 			</div>
-		</div>
-	</Layout>
-)
+		</Layout>
+	)
+}
 
 export const postQuery = graphql`
 	query($id: String!) {
