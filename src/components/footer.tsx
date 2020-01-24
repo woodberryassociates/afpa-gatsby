@@ -36,7 +36,7 @@ const Footer = () => {
 					<a className="" href="#">
 						DONATE
 					</a>
-					<a className="" href="#">
+					<a className="" href="#/">
 						SEARCH
 					</a>
 				</div>
@@ -62,7 +62,7 @@ const Footer = () => {
 				</div>
 
 				<div className="flex justify-between items-center min-w-120 fill-current">
-					<a>
+					<a href="https://www.facebook.com/patientaccess/">
 						<img className="h-4" alt="Facebook" src={facebook_light} />
 					</a>
 
