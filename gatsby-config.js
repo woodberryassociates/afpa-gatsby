@@ -66,7 +66,8 @@ module.exports = {
 				normalizers: normalizers => [
 					...normalizers,
 					{
-						// Normalizes the link format, so Gatsby doesn't drop one type (internal or external)
+						// Normalizes the link format, so Gatsby doesn't drop
+						// one type (link___NODE or external url string)
 						name: `AcfLinkNormalizer`,
 						normalizer: ({ entities }) => {
 							const media = entities.filter(
