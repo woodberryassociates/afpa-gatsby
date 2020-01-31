@@ -28,7 +28,7 @@ module.exports = {
 			resolve: `gatsby-source-wordpress`,
 			options: {
 				baseUrl: process.env.WP_ENV,
-				protocol: 'http',
+				protocol: `http`,
 				hostingWPCOM: false,
 				useACF: true, // TODO(?)
 				// searchAndReplaceContentUrls: {
@@ -37,31 +37,31 @@ module.exports = {
 				// },
 				includedRoutes: [
 					// Home Page CPTs
-					'**/sliders',
-					'**/working-groups',
-					'**/coalitions',
-					'**/home-resources',
+					`**/sliders`,
+					`**/working-groups`,
+					`**/coalitions`,
+					`**/home-resources`,
 					// About Page CPTs
-					'**/annual-reports',
-					'**/guiding-principles',
-					'**/leadership',
+					`**/annual-reports`,
+					`**/guiding-principles`,
+					`**/leadership`,
 					// Resources Page CPTs
-					'**/videos',
-					'**/infographics',
+					`**/videos`,
+					`**/infographics`,
 					// Events Page (+ Home Page) CPT
-					'**/events',
+					`**/events`,
 					// Surveys Page CPT
-					'**/surveys',
+					`**/surveys`,
 					// Advocacy Page CPTs
-					'**/legislative-advocacy',
-					'**/regulatory-advocacy',
+					`**/legislative-advocacy`,
+					`**/regulatory-advocacy`,
 					// Custom Backpage CPT
-					'**/backpages',
+					`**/backpages`,
 					// WP Core
-					'**/pages',
-					'**/media',
-					'**/tags',
-					'**/categories',
+					`**/pages`,
+					`**/media`,
+					`**/tags`,
+					`**/categories`,
 				],
 				normalizers: normalizers => [
 					...normalizers,
@@ -74,10 +74,11 @@ module.exports = {
 								e => e.__type === `wordpress__wp_media`
 							)
 							return entities.map(e => {
+								console.log(`Normalizing links...`)
 								if (
-									(e.__type === 'wordpress__wp_surveys') |
-									(e.__type === 'wordpress__wp_infographics') |
-									(e.__type === 'wordpress__wp_annual_reports')
+									e.__type === `wordpress__wp_surveys` ||
+									e.__type === `wordpress__wp_infographics` ||
+									e.__type === `wordpress__wp_annual_reports`
 								) {
 									if (e.acf.link___NODE)
 										e.acf.textLink = media.find(
@@ -93,18 +94,18 @@ module.exports = {
 			},
 		},
 		{
-			resolve: 'gatsby-source-gravityforms',
+			resolve: `gatsby-source-gravityforms`,
 			options: {
 				baseUrl: `http://${process.env.WP_ENV}` /** @TODO conditionally determine http/s */,
 				api: {
 					key:
-						process.env.WP_ENV === 'localhost/afpa'
-							? 'ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0'
-							: 'ck_34f32e6a2a3685bf3af8a6df364893af5150bcba',
+						process.env.WP_ENV === `localhost/afpa`
+							? `ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0`
+							: `ck_34f32e6a2a3685bf3af8a6df364893af5150bcba`,
 					secret:
-						process.env.WP_ENV === 'localhost/afpa'
-							? 'cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544'
-							: 'cs_ca032e610110bde9cf232b9c58eb15f59886d889',
+						process.env.WP_ENV === `localhost/afpa`
+							? `cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544`
+							: `cs_ca032e610110bde9cf232b9c58eb15f59886d889`,
 				},
 			},
 		},
@@ -153,13 +154,13 @@ module.exports = {
 					},
 					// RESOURCES
 					wordpress__wp_infographics: {
-						type: () => 'resource', // for filtering in the resourcesSearch component
+						type: () => `resource`, // for filtering in the resourcesSearch component
 						title: node => node.title,
 						link: node => node.acf.textLink,
 						img: (node, getNode) => getNode(node.featured_media___NODE),
 					},
 					wordpress__wp_videos: {
-						type: () => 'resource',
+						type: () => `resource`,
 						link: node => node.acf.url,
 						title: node => node.title,
 					},

@@ -1,1 +1,1 @@
-require('typeface-montserrat')
+require(`typeface-montserrat`)

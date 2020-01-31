@@ -13,7 +13,7 @@
 		"serve": "gatsby serve",
 		"format": "prettier --write src/**/*.{tsx}",
 		"lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-		"lint:fix": "eslint --fix src --ext .js,.jsx,.ts,.tsx"
+		"lint:fix": "eslint --fix . --ext .js,.jsx,.ts,.tsx"
 	},
 	"husky": {
 		"hooks": {

@@ -1,1 +1,9 @@
+# root dir
+.cache
+.vscode
+lambda
+node_modules
+public
+
+# src dir
 declarations.d.ts
