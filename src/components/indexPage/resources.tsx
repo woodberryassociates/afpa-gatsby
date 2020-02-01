@@ -52,7 +52,6 @@ const Resources = () => {
 						/>
 					</div>
 					{/* gatsby Link if local, otherwise anchor */}
-					{console.log(node.title + ` ` + node.acf.resource_url.indexOf(`/`))}
 					{node.acf.resource_url.indexOf(`/`) === 0 ? (
 						<Link to={node.acf.resource_url}>
 							<button className="mt-2 darkButton">

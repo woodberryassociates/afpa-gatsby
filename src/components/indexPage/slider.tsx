@@ -9,27 +9,25 @@ import {
 	Slider as CarouselSlider,
 } from 'pure-react-carousel'
 import React from 'react'
+import BackgroundImage from 'gatsby-background-image'
 
 const Slide = ({ slide }) => (
 	<CarouselSlide index={slide.id}>
-		<Img
-			className="h-in imgTop"
+		<BackgroundImage
 			fluid={slide.featured_media.localFile.childImageSharp.fluid}
-		/>
-		<div className="absolute left-0 pl-10 top-0 max-w-xl">
-			<h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-darkBlue my-3">
-				{slide.title}
-			</h1>
-			<div
-				className="hidden xs:block text-base sm:text-lg lg:text-xl xl:text-2xl font-light leading-snug"
-				dangerouslySetInnerHTML={{ __html: slide.acf.blurb }}
-			/>
+			className="h-full"
+		>
 			{slide.acf.link ? (
-				<a href={slide.acf.link}>
-					<button className="sm:mt-4">{slide.acf.link_text}</button>
+				<a
+					href={slide.acf.link}
+					className="absolute bottom-0 ml-2 mb-2 md:ml-12 md:mb-12"
+				>
+					<button className="p-2 sm:py-3 sm:px-8 text-sm sm:text-base">
+						{slide.acf.link_text}
+					</button>
 				</a>
 			) : null}
-		</div>
+		</BackgroundImage>
 	</CarouselSlide>
 )
 
@@ -64,7 +62,7 @@ const Slider = () => {
 	return (
 		<CarouselProvider
 			naturalSlideWidth={1920}
-			naturalSlideHeight={700}
+			naturalSlideHeight={800}
 			totalSlides={data.allWordpressWpSliders.edges.length}
 			isPlaying={true}
 		>
@@ -73,8 +71,6 @@ const Slider = () => {
 					<Slide key={node.id} slide={node} />
 				))}
 			</CarouselSlider>
-			{/* <ButtonBack>Back</ButtonBack>
-      <ButtonNext>Next</ButtonNext> */}
 		</CarouselProvider>
 	)
 }
