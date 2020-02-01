@@ -70,11 +70,11 @@ module.exports = {
 						// one type (link___NODE or external url string)
 						name: `AcfLinkNormalizer`,
 						normalizer: ({ entities }) => {
+							console.log(`Normalizing links...`)
 							const media = entities.filter(
 								e => e.__type === `wordpress__wp_media`
 							)
-							return entities.map(e => {
-								console.log(`Normalizing links...`)
+							const links = entities.map(e => {
 								if (
 									e.__type === `wordpress__wp_surveys` ||
 									e.__type === `wordpress__wp_infographics` ||
@@ -88,6 +88,8 @@ module.exports = {
 								}
 								return e
 							})
+							console.log(`Done!`)
+							return links
 						},
 					},
 				],

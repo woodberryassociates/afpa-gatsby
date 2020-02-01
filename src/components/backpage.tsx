@@ -27,7 +27,7 @@ const Backpage = ({ data: { post } }) => {
 				<div className="content flex flex-col">
 					<div dangerouslySetInnerHTML={{ __html: post.content }} />
 					{post.acf ? (
-						<div className="w-1/3 self-center">
+						<div className="xs:w-full sm:w-4/5 md:w-3/5 lg:w-2/5 self-center">
 							<GravityFormForm
 								id={post.acf.form_id}
 								formData={formData}

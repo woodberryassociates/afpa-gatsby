@@ -163,7 +163,7 @@ button {
 		@apply text-lightBlue;
 	}
 
-	> p {
+	p {
 		@apply mb-4;
 	}
 
@@ -183,13 +183,24 @@ button {
 	figure {
 		@apply my-6;
 	}
-
-	/* Gravity Forms */
-	input {
-		@apply my-1 p-2 w-full leading-loose rounded-lg text-black border;
+	iframe {
+		max-width: 100%;
 	}
-	.gravityform__button {
-		@apply mt-1;
+
+	form {
+		/* Gravity Forms */
+		input {
+			@apply my-1 p-2 w-full leading-loose rounded-lg text-black border;
+		}
+		.gravityform__button {
+			@apply mt-1;
+		}
+		div .left {
+			@apply w-49/100 float-left;
+		}
+		div .right {
+			@apply w-49/100 float-right;
+		}
 	}
 }
 

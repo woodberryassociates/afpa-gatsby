@@ -82,14 +82,6 @@ const Header = () => {
 							</Link>
 						</h6>
 					</div>
-
-					<div>
-						<h6>
-							<Link className="" to="/surveyhub">
-								SURVEYHUB
-							</Link>
-						</h6>
-					</div>
 				</section>
 
 				{/* SOCIAL LINKS */}

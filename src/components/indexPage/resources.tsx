@@ -52,13 +52,25 @@ const Resources = () => {
 						/>
 					</div>
 					{/* gatsby Link if local, otherwise anchor */}
-					{node.acf.resource_url.substring(1) === `/` ? (
+					{console.log(node.title + ` ` + node.acf.resource_url.indexOf(`/`))}
+					{node.acf.resource_url.indexOf(`/`) === 0 ? (
 						<Link to={node.acf.resource_url}>
-							<button className="mt-2 darkButton">Explore More</button>
+							<button className="mt-2 darkButton">
+								{/* Button has conditionally differen text */}
+								{node.title === `Videos`
+									? `Watch`
+									: node.title === `Podcasts`
+									? `Listen`
+									: node.title === `Surveys`
+									? `Read`
+									: node.title === `Infographics`
+									? `View`
+									: `Explore`}
+							</button>
 						</Link>
 					) : (
 						<a href={node.acf.resource_url}>
-							<button className="mt-2 darkButton">Explore More</button>
+							<button className="mt-2 darkButton">Read</button>
 						</a>
 					)}
 				</div>

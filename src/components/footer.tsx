@@ -22,25 +22,17 @@ const Footer = () => {
 	return (
 		<footer className="footerClip bg-lightBlue text-white text-sm font-light tracking-wider -mt-64">
 			<div className="mx-2 md:mx-32 py-12 pt-24 min-h-250 flex flex-col xs:flex-row justify-between items-center xs:items-end">
+				{/* LINKS */}
 				<div className="flex flex-col justify-end leading-loose">
 					<Link to="coalitions">COALITIONS</Link>
-					<a className="" href="https://gafpa.org/">
-						GAFPA
-					</a>
-					<a className="" href="https://instituteforpatientaccess.org">
-						IFPA
-					</a>
-					<a className="" href="#">
-						CONTACT
-					</a>
-					<a className="" href="#">
-						DONATE
-					</a>
-					<a className="" href="#/">
-						SEARCH
-					</a>
+					<a href="https://gafpa.org/">GAFPA</a>
+					<a href="https://instituteforpatientaccess.org">IFPA</a>
+					<a href="mailto:info@allianceforpatientaccess.org">CONTACT</a>
+					<Link to="donate">DONATE</Link>
+					<a href="#/">SEARCH</a>
 				</div>
 
+				{/* NEWSLETTER SUBSCRIPTION */}
 				<div className="flex flex-col justify-end">
 					<Img className="my-3 -mx-3" fluid={data.img.childImageSharp.fluid} />
 					<p>SUBSCRIBE TO OUR NEWSLETTER</p>
@@ -53,26 +45,51 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<div className="px-2 sm:px-32 bg-darkBlue h-16 text-xs flex justify-between items-center">
+			{/* FOOT */}
+			<div className="px-2 lg:px-32 bg-darkBlue h-40 lg:h-16 text-xs flex justify-between items-center">
+				{/* CREDIT */}
 				<div className="pr-3">
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href="https://www.gatsbyjs.org">Gatsby</a>.{` `}Theme by{` `}
+					© {new Date().getFullYear()}, Built with{` `}
+					<a href="https://www.gatsbyjs.org">Gatsby</a>.
+					<br />
+					Theme by{` `}
 					<a href="https://www.avinerenberg.com">Avi Nerenberg</a>.
 				</div>
 
-				<div className="flex justify-between items-center min-w-120 fill-current">
-					<a href="https://www.facebook.com/patientaccess/">
-						<img className="h-4" alt="Facebook" src={facebook_light} />
-					</a>
+				{/* AfPA INFO */}
+				<div className="flex flex-wrap">
+					<div className="flex items-center flex-wrap">
+						<a
+							href="https://www.google.com/maps/place/1275+Pennsylvania+Ave+NW"
+							className="mr-6 lg:mr-0"
+						>
+							1275 Pennsylvania Ave. NW, Suite 1100A
+							<br />
+							Washington, DC 20004-2417
+						</a>
 
-					<a href="https://twitter.com/patientaccess">
-						<img className="h-4" alt="Twitter" src={twitter_light} />
-					</a>
+						<div className="my-3 md:mx-6 flex flex-col">
+							<a href="mailto:info@allianceforpatientaccess.org">
+								info@allianceforpatientaccess.org
+							</a>
+							<a href="tel:202-499-4114">202-499-4114</a>
+						</div>
+					</div>
 
-					<a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
-						<img className="h-4" alt="YouTube" src={youtube_light} />
-					</a>
+					{/* AfPA SOCIAL LINKS */}
+					<div className="flex justify-between items-center min-w-120 fill-current">
+						<a href="https://www.facebook.com/patientaccess/">
+							<img className="h-4" alt="Facebook" src={facebook_light} />
+						</a>
+
+						<a href="https://twitter.com/patientaccess">
+							<img className="h-4" alt="Twitter" src={twitter_light} />
+						</a>
+
+						<a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
+							<img className="h-4" alt="YouTube" src={youtube_light} />
+						</a>
+					</div>
 				</div>
 			</div>
 		</footer>

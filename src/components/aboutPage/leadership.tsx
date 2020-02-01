@@ -8,7 +8,27 @@ const Leadership = ({
 }) => {
 	const data = useStaticQuery(graphql`
 		query Leadership {
-			wordpressWpLeadership(tags: { elemMatch: { slug: { eq: "chairman" } } }) {
+			chairman: wordpressWpLeadership(
+				tags: { elemMatch: { slug: { eq: "chairman" } } }
+			) {
+				title
+				content
+				acf {
+					location
+				}
+				featured_media {
+					localFile {
+						childImageSharp {
+							fixed(width: 400, height: 600) {
+								...GatsbyImageSharpFixed
+							}
+						}
+					}
+				}
+			}
+			director: wordpressWpLeadership(
+				tags: { elemMatch: { slug: { eq: "executive-director" } } }
+			) {
 				title
 				content
 				acf {
@@ -25,7 +45,11 @@ const Leadership = ({
 				}
 			}
 			allWordpressWpLeadership(
-				filter: { tags: { elemMatch: { slug: { ne: "chairman" } } } }
+				filter: {
+					tags: {
+						elemMatch: { slug: { nin: ["chairman", "executive-director"] } }
+					}
+				}
 			) {
 				edges {
 					node {
@@ -49,39 +73,40 @@ const Leadership = ({
 			}
 		}
 	`)
-	const chairman = data.wordpressWpLeadership
 	const leadership = data.allWordpressWpLeadership.edges
 
 	return (
 		<div className="flex flex-col justify-between items-center">
+			{/* CHAIRMAN */}
 			<div
 				id="chairman"
 				className="my-10 flex justify-center items-center w-full"
 			>
 				<div className="h-px w-2/5 bg-lighterGray" />
-				<h5 className="mx-4 text-afpaGreen text-center">About the Chairman</h5>
+				<h5 className="mx-4 text-afpaGreen text-center">Chairman</h5>
 				<div className="h-px w-2/5 bg-lighterGray" />
 			</div>
 			<div className="sm:mx-32 flex flex-col-reverse xl:flex-row justify-between items-center bg-white">
 				<div className="w-2/3 p-2 xl:p-20 flex flex-col justify-center">
-					<h5 className="leading-snug">{chairman.title}</h5>
+					<h5 className="leading-snug">{data.chairman.title}</h5>
 					<h3 className="text-lightBlue leading-snug">
-						{chairman.acf.location}
+						{data.chairman.acf.location}
 					</h3>
 					<div
 						className="my-3 font-light"
-						dangerouslySetInnerHTML={{ __html: chairman.content }}
+						dangerouslySetInnerHTML={{ __html: data.chairman.content }}
 					/>
 				</div>
 				<Img
 					className="responsiveChairmanImg"
-					fixed={chairman.featured_media.localFile.childImageSharp.fixed}
+					fixed={data.chairman.featured_media.localFile.childImageSharp.fixed}
 				/>
 			</div>
 
+			{/* BOARD OF DIRECTORS */}
 			<div className="mx-10 mt-16 mb-10 flex justify-center items-center w-full">
 				<div className="h-px w-2/5 bg-lighterGray" />
-				<h5 className="text-afpaGreen mx-4 text-center">AfPA Leadership</h5>
+				<h5 className="text-afpaGreen mx-4 text-center">Board of Directors</h5>
 				<div className="h-px w-2/5 bg-lighterGray" />
 			</div>
 			<div className="flex flex-wrap justify-between">
@@ -107,13 +132,39 @@ const Leadership = ({
 				))}
 			</div>
 
+			{/* EXECUTIVE DIRECTOR */}
+			<div
+				id="chairman"
+				className="my-10 flex justify-center items-center w-full"
+			>
+				<div className="h-px w-2/5 bg-lighterGray" />
+				<h5 className="mx-4 text-afpaGreen text-center">Executive Director</h5>
+				<div className="h-px w-2/5 bg-lighterGray" />
+			</div>
+			<div className="sm:mx-32 flex flex-col-reverse xl:flex-row justify-between items-center bg-white">
+				<div className="w-2/3 p-2 xl:p-20 flex flex-col justify-center">
+					<h5 className="leading-snug">{data.director.title}</h5>
+					<h3 className="text-lightBlue leading-snug">
+						{data.director.acf.location}
+					</h3>
+					<div
+						className="my-3 font-light"
+						dangerouslySetInnerHTML={{ __html: data.director.content }}
+					/>
+				</div>
+				<Img
+					className="responsiveChairmanImg"
+					fixed={data.director.featured_media.localFile.childImageSharp.fixed}
+				/>
+			</div>
+
 			<div
 				id="membership"
 				className="mx-10 mt-10 flex justify-center items-center w-full"
 			>
 				<div className="h-px w-1/3 bg-lighterGray" />
 				<h5 className="text-afpaGreen text-center mx-4">
-					Associate Membership in the AfPA
+					Associate Membership in AfPA
 				</h5>
 				<div className="h-px w-1/3 bg-lighterGray" />
 			</div>

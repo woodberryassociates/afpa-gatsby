@@ -31,13 +31,23 @@ const AnnualReports = () => {
 
 	return (
 		<div className="flex flex-col">
+			{/* TWO MOST RECENT REPORTS */}
 			<div className="flex flex-wrap justify-around">
-				{data.reports.edges.map(({ node: report }) => (
+				{data.reports.edges.slice(0, 2).map(({ node: report }) => (
 					<a href={report.acf.textLink} key={report.id}>
 						<Img
 							className="w-56 h-64 md:w-500 md:h-600 m-10 shadow-lg"
 							fixed={report.featured_media.localFile.childImageSharp.fluid}
 						/>
+					</a>
+				))}
+			</div>
+
+			{/* PRIOR REPORTS */}
+			<div className="flex flex-wrap justify-around">
+				{data.reports.edges.slice(2).map(({ node: report }) => (
+					<a href={report.acf.textLink} key={report.id}>
+						{report.title}
 					</a>
 				))}
 			</div>
