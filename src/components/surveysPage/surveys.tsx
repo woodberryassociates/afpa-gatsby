@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import React from 'react'
 
 const SurveyCard = ({
@@ -8,7 +7,6 @@ const SurveyCard = ({
 		node: {
 			title,
 			acf: { textLink, date, blurb },
-			featured_media,
 		},
 	},
 }) => (
@@ -16,16 +14,6 @@ const SurveyCard = ({
 		key={key}
 		className="my-10 flex flex-wrap sm:flex-no-wrap justify-around curEventCard:justify-between bg-white cardShadow curEventCard"
 	>
-		{featured_media ? (
-			<Img
-				className="curEventCardImg self-center"
-				imgStyle={{
-					objectFit: `contain`,
-				}}
-				fixed={featured_media.localFile.childImageSharp.fixed}
-			/>
-		) : null}
-
 		<div className="m-5 curEventCard:w-1/2">
 			{/* Title */}
 			<p
@@ -57,15 +45,6 @@ const Surveys = () => {
 							textLink
 							date
 							blurb
-						}
-						featured_media {
-							localFile {
-								childImageSharp {
-									fixed(width: 300, height: 200) {
-										...GatsbyImageSharpFixed
-									}
-								}
-							}
 						}
 					}
 				}
