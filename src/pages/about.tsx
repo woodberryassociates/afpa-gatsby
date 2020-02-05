@@ -104,7 +104,9 @@ const AboutPage = ({ data }) => {
 				<h4 id="leadership">Leadership</h4>
 				<Leadership
 					associateMembership={page.acf.associate_membership}
-					associateMembershipLink={page.acf.associate_membership_link.link}
+					associateMembershipLink={
+						page.acf.associate_membership_link.source_url
+					}
 				/>
 			</div>
 
@@ -123,7 +125,7 @@ export const pageQuery = graphql`
 				leadership
 				associate_membership
 				associate_membership_link {
-					link
+					source_url
 				}
 				membership_photo {
 					localFile {
