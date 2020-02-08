@@ -35,7 +35,7 @@ const GuidingPrinciples = () => {
 				>
 					<Img
 						className="w-full h-64 responsiveGPImg"
-						fixed={gp.featured_media.localFile.childImageSharp.fluid}
+						fluid={gp.featured_media.localFile.childImageSharp.fluid}
 					/>
 					<div className="py-5 px-2 sm:p-5">
 						<h3>Pillar {i + 1}</h3>

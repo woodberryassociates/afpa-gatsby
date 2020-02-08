@@ -13,7 +13,7 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 		<div>
 			{/* Featured Event Header */}
 			<BackgroundImage
-				className="min-h-500 flex items-center imgTop"
+				className="max-h-500 md:min-h-500 flex items-center imgTop"
 				fluid={[
 					page.featured_media.localFile.childImageSharp.fluid,
 					`linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,

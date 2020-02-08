@@ -5,6 +5,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Surveys from '../components/surveysPage/surveys'
+import surveyLogo from '../images/afpa-surveys-logo.png'
 
 const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 	<Layout>
@@ -12,33 +13,17 @@ const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 		<div>
 			{/* Featured Survey Header */}
 			<BackgroundImage
-				className="min-h-500 flex items-center imgTop"
+				className="max-h-500 md:max-h-500 flex items-center imgTop"
 				fluid={[
 					page.featured_media.localFile.childImageSharp.fluid,
-					`linear-gradient(rgba(36, 43, 96, 0.79), rgba(36, 43, 96, 0.79))`,
+					`linear-gradient(rgba(36, 43, 96, 0.5), rgba(36, 43, 96, 0.5))`,
 				].reverse()}
 			>
-				<div>
-					<div className="mx-2 lg:ml-64 max-w-md flex flex-col justify-between items-start">
-						<h4
-							className="text-white leading-normal"
-							dangerouslySetInnerHTML={{ __html: featured.title }}
-						/>
-						<p
-							className="text-white leading-relaxed my-4 content"
-							dangerouslySetInnerHTML={
-								featured.acf.blurb
-									? { __html: featured.acf.blurb }
-									: { __html: `` }
-							}
-						/>
-
-						{/* Survey Link */}
-						<a className="mr-10 mb-2" href={featured.acf.textLink}>
-							<button>View Survey</button>
-						</a>
-					</div>
-				</div>
+				<img
+					alt="Surveys Logo"
+					src={surveyLogo}
+					className="w-1/2 my-0 m-auto"
+				/>
 			</BackgroundImage>
 
 			<Surveys />
