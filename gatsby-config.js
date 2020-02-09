@@ -28,7 +28,7 @@ module.exports = {
 			resolve: `gatsby-source-wordpress`,
 			options: {
 				baseUrl: process.env.WP_ENV,
-				protocol: `http`,
+				protocol: `https`,
 				hostingWPCOM: false,
 				useACF: true, // TODO(?)
 				// searchAndReplaceContentUrls: {
@@ -98,16 +98,16 @@ module.exports = {
 		{
 			resolve: `gatsby-source-gravityforms`,
 			options: {
-				baseUrl: `http://${process.env.WP_ENV}` /** @TODO conditionally determine http/s */,
+				baseUrl: `https://${process.env.WP_ENV}` /** @TODO conditionally determine http/s */,
 				api: {
 					key:
 						process.env.WP_ENV === `localhost/afpa`
 							? `ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0`
-							: `ck_34f32e6a2a3685bf3af8a6df364893af5150bcba`,
+							: `ck_ba335c8113eff32c2185027fdd0cb32ddf58dc96`,
 					secret:
 						process.env.WP_ENV === `localhost/afpa`
 							? `cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544`
-							: `cs_ca032e610110bde9cf232b9c58eb15f59886d889`,
+							: `cs_7d30d55a01952827476863bb283f9e0b3be14ca2`,
 				},
 			},
 		},
