@@ -1,9 +1,5 @@
 # Netlify Redirects
 # https://www.netlify.com/docs/redirects/
 
-# wp-admin rewrite splat
-/wp-admin/*	https://afpadev.wpengine.com/:splat	200
-# /wp-login redirect_to=:redirect_to https://afpadev.wpengine.com/wp-login.php:redirect_to 200
-
-# wp-admin redirect
-/admin/*	/wp-admin/
+# Redirect default Netlify subdomain to primary domain
+https://afpa.netlify.com/* https://allianceforpatientaccess.org/:splat 301!
