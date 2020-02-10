@@ -9,6 +9,7 @@
 		"start": "WP_ENV=admin.allianceforpatientaccess.org GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
 		"start:lambda": "netlify-lambda serve src/lambda",
 		"build": "gatsby build",
+		"build:local": "WP_ENV=admin.allianceforpatientaccess.org GATSBY_CONCURRENT_DOWNLOAD=5 gatsby build",
 		"build:lambda": "netlify-lambda build src/lambda",
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",

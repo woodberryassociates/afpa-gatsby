@@ -30,7 +30,7 @@ module.exports = {
 				baseUrl: process.env.WP_ENV,
 				protocol: `https`,
 				hostingWPCOM: false,
-				useACF: true, // TODO(?)
+				useACF: true,
 				// searchAndReplaceContentUrls: {
 				//   sourceUrl: "",
 				//   replacementUrl: "",
