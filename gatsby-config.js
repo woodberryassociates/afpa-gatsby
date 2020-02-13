@@ -98,7 +98,7 @@ module.exports = {
 		{
 			resolve: `gatsby-source-gravityforms`,
 			options: {
-				baseUrl: `https://${process.env.WP_ENV}` /** @TODO conditionally determine http/s */,
+				baseUrl: `https://${process.env.WP_ENV}`,
 				api: {
 					key:
 						process.env.WP_ENV === `localhost/afpa`
