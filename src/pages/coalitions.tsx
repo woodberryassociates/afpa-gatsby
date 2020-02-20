@@ -9,29 +9,67 @@ const Coalitions = ({
 	data: { allWordpressWpCoalitions: coalitions, wordpressPage: page },
 }) => (
 	<Layout>
-		<SEO title="Coaltions" />
+		<SEO title="Coalitions & Affiliates" />
+		{console.log(coalitions)}
+		{/* Loop through the array twice, and filter by category in each loop. */}
+		{/* AfPA Coalitions */}
+		<div className="mb-16 px-2 sm:px-16 md:px-32 xl:px-64 content">
+			<h4>Coalitions</h4>
+			<p dangerouslySetInnerHTML={{ __html: page.acf.coalitions_text }} />
+			{coalitions.edges.map(({ node: coalition }) =>
+				coalition.categories && coalition.categories[0].slug === `coalition` ? (
+					<div
+						key={coalition.id}
+						className="mt-2 flex flex-col sm:flex-row justify-center items-center"
+					>
+						{coalition.featured_media ? (
+							<a href={coalition.acf.coalition_link} className="self-center">
+								<Img
+									className="sm:mr-6 my-5 sm:my-0"
+									fixed={
+										coalition.featured_media.localFile.childImageSharp.fixed
+									}
+								/>
+							</a>
+						) : null}
+						<p
+							dangerouslySetInnerHTML={{ __html: coalition.acf.blurb }}
+							className="text-center sm:text-left"
+							style={{ margin: `0` }}
+						/>
+					</div>
+				) : null
+			)}
+		</div>
+
+		{/* AfPA Affiliates */}
 		<div className="mb-64 px-2 sm:px-16 md:px-32 xl:px-64 content">
-			<h4>{page.title}</h4>
-			<p dangerouslySetInnerHTML={{ __html: page.acf.header_text }} />
-			{coalitions.edges.map(({ node: coalition }) => (
-				<div
-					key={coalition.id}
-					className="mt-2 flex flex-col sm:flex-row justify-center"
-				>
-					{coalition.featured_media ? (
-						<a href={coalition.acf.coalition_link} className="self-center">
-							<Img
-								className="sm:mr-6 my-5 sm:my-0"
-								fixed={coalition.featured_media.localFile.childImageSharp.fixed}
-							/>
-						</a>
-					) : null}
-					<p
-						dangerouslySetInnerHTML={{ __html: coalition.acf.blurb }}
-						className="text-center sm:text-left"
-					/>
-				</div>
-			))}
+			<h4>Affiliates</h4>
+			<p dangerouslySetInnerHTML={{ __html: page.acf.affiliates_text }} />
+			{coalitions.edges.map(({ node: coalition }) =>
+				coalition.categories && coalition.categories[0].slug === `affiliate` ? (
+					<div
+						key={coalition.id}
+						className="mt-2 flex flex-col sm:flex-row justify-center items-center"
+					>
+						{coalition.featured_media ? (
+							<a href={coalition.acf.coalition_link} className="self-center">
+								<Img
+									className="sm:mr-6 my-5 sm:my-0"
+									fixed={
+										coalition.featured_media.localFile.childImageSharp.fixed
+									}
+								/>
+							</a>
+						) : null}
+						<p
+							dangerouslySetInnerHTML={{ __html: coalition.acf.blurb }}
+							className="text-center sm:text-left"
+							style={{ margin: `0` }}
+						/>
+					</div>
+				) : null
+			)}
 		</div>
 	</Layout>
 )
@@ -43,6 +81,8 @@ export const pageQuery = graphql`
 			title
 			acf {
 				header_text
+				coalitions_text
+				affiliates_text
 			}
 		}
 		allWordpressWpCoalitions {
@@ -52,6 +92,9 @@ export const pageQuery = graphql`
 					acf {
 						blurb
 						coalition_link
+					}
+					categories {
+						slug
 					}
 					featured_media {
 						localFile {

@@ -1,5 +1,5 @@
 {
-  "languageStylus.useSeparator": false,
-  "editor.formatOnSave": true,
-  "postcss.validate": false // incorrect checker for the packages
+	"languageStylus.useSeparator": false,
+	"editor.formatOnSave": true,
+	"postcss.validate": false // incorrect checker for the packages
 }

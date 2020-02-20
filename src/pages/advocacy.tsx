@@ -67,8 +67,15 @@ const AdvocacyPage = ({ data }) => {
 								<div className="flex items-start">
 									{fedIssueArr.map(el => (
 										<div key={el} className="md:w-5/12 mt-4">
-											<h5>{el.split(`\\\\`)[0]}</h5>
-											<p>{el.split(`\\\\`)[1]}</p>
+											{/* Issue Name */}
+											<h5 className="mb-0">{el.split(`\\\\`)[0]}</h5>
+											{/* Description */}
+											<p
+												className="mb-2 advocacyTag"
+												dangerouslySetInnerHTML={{
+													__html: el.split(`\\\\`)[1],
+												}}
+											/>
 											<div className="h-px w-full bg-backgroundGray" />
 											{fedIssues[el].map((issue: any) => (
 												<div key={issue.id} className="my-3">
@@ -112,8 +119,15 @@ const AdvocacyPage = ({ data }) => {
 								<div className="flex flex-wrap items-start justify-between">
 									{stateIssueArr.map(el => (
 										<div key={el} className="md:w-5/12 mt-4">
-											<h5>{el.split(`\\\\`)[0]}</h5>
-											<p>{el.split(`\\\\`)[1]}</p>
+											{/* Issue Name */}
+											<h5 className="mb-0">{el.split(`\\\\`)[0]}</h5>
+											{/* Description */}
+											<p
+												className="mb-2 advocacyTag	"
+												dangerouslySetInnerHTML={{
+													__html: el.split(`\\\\`)[1],
+												}}
+											/>
 											<div className="h-px w-full bg-backgroundGray" />
 											{stateIssues[el].map((issue: any) => (
 												<div key={issue.id} className="my-5">

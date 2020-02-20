@@ -4,7 +4,8 @@
 $lightBlue: #008fc3;
 $darkBlue: #242b5f;
 $lighterGray: #a4a8b2;
-$lightGray: #9b9b9b; /* 979797 */
+$lightGray: #9b9b9b;
+/* 979797 */
 $darkGray: #4a4a4a;
 $backgroundGray: #f2f2f2;
 $afpaGreen: #008560;
@@ -79,7 +80,11 @@ button {
 	h6 {
 		@apply px-2;
 	}
+}
+
+.advocacyTag {
 	a {
+		@apply text-lightBlue
 	}
 }
 
@@ -101,6 +106,7 @@ button {
 		width: 300px !important;
 		height: 450px !important;
 	}
+
 	.responsiveGPImg {
 		width: 280 !important;
 		height: 240 !important;
@@ -139,14 +145,14 @@ button {
 	clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
 }
 
-.rightTopTilt {
-}
-.rightBottomTilt {
-}
+.rightTopTilt {}
+
+.rightBottomTilt {}
 
 .homePageWGClip {
 	background: linear-gradient(10deg, transparent 40%, $afpaGreen 40%);
 }
+
 /* @media (max-width: 640px) {
   background: 0;
 } */
@@ -174,7 +180,7 @@ button {
 	ul {
 		@apply mt-5 mb-6 ml-6 list-disc font-light;
 
-		> li {
+		>li {
 			@apply my-2;
 		}
 	}
@@ -183,21 +189,26 @@ button {
 	figure {
 		@apply my-6;
 	}
+
 	iframe {
 		max-width: 100%;
 	}
 
 	form {
+
 		/* Gravity Forms */
 		input {
 			@apply my-1 p-2 w-full leading-loose rounded-lg text-black border;
 		}
+
 		.gravityform__button {
 			@apply mt-1;
 		}
+
 		div .left {
 			@apply w-49/100 float-left;
 		}
+
 		div .right {
 			@apply w-49/100 float-right;
 		}
@@ -224,7 +235,7 @@ button {
  * sets the dark blue bold text on the about page
  * TODO: make more dynamic
  */
-.lastChildBoldDarkBlue > p:last-child > strong {
+.lastChildBoldDarkBlue>p:last-child>strong {
 	@apply text-darkBlue !important;
 }
 
@@ -260,7 +271,8 @@ button {
 	background-color: transparent;
 
 	fill: none;
-	stroke: #d7dbdc; /* $lighterGray */
+	stroke: #d7dbdc;
+	/* $lighterGray */
 	stroke-width: 3;
 
 	cursor: pointer;
@@ -276,8 +288,7 @@ button {
 	transform-origin: 50% 50%;
 }
 
-.circle-media-player__background {
-}
+.circle-media-player__background {}
 
 .circle-media-player__play,
 .circle-media-player__pause {
@@ -292,12 +303,15 @@ button {
 .gravityform__label {
 	@apply hidden;
 }
+
 .gravityform__button {
 	@apply border border-white rounded-lg w-full;
 }
+
 .gravityform__field {
 	@apply p-0 !important;
 }
+
 .gform_confirmation_message {
 	max-width: 300px;
 }
@@ -310,10 +324,12 @@ button {
 	float: right;
 	margin: 0.25rem !important;
 }
+
 .alignleft {
 	float: left;
 	margin: 0.25rem !important;
 }
+
 .aligncenter {
 	display: flex;
 	justify-content: center;
