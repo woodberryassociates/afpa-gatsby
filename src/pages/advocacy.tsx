@@ -19,15 +19,14 @@ const AdvocacyPage = ({ data }) => {
 	// TODO?: wonder if this can be reduced to a single call to reduce...
 	legFields.forEach(el => {
 		el = el.node
+		const location = el.tags[0].name + `\\\\` + el.tags[0].description // escape char sequence to split name and description (hacky as hell, I know — the description spec was requested long after I had finished the logic for the tag names!)
 
 		if (el.categories[0].slug === `federal`) {
-			if (fedIssues[el.tags[0].name] === undefined)
-				fedIssues[el.tags[0].name] = []
-			fedIssues[el.tags[0].name].push(el)
+			if (fedIssues[location] === undefined) fedIssues[location] = []
+			fedIssues[location].push(el)
 		} else {
-			if (stateIssues[el.tags[0].name] === undefined)
-				stateIssues[el.tags[0].name] = []
-			stateIssues[el.tags[0].name].push(el)
+			if (stateIssues[location] === undefined) stateIssues[location] = []
+			stateIssues[location].push(el)
 		}
 	})
 	for (const key in fedIssues) fedIssueArr.push(key)
@@ -68,7 +67,8 @@ const AdvocacyPage = ({ data }) => {
 								<div className="flex items-start">
 									{fedIssueArr.map(el => (
 										<div key={el} className="md:w-5/12 mt-4">
-											<h5>{el}</h5>
+											<h5>{el.split(`\\\\`)[0]}</h5>
+											<p>{el.split(`\\\\`)[1]}</p>
 											<div className="h-px w-full bg-backgroundGray" />
 											{fedIssues[el].map((issue: any) => (
 												<div key={issue.id} className="my-3">
@@ -112,7 +112,8 @@ const AdvocacyPage = ({ data }) => {
 								<div className="flex flex-wrap items-start justify-between">
 									{stateIssueArr.map(el => (
 										<div key={el} className="md:w-5/12 mt-4">
-											<h5>{el}</h5>
+											<h5>{el.split(`\\\\`)[0]}</h5>
+											<p>{el.split(`\\\\`)[1]}</p>
 											<div className="h-px w-full bg-backgroundGray" />
 											{stateIssues[el].map((issue: any) => (
 												<div key={issue.id} className="my-5">
@@ -162,8 +163,7 @@ const AdvocacyPage = ({ data }) => {
 							<p key={el.node.id} className="my-2 text-lightBlue text-sm">
 								<a href={el.node.acf.link}>{el.node.title}</a>
 							</p>
-						)
-						)}
+						))}
 					</div>
 				</section>
 			</div>
@@ -181,6 +181,7 @@ export const pageQuery = graphql`
 					tags {
 						name
 						slug
+						description
 					}
 					categories {
 						name

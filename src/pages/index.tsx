@@ -36,7 +36,7 @@ const IndexPage = ({ data }) => (
 		{/* RESOURCE LINKS */}
 		<div className="pt-24 p-16 flex flex-col items-center text-center bg-backgroundGray">
 			<div className="flex flex-col items-center text-center">
-				<h4>Online Resource Center</h4>
+				<h4>Resource Center</h4>
 				<div
 					className="max-w-425 mb-6 leading-relaxed font-light"
 					dangerouslySetInnerHTML={{

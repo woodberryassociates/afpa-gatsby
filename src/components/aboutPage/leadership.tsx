@@ -148,7 +148,7 @@ const Leadership = ({
 						{data.director.acf.location}
 					</h3>
 					<div
-						className="my-3 font-light"
+						className="my-3 font-light leadershipCard"
 						dangerouslySetInnerHTML={{ __html: data.director.content }}
 					/>
 				</div>
