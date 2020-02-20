@@ -11,8 +11,8 @@ const Footer = () => {
 		query {
 			img: file(relativePath: { eq: "logo-light.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 600) {
-						...GatsbyImageSharpFluid
+					fixed(width: 600) {
+						...GatsbyImageSharpFixed
 					}
 				}
 			}
@@ -24,17 +24,27 @@ const Footer = () => {
 			<div className="mx-2 md:mx-32 py-12 pt-24 min-h-250 flex flex-col xs:flex-row justify-between items-center xs:items-end">
 				{/* LINKS */}
 				<div className="flex flex-col justify-end leading-loose">
-					<Link to="coalitions">COALITIONS</Link>
-					<a href="https://gafpa.org/">GAFPA</a>
-					<a href="https://instituteforpatientaccess.org">IFPA</a>
-					<a href="mailto:info@allianceforpatientaccess.org">CONTACT</a>
-					<Link to="donate">DONATE</Link>
-					<a href="#/">SEARCH</a>
+					<Link className="uppercase" to="afpa-state-chapters">
+						State Chapters
+					</Link>
+					<a className="uppercase" href="https://gafpa.org/">
+						Global AfPA
+					</a>
+					<a className="uppercase" href="https://instituteforpatientaccess.org">
+						Institute for Patient Access
+					</a>
+					<a
+						className="uppercase"
+						href="mailto:info@allianceforpatientaccess.org"
+					>
+						Contact
+					</a>
+					{/* <Link className="uppercase" to="donate">DONATE</Link> */}
 				</div>
 
 				{/* NEWSLETTER SUBSCRIPTION */}
 				<div className="flex flex-col justify-end">
-					<Img className="my-3 -mx-3" fluid={data.img.childImageSharp.fluid} />
+					<Img className="my-3 -mx-3" fixed={data.img.childImageSharp.fixed} />
 					<p>SUBSCRIBE TO OUR NEWSLETTER</p>
 					<div className="bg-white h-px w-10 my-5" />
 					<GravityFormForm

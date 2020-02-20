@@ -53,13 +53,13 @@ const Search = ({ show, setShow }) => {
 							<li key={el.id}>
 								<a href={el.link} className="my-5 flex items-stretch">
 									{/* TODO: query img for image-sharp */}
-									{el.img ? (
+									{/* {el.img ? (
 										<img
 											className="w-24 object-cover"
 											alt={el.img.title}
 											src={el.img.source_url}
 										/>
-									) : null}
+									) : null} */}
 									<div className="ml-4 w-2/3 flex items-center">
 										<p
 											className="leading-snug"

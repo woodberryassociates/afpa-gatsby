@@ -77,8 +77,8 @@ const Header = () => {
 
 					<div>
 						<h6>
-							<Link className="whitespace-no-wrap" to="/afpa-state-chapters">
-								STATE CHAPTERS
+							<Link className="whitespace-no-wrap" to="/coalitions">
+								COALITIONS
 							</Link>
 						</h6>
 					</div>

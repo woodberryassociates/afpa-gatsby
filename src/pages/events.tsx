@@ -50,7 +50,9 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 								</>
 							) : null}
 						</div>
-						<button>Register Now</button>
+						<a href={featured.acf.link}>
+							<button>Register Now</button>
+						</a>
 					</div>
 				</div>
 			</BackgroundImage>
