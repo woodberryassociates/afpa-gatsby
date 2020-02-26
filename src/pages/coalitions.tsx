@@ -20,7 +20,7 @@ const Coalitions = ({
 				coalition.categories && coalition.categories[0].slug === `coalition` ? (
 					<div
 						key={coalition.id}
-						className="my-10 flex flex-col sm:flex-row justify-center items-center"
+						className="my-10 flex flex-col sm:flex-row items-center"
 					>
 						{coalition.featured_media ? (
 							<a href={coalition.acf.coalition_link} className="self-center">
@@ -50,7 +50,7 @@ const Coalitions = ({
 				coalition.categories && coalition.categories[0].slug === `affiliate` ? (
 					<div
 						key={coalition.id}
-						className="my-10 flex flex-col sm:flex-row justify-center items-center"
+						className="my-10 flex flex-col sm:flex-row items-center"
 					>
 						{coalition.featured_media ? (
 							<a href={coalition.acf.coalition_link} className="self-center">
