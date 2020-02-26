@@ -13,14 +13,14 @@ const Coalitions = ({
 		{console.log(coalitions)}
 		{/* Loop through the array twice, and filter by category in each loop. */}
 		{/* AfPA Coalitions */}
-		<div className="mb-16 px-2 sm:px-16 md:px-32 xl:px-64 content">
+		<div className="mb-10 px-2 sm:px-16 md:px-32 xl:px-64 content">
 			<h4>Coalitions</h4>
 			<p dangerouslySetInnerHTML={{ __html: page.acf.coalitions_text }} />
 			{coalitions.edges.map(({ node: coalition }) =>
 				coalition.categories && coalition.categories[0].slug === `coalition` ? (
 					<div
 						key={coalition.id}
-						className="mt-2 flex flex-col sm:flex-row justify-center items-center"
+						className="my-10 flex flex-col sm:flex-row justify-center items-center"
 					>
 						{coalition.featured_media ? (
 							<a href={coalition.acf.coalition_link} className="self-center">
@@ -50,7 +50,7 @@ const Coalitions = ({
 				coalition.categories && coalition.categories[0].slug === `affiliate` ? (
 					<div
 						key={coalition.id}
-						className="mt-2 flex flex-col sm:flex-row justify-center items-center"
+						className="my-10 flex flex-col sm:flex-row justify-center items-center"
 					>
 						{coalition.featured_media ? (
 							<a href={coalition.acf.coalition_link} className="self-center">

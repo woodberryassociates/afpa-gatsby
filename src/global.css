@@ -84,7 +84,7 @@ button {
 
 .advocacyTag {
 	a {
-		@apply text-lightBlue
+		@apply text-lightBlue block
 	}
 }
 

@@ -40,7 +40,7 @@ const AboutPage = ({ data }) => {
 						</li>
 						<li>
 							<a href="#guiding-principles">
-								<h3>Guiding Principles</h3>
+								<h3>Principles of Patient-Centered Care</h3>
 							</a>
 							<div className="h-px my-4 w-full bg-backgroundGray" />
 						</li>
@@ -86,12 +86,12 @@ const AboutPage = ({ data }) => {
 				<AnnualReports />
 			</div>
 
-			{/* Guiding Principles */}
+			{/* Principles of Patient-Centered Care */}
 			<div
 				id="guiding-principles"
 				className="-my-48 px-2 py-40 flex flex-col items-center bg-backgroundGray rightTilt"
 			>
-				<h4>Guiding Principles</h4>
+				<h4>Principles of Patient-Centered Care</h4>
 				<p
 					className="sectionSubHead max-w-650"
 					dangerouslySetInnerHTML={{ __html: page.acf.guiding_principles }}

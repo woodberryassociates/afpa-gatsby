@@ -38,7 +38,7 @@ const GuidingPrinciples = () => {
 						fluid={gp.featured_media.localFile.childImageSharp.fluid}
 					/>
 					<div className="py-5 px-2 sm:p-5">
-						<h3>Pillar {i + 1}</h3>
+						<h3>Principle {i + 1}</h3>
 						<h5 className="-mt-3 mb-2 whitespace-no-wrap text-xl">
 							{gp.title}
 						</h5>
