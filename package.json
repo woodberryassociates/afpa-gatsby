@@ -2,7 +2,7 @@
 	"name": "afpa-wordpress",
 	"private": false,
 	"description": "AfPA's WordPress website with Gatsby",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"author": "Avi Nerenberg <avinerenberg@gmail.com>",
 	"license": "MIT",
 	"scripts": {

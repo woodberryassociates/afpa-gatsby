@@ -59,11 +59,7 @@ const Footer = () => {
 			<div className="px-2 lg:px-32 bg-darkBlue h-40 lg:h-16 text-xs flex justify-between items-center">
 				{/* CREDIT */}
 				<div className="pr-3">
-					© {new Date().getFullYear()}, Built with{` `}
-					<a href="https://www.gatsbyjs.org">Gatsby</a>.
-					<br />
-					Theme by{` `}
-					<a href="https://www.avinerenberg.com">Avi Nerenberg</a>.
+					© {new Date().getFullYear()}, Alliance for Patient Access.
 				</div>
 
 				{/* AfPA INFO */}
