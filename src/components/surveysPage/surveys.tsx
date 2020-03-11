@@ -35,7 +35,7 @@ const Surveys = () => {
 	const data = useStaticQuery(graphql`
 		query SurveysQuery {
 			upcoming: allWordpressWpSurveys(
-				sort: { fields: acf___date, order: ASC }
+				sort: { fields: acf___date, order: DESC }
 			) {
 				edges {
 					node {
