@@ -61,6 +61,8 @@ module.exports = {
 					`**/media`,
 					`**/tags`,
 					`**/categories`,
+					// Menus
+					`**/wp-api-menus/**`
 				],
 				normalizers: normalizers => [
 					...normalizers,

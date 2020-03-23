@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-undef
 module.exports = {
 	theme: {
-		// TODO: the font-family isn't being applied
 		fontFamily: {
 			mont: [
 				`Montserrat`,
@@ -14,7 +13,6 @@ module.exports = {
 			],
 		},
 		screens: {
-			// TODO: overrides all defaults (unexpected)
 			xxs: `350px`,
 			xs: `450px`,
 			sm: `640px`,

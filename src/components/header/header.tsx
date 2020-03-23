@@ -82,6 +82,14 @@ const Header = () => {
 							</Link>
 						</h6>
 					</div>
+
+					<div>
+						<h6>
+							<Link className="whitespace-no-wrap" to="/covid-19">
+								COVID-19
+							</Link>
+						</h6>
+					</div>
 				</section>
 
 				{/* SOCIAL LINKS */}
