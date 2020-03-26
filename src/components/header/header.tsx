@@ -7,12 +7,18 @@ import Search from './headerSearch'
 
 const Header = () => {
 	const data = useStaticQuery(graphql`
-		query {
+		query Header {
 			img: file(relativePath: { eq: "logo.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 600) {
 						...GatsbyImageSharpFluid
 					}
+				}
+			}
+			menu: wordpressWpApiMenusMenusItems(slug: { eq: "header-navigation" }) {
+				items {
+					title
+					url
 				}
 			}
 		}
@@ -51,37 +57,23 @@ const Header = () => {
 			>
 				{/* TEXT LINKS */}
 				<section className="px-10 xl:px-16 lg:w-5/6 flex flex-col lg:flex-row justify-around items-center text-base">
-					<div>
-						<h6>
-							<Link className="" to="/about">
-								ABOUT
-							</Link>
-						</h6>
-					</div>
-
-					<div>
-						<h6>
-							<Link className="" to="/events">
-								EVENTS
-							</Link>
-						</h6>
-					</div>
-
-					<div>
-						<h6>
-							<Link className="" to="/advocacy">
-								ADVOCACY
-							</Link>
-						</h6>
-					</div>
-
-					<div>
-						<h6>
-							<Link className="whitespace-no-wrap" to="/coalitions">
-								COALITIONS
-							</Link>
-						</h6>
-					</div>
+					{data.menu.items.map(item => (
+						<div>
+							<h6>
+								{/* Return Link or anchor element conditionally */}
+								{item.url.slice(0, 37) ===
+								`https://allianceforpatientaccess.org/` ? (
+									<Link className="uppercase" to={item.url.slice(37)}>
+										{item.title}
+									</Link>
+								) : (
+									<a className="uppercase" href={item.url}>
+										{item.title}
+									</a>
+								)}
+							</h6>
+						</div>
+					))}
 				</section>
 
 				{/* SOCIAL LINKS */}
