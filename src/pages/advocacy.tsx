@@ -64,7 +64,7 @@ const AdvocacyPage = ({ data }) => {
 									<div className="h-2px w-full bg-textGreen" />
 								</div>
 
-								<div className="flex items-start">
+								<div className="flex flex-wrap items-start justify-between">
 									{fedIssueArr.map(el => (
 										<div key={el} className="md:w-5/12 mt-4">
 											{/* Issue Name */}
