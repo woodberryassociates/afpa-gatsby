@@ -51,6 +51,8 @@ module.exports = {
 					`**/events`,
 					// Surveys Page CPT
 					`**/surveys`,
+					// COVID-19 Page CPT
+					`**/covid-19s`,
 					// Advocacy Page CPTs
 					`**/legislative-advocacy`,
 					`**/regulatory-advocacy`,
@@ -80,10 +82,11 @@ module.exports = {
 							const links = entities.map(e => {
 								if ( // custom post types
 									e.__type === `wordpress__wp_surveys` ||
+									e.__type === `wordpress__wp_covid_19s` ||
 									e.__type === `wordpress__wp_infographics` ||
 									e.__type === `wordpress__wp_annual_reports`
 								) {
-									if (e.acf.link___NODE)
+									if (e.acf.link___NODE) // if the link is being treated as a node, then find and return the actual url
 										e.acf.textLink = media.find(
 											m => m.id === e.acf.link___NODE
 										).source_url

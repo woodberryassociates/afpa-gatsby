@@ -5,7 +5,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Surveys from '../components/surveysPage/surveys'
-import surveyLogo from '../images/afpa-surveys-logo.png'
+import { surveyLogo } from '../images'
 
 const SurveyHubPage = ({ data: { page, featured, current, past } }) => (
 	<Layout>

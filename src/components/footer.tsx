@@ -51,6 +51,7 @@ const Footer = () => {
 						id={1}
 						formData={useGravityData()}
 						lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
+						maxLength={() => null}
 					/>
 				</div>
 			</div>

@@ -17,6 +17,7 @@ const Header = () => {
 			}
 			menu: wordpressWpApiMenusMenusItems(slug: { eq: "header-navigation" }) {
 				items {
+					id: object_id
 					title
 					url
 				}
@@ -58,7 +59,7 @@ const Header = () => {
 				{/* TEXT LINKS */}
 				<section className="px-10 xl:px-16 lg:w-5/6 flex flex-col lg:flex-row justify-around items-center text-base">
 					{data.menu.items.map(item => (
-						<div>
+						<div key={item.id}>
 							<h6>
 								{/* Return Link or anchor element conditionally */}
 								{item.url.slice(0, 37) ===
