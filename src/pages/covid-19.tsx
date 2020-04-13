@@ -12,7 +12,7 @@ const CovidPage = ({
 	},
 }) => (
 	<Layout>
-		<SEO title="COVID-19" />
+		<SEO title={title} />
 		<div>
 			{/* COVID Header */}
 			<Img
