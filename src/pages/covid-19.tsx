@@ -16,7 +16,7 @@ const CovidPage = ({
 		<div>
 			{/* COVID Header */}
 			<Img
-				className="max-h-500 md:min-h-500 flex items-center imgTop"
+				imgStyle={{ objectPosition: `top` }}
 				fluid={featured_media.localFile.childImageSharp.fluid}
 			/>
 
