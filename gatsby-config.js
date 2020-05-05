@@ -4,7 +4,8 @@ module.exports = {
 		description: `Alliance for Patient Access is a national network of physicians dedicated to ensuring patient access to approved therapies and appropriate clinical care.`,
 		author: `@avinerenberg`,
 	},
-	plugins: [{
+	plugins: [
+		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `afpa-wordpress`,
@@ -64,7 +65,7 @@ module.exports = {
 					`**/tags`,
 					`**/categories`,
 					// Menus
-					`**/wp-api-menus/**`
+					`**/wp-api-menus/**`,
 				],
 				normalizers: normalizers => [
 					...normalizers,
@@ -72,26 +73,30 @@ module.exports = {
 						// Normalizes the link format, so Gatsby doesn't drop
 						// one type (link___NODE or external url string)
 						name: `AcfLinkNormalizer`,
-						normalizer: ({
-							entities
-						}) => {
+						normalizer: ({ entities }) => {
 							console.log(`Normalizing links...`)
 							const media = entities.filter(
 								e => e.__type === `wordpress__wp_media`
 							)
 							const links = entities.map(e => {
-								if ( // custom post types
+								if (
+									// custom post types
 									e.__type === `wordpress__wp_surveys` ||
 									e.__type === `wordpress__wp_covid_19s` ||
 									e.__type === `wordpress__wp_infographics` ||
 									e.__type === `wordpress__wp_annual_reports`
 								) {
-									if (e.acf.link___NODE) // if the link is being treated as a node, then find and return the actual url
+									if (e.acf.link___NODE)
+										// if the link is being treated as a node, then find and return the actual url
 										e.acf.textLink = media.find(
 											m => m.id === e.acf.link___NODE
 										).source_url
 									else e.acf.textLink = e.acf.link
-								} else if (e.__type === `wordpress__PAGE` && e.title === `About`) { // about page assoc membership link
+								} else if (
+									e.__type === `wordpress__PAGE` &&
+									e.title === `About`
+								) {
+									// about page assoc membership link
 									if (e.acf.associate_membership_link___NODE)
 										e.acf.assocLink = media.find(
 											m => m.id === e.acf.associate_membership_link___NODE
@@ -112,10 +117,14 @@ module.exports = {
 			options: {
 				baseUrl: `https://${process.env.WP_ENV}`,
 				api: {
-					key: process.env.WP_ENV === `localhost/afpa` ?
-						`ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0` : `ck_ba335c8113eff32c2185027fdd0cb32ddf58dc96`,
-					secret: process.env.WP_ENV === `localhost/afpa` ?
-						`cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544` : `cs_7d30d55a01952827476863bb283f9e0b3be14ca2`,
+					key:
+						process.env.WP_ENV === `localhost/afpa`
+							? `ck_1c36da8a57533b5e2e6bbcec9f5d26265c58bdd0`
+							: `ck_ba335c8113eff32c2185027fdd0cb32ddf58dc96`,
+					secret:
+						process.env.WP_ENV === `localhost/afpa`
+							? `cs_f618c0b0f10cd9aaf5da21d3ba6c45e23af4b544`
+							: `cs_7d30d55a01952827476863bb283f9e0b3be14ca2`,
 				},
 			},
 		},
@@ -141,8 +150,8 @@ module.exports = {
 						link: node => node.acf.link,
 						tags: (node, getNode) =>
 							node.tags___NODE // ignore if empty (e.g. regular event) TODO?: add default tag
-							?
-							node.tags___NODE.map(id => getNode(id).name) : null,
+								? node.tags___NODE.map(id => getNode(id).name)
+								: null,
 						img: (node, getNode) => getNode(node.featured_media___NODE),
 					},
 					wordpress__wp_surveys: {
@@ -150,8 +159,8 @@ module.exports = {
 						link: node => node.acf.textLink,
 						tags: (node, getNode) =>
 							node.tags___NODE // ignore if empty
-							?
-							node.tags___NODE.map(id => getNode(id).name) : null,
+								? node.tags___NODE.map(id => getNode(id).name)
+								: null,
 						img: (node, getNode) => getNode(node.featured_media___NODE),
 					},
 					wordpress__wp_legislative_advocacy: {
