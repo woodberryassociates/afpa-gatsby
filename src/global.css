@@ -84,7 +84,7 @@ button {
 
 .advocacyTag {
 	a {
-		@apply text-lightBlue block
+		@apply text-lightBlue block;
 	}
 }
 
@@ -145,9 +145,11 @@ button {
 	clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
 }
 
-.rightTopTilt {}
+.rightTopTilt {
+}
 
-.rightBottomTilt {}
+.rightBottomTilt {
+}
 
 .homePageWGClip {
 	background: linear-gradient(10deg, transparent 40%, $afpaGreen 40%);
@@ -180,7 +182,7 @@ button {
 	ul {
 		@apply mt-5 mb-6 ml-6 list-disc font-light;
 
-		>li {
+		> li {
 			@apply my-2;
 		}
 	}
@@ -195,7 +197,6 @@ button {
 	}
 
 	form {
-
 		/* Gravity Forms */
 		input {
 			@apply my-1 p-2 w-full leading-loose rounded-lg text-black border;
@@ -205,11 +206,11 @@ button {
 			@apply mt-1;
 		}
 
-		div .left {
+		li.left {
 			@apply w-49/100 float-left;
 		}
 
-		div .right {
+		li.right {
 			@apply w-49/100 float-right;
 		}
 	}
@@ -235,7 +236,7 @@ button {
  * sets the dark blue bold text on the about page
  * TODO: make more dynamic
  */
-.lastChildBoldDarkBlue>p:last-child>strong {
+.lastChildBoldDarkBlue > p:last-child > strong {
 	@apply text-darkBlue !important;
 }
 
@@ -288,7 +289,8 @@ button {
 	transform-origin: 50% 50%;
 }
 
-.circle-media-player__background {}
+.circle-media-player__background {
+}
 
 .circle-media-player__play,
 .circle-media-player__pause {
@@ -298,8 +300,13 @@ button {
 
 /**
  * Styling for the GravityFormForm component elements
- * (currently, just the email subscription.)
+ * (footer subscription & backpages, incl. State Chapters)
  */
+
+.gform_body ul {
+	@apply ml-0 list-none;
+}
+
 .gravityform__label {
 	@apply hidden;
 }
