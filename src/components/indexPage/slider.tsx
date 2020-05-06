@@ -1,15 +1,15 @@
 // tslint:disable-next-line:no-submodule-imports
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
+import React from 'react'
+
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 import {
 	CarouselProvider,
 	Slide as CarouselSlide,
 	Slider as CarouselSlider,
 } from 'pure-react-carousel'
-import React from 'react'
-import BackgroundImage from 'gatsby-background-image'
 
 const Slide = ({ slide }) => (
 	<CarouselSlide index={slide.id}>
