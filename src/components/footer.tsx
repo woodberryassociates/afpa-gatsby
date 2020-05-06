@@ -1,9 +1,19 @@
 import React from 'react'
 
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import {
+	graphql,
+	Link,
+	useStaticQuery
+} from 'gatsby'
+import GravityFormForm from 'gatsby-gravityforms-component'
 import Img from 'gatsby-image'
 
-import { facebook_light, twitter_light, youtube_light } from '../images'
+import { useGravityData } from '../hooks/gravityForms'
+import {
+	facebook_light,
+	twitter_light,
+	youtube_light
+} from '../images'
 
 const Footer = () => {
 	const data = useStaticQuery(graphql`
@@ -46,23 +56,12 @@ const Footer = () => {
 					<Img className="my-3 -mx-3" fixed={data.img.childImageSharp.fixed} />
 					<p>SUBSCRIBE TO OUR NEWSLETTER</p>
 					<div className="bg-white h-px w-10 my-5" />
-					{/* <GravityFormForm
+					<GravityFormForm
 						id={1}
 						formData={useGravityData()}
 						lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
 						maxLength={() => null}
-					/> */}
-					<p className="max-w-sm">
-						Please{` `}
-						<a
-							className="text-blue-900"
-							href="mailto:info@allianceforpatientaccess.org"
-						>
-							email us
-						</a>
-						{` `}
-						to receive updates from the Alliance for Patient Access.
-					</p>
+					/>
 				</div>
 			</div>
 

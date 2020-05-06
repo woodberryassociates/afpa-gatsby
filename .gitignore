@@ -1,6 +1,3 @@
-# Netlify settings (all prod settings are currently stored on Netlify)
-netlify.toml
-
 # built lambda dir
 lambda/*
 

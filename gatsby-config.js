@@ -36,10 +36,6 @@ module.exports = {
 				protocol: `https`,
 				hostingWPCOM: false,
 				useACF: true,
-				// searchAndReplaceContentUrls: {
-				//   sourceUrl: "",
-				//   replacementUrl: "",
-				// },
 				includedRoutes: [
 					// Home Page CPTs
 					`**/sliders`,

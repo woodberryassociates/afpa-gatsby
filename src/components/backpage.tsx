@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
+import GravityFormForm from 'gatsby-gravityforms-component'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
@@ -27,24 +28,13 @@ const Backpage = ({ data: { post } }) => {
 				<div className="content flex flex-col">
 					<div dangerouslySetInnerHTML={{ __html: post.content }} />
 					{post.acf ? (
-						// <div className="xs:w-full sm:w-4/5 md:w-3/5 xl:w-2/5 self-center">
-						// 	<GravityFormForm
-						// 		id={post.acf.form_id}
-						// 		formData={formData}
-						// 		lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
-						// 	/>
-						// </div>
-						<p className="max-w-sm">
-							Please{` `}
-							<a
-								className="text-blue-900"
-								href="mailto:info@allianceforpatientaccess.org"
-							>
-								email us
-							</a>
-							{` `}
-							to receive updates from the Alliance for Patient Access.
-						</p>
+						<div className="xs:w-full sm:w-4/5 md:w-3/5 xl:w-2/5 self-center">
+							<GravityFormForm
+								id={post.acf.form_id}
+								formData={formData}
+								lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
+							/>
+						</div>
 					) : null}
 				</div>
 			</div>
