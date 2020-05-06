@@ -27,13 +27,25 @@ const Backpage = ({ data: { post } }) => {
 				<div className="content flex flex-col">
 					<div dangerouslySetInnerHTML={{ __html: post.content }} />
 					{post.acf ? (
-						<div className="xs:w-full sm:w-4/5 md:w-3/5 xl:w-2/5 self-center">
-							<GravityFormForm
-								id={post.acf.form_id}
-								formData={formData}
-								lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
-							/>
-						</div>
+						// <div className="xs:w-full sm:w-4/5 md:w-3/5 xl:w-2/5 self-center">
+						// 	<GravityFormForm
+						// 		id={post.acf.form_id}
+						// 		formData={formData}
+						// 		lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
+						// 	/>
+						// </div>
+						<p className="max-w-sm">
+							We're experiencing problems with our form at the moment, please
+							{` `}
+							<a
+								className="text-blue-900"
+								href="mailto:info@allianceforpatientaccess.org"
+							>
+								email us
+							</a>
+							{` `}
+							to be added. Apologies for the inconvenience!
+						</p>
 					) : null}
 				</div>
 			</div>

@@ -54,13 +54,14 @@ const Footer = () => {
 						maxLength={() => null}
 					/> */}
 					<p className="max-w-sm">
-						We're experiencing problems with our form at the moment, please{' '}
+						We're experiencing problems with our form at the moment, please{` `}
 						<a
 							className="text-blue-900"
 							href="mailto:info@allianceforpatientaccess.org"
 						>
 							email us
-						</a>{' '}
+						</a>
+						{` `}
 						to be added. Apologies for the inconvenience!
 					</p>
 				</div>
