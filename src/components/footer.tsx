@@ -1,9 +1,8 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import GravityFormForm from 'gatsby-gravityforms-component'
-import Img from 'gatsby-image'
 import React from 'react'
 
-import { useGravityData } from '../hooks/gravityForms'
+import { graphql, Link, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
 import { facebook_light, twitter_light, youtube_light } from '../images'
 
 const Footer = () => {
@@ -54,7 +53,7 @@ const Footer = () => {
 						maxLength={() => null}
 					/> */}
 					<p className="max-w-sm">
-						We're experiencing problems with our form at the moment, please{` `}
+						Please{` `}
 						<a
 							className="text-blue-900"
 							href="mailto:info@allianceforpatientaccess.org"
@@ -62,7 +61,7 @@ const Footer = () => {
 							email us
 						</a>
 						{` `}
-						to be added. Apologies for the inconvenience!
+						to receive updates from the Alliance for Patient Access.
 					</p>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
+import React from 'react'
+
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
-import GravityFormForm from 'gatsby-gravityforms-component'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -35,8 +35,7 @@ const Backpage = ({ data: { post } }) => {
 						// 	/>
 						// </div>
 						<p className="max-w-sm">
-							We're experiencing problems with our form at the moment, please
-							{` `}
+							Please{` `}
 							<a
 								className="text-blue-900"
 								href="mailto:info@allianceforpatientaccess.org"
@@ -44,7 +43,7 @@ const Backpage = ({ data: { post } }) => {
 								email us
 							</a>
 							{` `}
-							to be added. Apologies for the inconvenience!
+							to receive updates from the Alliance for Patient Access.
 						</p>
 					) : null}
 				</div>
