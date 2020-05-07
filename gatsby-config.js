@@ -80,10 +80,11 @@ module.exports = {
 					console.log(`Normalizing links...`)
 
 					const media = entities.filter(e => e.__type === `wordpress__wp_media`)
-					const localFiles = entities.filter(
-						e => e.id === `a5fb2551-dd46-5af2-b2a9-30bd1f844678` // localFile___NODE
-					)
-					console.log(localFiles)
+					// const files = entities.filter(e => e.__type === `file`)
+					// const files = media.filter(
+					// 	e => e.localFile___NODE === `a5fb2551-dd46-5af2-b2a9-30bd1f844678` // localFile___NODE
+					// )
+					// console.log(`files: `, files)
 
 					const links = entities.map(e => {
 						if (
@@ -101,10 +102,14 @@ module.exports = {
 								).source_url
 							} else e.acf.textLink = e.acf.link
 
+							// const localFileID = (e.acf.textLink = media.find(
+							// 	m => m.id === e.acf.link___NODE
+							// ).localFile___NODE)
 							// e.acf.staticUrl = media.find(
-							// 	m => m.id === e.acf.textLink
+							// 	m => m.id === localFileID
 							// ).publicURL
-							// console.log(e.acf.staticUrl)
+							// console.log(localFileID)
+							// console.log(media.find(m => m.id === localFileID))
 						} else if (
 							// about page assoc membership link
 							e.__type === `wordpress__PAGE` &&
