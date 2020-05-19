@@ -1,6 +1,8 @@
+import React, { useState } from 'react'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React, { useState } from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import { goDown, goUp, pagination } from './pagination'
 
@@ -44,7 +46,8 @@ const Infographics = () => {
 				{(infographics[selectedPage] as any).map(infographic => {
 					infographic = infographic.node
 					return (
-						<a
+						<OutboundLink
+							target="_blank"
 							key={infographic.id}
 							href={infographic.acf.textLink}
 							className="w-full sm:w-1/2 lg:w-1/3 p-2"
@@ -59,7 +62,7 @@ const Infographics = () => {
 								className="text-darkGray"
 								dangerouslySetInnerHTML={{ __html: infographic.title }}
 							/>
-						</a>
+						</OutboundLink>
 					)
 				})}
 			</div>

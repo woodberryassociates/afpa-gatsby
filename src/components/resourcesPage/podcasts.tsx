@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 import Parser from 'rss-parser'
 
 import CircleMediaPlayer from './circlePlayer'
@@ -45,12 +47,13 @@ const Podcasts = () => {
 						) : null
 				  )
 				: null}
-			<a
+			<OutboundLink
+				target="_blank"
 				className="self-center sm:self-end mr-2"
 				href="https://podcasts.apple.com/us/podcast/afpas-patient-access-podcast/id1432624094"
 			>
 				<h5 className="text-xl">See More & Subscribe Here</h5>
-			</a>
+			</OutboundLink>
 		</div>
 	)
 }

@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import AnnualReports from '../components/aboutPage/annualReports'
 import GuidingPrinciples from '../components/aboutPage/guidingPrinciples'
@@ -27,39 +29,39 @@ const AboutPage = ({ data }) => {
 					<div className="h-1 mt-3 mb-4 w-full bg-darkBlue" />
 					<ul>
 						<li>
-							<a href="#about">
+							<OutboundLink target="_blank" href="#about">
 								<h3>About AFPA</h3>
-							</a>
+							</OutboundLink>
 							<div className="h-px my-4 w-full bg-backgroundGray" />
 						</li>
 						<li>
-							<a href="#annual-reports">
+							<OutboundLink target="_blank" href="#annual-reports">
 								<h3>Annual Reports</h3>
-							</a>
+							</OutboundLink>
 							<div className="h-px my-4 w-full bg-backgroundGray" />
 						</li>
 						<li>
-							<a href="#guiding-principles">
+							<OutboundLink target="_blank" href="#guiding-principles">
 								<h3>Principles of Patient-Centered Care</h3>
-							</a>
+							</OutboundLink>
 							<div className="h-px my-4 w-full bg-backgroundGray" />
 						</li>
 						<li>
-							<a href="#chairman">
+							<OutboundLink target="_blank" href="#chairman">
 								<h3>Chairman</h3>
-							</a>
+							</OutboundLink>
 							<div className="h-px my-4 w-full bg-backgroundGray" />
 						</li>
 						<li>
-							<a href="#leadership">
+							<OutboundLink target="_blank" href="#leadership">
 								<h3>Leadership</h3>
-							</a>
+							</OutboundLink>
 							<div className="h-px my-4 w-full bg-backgroundGray" />
 						</li>
 						<li>
-							<a href="#membership">
+							<OutboundLink target="_blank" href="#membership">
 								<h3>Transparency</h3>
-							</a>
+							</OutboundLink>
 						</li>
 					</ul>
 				</div>

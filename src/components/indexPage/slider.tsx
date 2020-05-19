@@ -5,6 +5,7 @@ import React from 'react'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 import {
 	CarouselProvider,
 	Slide as CarouselSlide,
@@ -18,14 +19,15 @@ const Slide = ({ slide }) => (
 			className="h-full"
 		>
 			{slide.acf.link ? (
-				<a
+				<OutboundLink
+					target="_blank"
 					href={slide.acf.link}
 					className="absolute bottom-0 ml-2 mb-2 md:ml-12 md:mb-12"
 				>
 					<button className="p-2 sm:py-3 sm:px-8 text-sm sm:text-base">
 						{slide.acf.link_text}
 					</button>
-				</a>
+				</OutboundLink>
 			) : null}
 		</BackgroundImage>
 	</CarouselSlide>

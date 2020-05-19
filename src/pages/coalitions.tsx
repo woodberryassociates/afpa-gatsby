@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -23,14 +25,18 @@ const Coalitions = ({
 						className="my-10 flex flex-col sm:flex-row items-center"
 					>
 						{coalition.featured_media ? (
-							<a href={coalition.acf.coalition_link} className="self-center">
+							<OutboundLink
+								target="_blank"
+								href={coalition.acf.coalition_link}
+								className="self-center"
+							>
 								<Img
 									className="sm:mr-6 my-5 sm:my-0"
 									fixed={
 										coalition.featured_media.localFile.childImageSharp.fixed
 									}
 								/>
-							</a>
+							</OutboundLink>
 						) : null}
 						<p
 							dangerouslySetInnerHTML={{ __html: coalition.acf.blurb }}
@@ -53,14 +59,18 @@ const Coalitions = ({
 						className="my-10 flex flex-col sm:flex-row items-center"
 					>
 						{coalition.featured_media ? (
-							<a href={coalition.acf.coalition_link} className="self-center">
+							<OutboundLink
+								target="_blank"
+								href={coalition.acf.coalition_link}
+								className="self-center"
+							>
 								<Img
 									className="sm:mr-6 my-5 sm:my-0"
 									fixed={
 										coalition.featured_media.localFile.childImageSharp.fixed
 									}
 								/>
-							</a>
+							</OutboundLink>
 						) : null}
 						<p
 							dangerouslySetInnerHTML={{ __html: coalition.acf.blurb }}

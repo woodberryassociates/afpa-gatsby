@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 const FeaturedEvent = () => {
 	const data = useStaticQuery(graphql`
@@ -47,9 +49,9 @@ const FeaturedEvent = () => {
 							__html: data.event.acf.blurb,
 						}}
 					/>
-					<a href={data.event.acf.link}>
+					<OutboundLink target="_blank" href={data.event.acf.link}>
 						<button>Register Now</button>
-					</a>
+					</OutboundLink>
 				</div>
 			</div>
 		</BackgroundImage>

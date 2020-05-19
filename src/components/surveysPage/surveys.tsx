@@ -1,5 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+
+import { graphql, useStaticQuery } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 const SurveyCard = ({
 	key,
@@ -25,9 +27,13 @@ const SurveyCard = ({
 		</div>
 
 		{/* Survey Link */}
-		<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={textLink}>
+		<OutboundLink
+			target="_blank"
+			className="mr-10 mb-2 curEventCard:mb-0 self-center"
+			href={textLink}
+		>
 			<button>View Survey</button>
-		</a>
+		</OutboundLink>
 	</div>
 )
 

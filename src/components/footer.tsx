@@ -1,19 +1,12 @@
 import React from 'react'
 
-import {
-	graphql,
-	Link,
-	useStaticQuery
-} from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import GravityFormForm from 'gatsby-gravityforms-component'
 import Img from 'gatsby-image'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import { useGravityData } from '../hooks/gravityForms'
-import {
-	facebook_light,
-	twitter_light,
-	youtube_light
-} from '../images'
+import { facebook_light, twitter_light, youtube_light } from '../images'
 
 const Footer = () => {
 	const data = useStaticQuery(graphql`
@@ -36,18 +29,27 @@ const Footer = () => {
 					<Link className="uppercase" to="afpa-state-chapters">
 						State Chapters
 					</Link>
-					<a className="uppercase" href="https://gafpa.org/">
+					<OutboundLink
+						target="_blank"
+						className="uppercase"
+						href="https://gafpa.org/"
+					>
 						Global AfPA
-					</a>
-					<a className="uppercase" href="https://instituteforpatientaccess.org">
+					</OutboundLink>
+					<OutboundLink
+						target="_blank"
+						className="uppercase"
+						href="https://instituteforpatientaccess.org"
+					>
 						Institute for Patient Access
-					</a>
-					<a
+					</OutboundLink>
+					<OutboundLink
+						target="_blank"
 						className="uppercase"
 						href="mailto:info@allianceforpatientaccess.org"
 					>
 						Contact
-					</a>
+					</OutboundLink>
 					{/* <Link className="uppercase" to="donate">DONATE</Link> */}
 				</div>
 
@@ -75,36 +77,51 @@ const Footer = () => {
 				{/* AfPA INFO */}
 				<div className="flex flex-wrap">
 					<div className="flex items-center flex-wrap">
-						<a
+						<OutboundLink
+							target="_blank"
 							href="https://www.google.com/maps/place/1275+Pennsylvania+Ave+NW"
 							className="mr-6 lg:mr-0"
 						>
 							1275 Pennsylvania Ave. NW, Suite 1100A
 							<br />
 							Washington, DC 20004-2417
-						</a>
+						</OutboundLink>
 
 						<div className="my-3 md:mx-6 flex flex-col">
-							<a href="mailto:info@allianceforpatientaccess.org">
+							<OutboundLink
+								target="_blank"
+								href="mailto:info@allianceforpatientaccess.org"
+							>
 								info@allianceforpatientaccess.org
-							</a>
-							<a href="tel:202-499-4114">202-499-4114</a>
+							</OutboundLink>
+							<OutboundLink target="_blank" href="tel:202-499-4114">
+								202-499-4114
+							</OutboundLink>
 						</div>
 					</div>
 
 					{/* AfPA SOCIAL LINKS */}
 					<div className="flex justify-between items-center min-w-120 fill-current">
-						<a href="https://www.facebook.com/patientaccess/">
+						<OutboundLink
+							target="_blank"
+							href="https://www.facebook.com/patientaccess/"
+						>
 							<img className="h-4" alt="Facebook" src={facebook_light} />
-						</a>
+						</OutboundLink>
 
-						<a href="https://twitter.com/patientaccess">
+						<OutboundLink
+							target="_blank"
+							href="https://twitter.com/patientaccess"
+						>
 							<img className="h-4" alt="Twitter" src={twitter_light} />
-						</a>
+						</OutboundLink>
 
-						<a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
+						<OutboundLink
+							target="_blank"
+							href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw"
+						>
 							<img className="h-4" alt="YouTube" src={youtube_light} />
-						</a>
+						</OutboundLink>
 					</div>
 				</div>
 			</div>

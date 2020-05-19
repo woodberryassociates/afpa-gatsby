@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 const UpcomingEventCard = ({
 	key,
@@ -55,9 +57,13 @@ const UpcomingEventCard = ({
 		</div>
 
 		{/* Registration button */}
-		<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={link}>
+		<OutboundLink
+			target="_blank"
+			className="mr-10 mb-2 curEventCard:mb-0 self-center"
+			href={link}
+		>
 			<button>{link_text}</button>
-		</a>
+		</OutboundLink>
 	</div>
 )
 

@@ -1,6 +1,8 @@
+import React, { useState } from 'react'
+
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React, { useState } from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import { facebook, hamburger, search, twitter, youtube } from '../../images' // TODO: use fontawesome here
 import Search from './headerSearch'
@@ -68,9 +70,13 @@ const Header = () => {
 										{item.title}
 									</Link>
 								) : (
-									<a className="uppercase" href={item.url}>
+									<OutboundLink
+										target="_blank"
+										className="uppercase"
+										href={item.url}
+									>
 										{item.title}
-									</a>
+									</OutboundLink>
 								)}
 							</h6>
 						</div>
@@ -80,21 +86,30 @@ const Header = () => {
 				{/* SOCIAL LINKS */}
 				<section className="xxs:w-1/2 lg:w-1/6 pb-2 lg:p-0 flex justify-around items-center">
 					<div>
-						<a href="https://facebook.com/patientaccess">
+						<OutboundLink
+							target="_blank"
+							href="https://facebook.com/patientaccess"
+						>
 							<img alt="Facebook" src={facebook} />
-						</a>
+						</OutboundLink>
 					</div>
 
 					<div>
-						<a href="https://twitter.com/patientaccess">
+						<OutboundLink
+							target="_blank"
+							href="https://twitter.com/patientaccess"
+						>
 							<img alt="Twitter" src={twitter} />
-						</a>
+						</OutboundLink>
 					</div>
 
 					<div>
-						<a href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw">
+						<OutboundLink
+							target="_blank"
+							href="https://www.youtube.com/channel/UCnFUTFIj5E8jMNbmkZbiRMw"
+						>
 							<img alt="YouTube" src={youtube} />
-						</a>
+						</OutboundLink>
 					</div>
 
 					<div className="relative cursor-pointer">

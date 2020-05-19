@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -84,20 +86,22 @@ const AdvocacyPage = ({ data }) => {
 													/>
 													<div className="flex justify-between">
 														{issue.acf.link_1 ? (
-															<a
+															<OutboundLink
+																target="_blank"
 																href={issue.acf.link_1}
 																className="text-sm text-lightBlue"
 															>
 																{issue.acf.link_1_text}
-															</a>
+															</OutboundLink>
 														) : null}
 														{issue.acf.link_2 ? (
-															<a
+															<OutboundLink
+																target="_blank"
 																href={issue.acf.link_2}
 																className="text-sm text-lightBlue"
 															>
 																{issue.acf.link_2_text}
-															</a>
+															</OutboundLink>
 														) : null}
 													</div>
 												</div>
@@ -136,20 +140,22 @@ const AdvocacyPage = ({ data }) => {
 													/>
 													<div className="flex justify-between">
 														{issue.acf.link_1 ? (
-															<a
+															<OutboundLink
+																target="_blank"
 																href={issue.acf.link_1}
 																className="text-sm text-lightBlue"
 															>
 																{issue.acf.link_1_text}
-															</a>
+															</OutboundLink>
 														) : null}
 														{issue.acf.link_2 ? (
-															<a
+															<OutboundLink
+																target="_blank"
 																href={issue.acf.link_2}
 																className="text-sm text-lightBlue"
 															>
 																{issue.acf.link_2_text}
-															</a>
+															</OutboundLink>
 														) : null}
 													</div>
 												</div>
@@ -175,7 +181,9 @@ const AdvocacyPage = ({ data }) => {
 						/>
 						{regFields.map(el => (
 							<p key={el.node.id} className="my-2 text-lightBlue text-sm">
-								<a href={el.node.acf.link}>{el.node.title}</a>
+								<OutboundLink target="_blank" href={el.node.acf.link}>
+									{el.node.title}
+								</OutboundLink>
 							</p>
 						))}
 					</div>

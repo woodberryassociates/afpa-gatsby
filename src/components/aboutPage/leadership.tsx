@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 const Leadership = ({
 	associateMembership: membership,
@@ -172,9 +174,13 @@ const Leadership = ({
 				className="lg:w-2/3 my-10 text-white font-light text-sm leading-relaxed text-center"
 				dangerouslySetInnerHTML={{ __html: membership }}
 			/>
-			<a className="mb-16 text-lightBlue" href={membershipLink}>
+			<OutboundLink
+				target="_blank"
+				className="mb-16 text-lightBlue"
+				href={membershipLink}
+			>
 				Financial support of AfPA and IfPA is acknowledged here.
-			</a>
+			</OutboundLink>
 		</div>
 	)
 }

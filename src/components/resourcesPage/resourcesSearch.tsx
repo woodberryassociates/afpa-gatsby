@@ -1,6 +1,8 @@
+import React, { useState } from 'react'
+
 import { Index } from 'elasticlunr'
 import { graphql, useStaticQuery } from 'gatsby'
-import React, { useState } from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 // https://www.gatsbyjs.org/packages/@tsimons/gatsby-plugin-elasticlunr-search/
 const Search = () => {
@@ -53,7 +55,11 @@ const Search = () => {
 				{results
 					? results.map(el => (
 							<li key={el.id} className="">
-								<a href={el.link} className="my-2 flex items-stretch">
+								<OutboundLink
+									target="_blank"
+									href={el.link}
+									className="my-2 flex items-stretch"
+								>
 									{/* TODO: query img for image-sharp */}
 									{el.img ? (
 										<img
@@ -65,7 +71,7 @@ const Search = () => {
 									<div className="ml-4 w-2/3 flex items-center">
 										<p dangerouslySetInnerHTML={{ __html: el.title }} />
 									</div>
-								</a>
+								</OutboundLink>
 							</li>
 					  ))
 					: null}

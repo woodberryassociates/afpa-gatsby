@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 const ResourceCard: JSX.IntrinsicAttributes & React.FC<any> = ({
 	resource: {
@@ -33,9 +35,13 @@ const ResourceCard: JSX.IntrinsicAttributes & React.FC<any> = ({
 		</div>
 
 		{/* Survey Link */}
-		<a className="mr-10 mb-2 curEventCard:mb-0 self-center" href={textLink}>
+		<OutboundLink
+			target="_blank"
+			className="mr-10 mb-2 curEventCard:mb-0 self-center"
+			href={textLink}
+		>
 			<button>{link_text}</button>
-		</a>
+		</OutboundLink>
 	</div>
 )
 

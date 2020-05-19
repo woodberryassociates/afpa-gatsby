@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 const PastEventCard = ({
 	event: {
@@ -27,9 +29,9 @@ const PastEventCard = ({
 			{/* Title */}
 			<p dangerouslySetInnerHTML={{ __html: title }} className="my-2 text-xl" />
 			{/* Link */}
-			<a href={link} className="text-xs">
+			<OutboundLink target="_blank" href={link} className="text-xs">
 				{link_text}
-			</a>
+			</OutboundLink>
 		</div>
 	</BackgroundImage>
 )

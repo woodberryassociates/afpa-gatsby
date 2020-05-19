@@ -1,5 +1,7 @@
-import { graphql } from 'gatsby'
 import React, { useState } from 'react'
+
+import { graphql } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 import ReactPlayer from 'react-player'
 
 import Layout from '../components/layout'
@@ -114,9 +116,12 @@ const ResourcePage = ({
 						__html: page.acf.ifpa,
 					}}
 				/>
-				<a href="https://instituteforpatientaccess.org">
+				<OutboundLink
+					target="_blank"
+					href="https://instituteforpatientaccess.org"
+				>
 					<button>{page.acf.ifpa_link}</button>
-				</a>
+				</OutboundLink>
 			</div>
 		</Layout>
 	)

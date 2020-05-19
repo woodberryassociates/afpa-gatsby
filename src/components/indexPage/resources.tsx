@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 const Resources = () => {
 	const data = useStaticQuery(graphql`
@@ -68,9 +70,9 @@ const Resources = () => {
 							</button>
 						</Link>
 					) : (
-						<a href={node.acf.resource_url}>
+						<OutboundLink target="_blank" href={node.acf.resource_url}>
 							<button className="mt-2 darkButton">Read</button>
-						</a>
+						</OutboundLink>
 					)}
 				</div>
 			))}

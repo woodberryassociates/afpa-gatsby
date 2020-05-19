@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
-import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
 import PastEventsGallery from '../components/eventsPage/pastEvents'
 import UpcomingEvents from '../components/eventsPage/upcomingEvents'
@@ -50,9 +52,9 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 								</>
 							) : null}
 						</div>
-						<a href={featured.acf.link}>
+						<OutboundLink target="_blank" href={featured.acf.link}>
 							<button>Register Now</button>
-						</a>
+						</OutboundLink>
 					</div>
 				</div>
 			</BackgroundImage>
