@@ -79,6 +79,8 @@
 		"gatsby-cli": "^2.12.10",
 		"gatsby-gravityforms-component": "^2.0.1",
 		"gatsby-image": "^2.2.38",
+		"gatsby-plugin-facebook-pixel": "^1.0.3",
+		"gatsby-plugin-google-gtag": "^2.1.1",
 		"gatsby-plugin-manifest": "^2.2.37",
 		"gatsby-plugin-offline": "^2.2.10",
 		"gatsby-plugin-postcss": "^2.1.19",

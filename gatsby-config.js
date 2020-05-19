@@ -23,6 +23,26 @@ module.exports = {
 			},
 		},
 		{
+			resolve: `gatsby-plugin-google-gtag`,
+			options: {
+				trackingIds: [`UA-92815152-1`],
+				gtagConfig: {
+					anonymize_ip: true,
+					cookie_expires: 0,
+				},
+				pluginConfig: {
+					head: true,
+					respectDNT: true,
+				},
+			},
+		},
+		{
+			resolve: `gatsby-plugin-facebook-pixel`,
+			options: {
+				pixelId: `1891080854539839`,
+			},
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
