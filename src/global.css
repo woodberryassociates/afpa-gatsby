@@ -342,4 +342,15 @@ button {
 	justify-content: center;
 }
 
+.wp-block-columns {
+	display: flex;
+
+	.wp-block-column {
+	}
+
+	.is-vertically-aligned-center {
+		align-self: center;
+	}
+}
+
 @tailwind utilities;
