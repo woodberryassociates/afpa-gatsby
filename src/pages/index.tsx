@@ -1,8 +1,9 @@
-import { graphql } from 'gatsby'
 import React from 'react'
 
-import FeaturedEvent from '../components/indexPage/featuredEvent'
+import { graphql } from 'gatsby'
+
 import FeaturedTweet from '../components/indexPage/featuredTweet'
+import MedicareChampions from '../components/indexPage/medicareChampions'
 import Resources from '../components/indexPage/resources'
 import Slider from '../components/indexPage/slider'
 import WorkingGroups from '../components/indexPage/workingGroups'
@@ -14,7 +15,7 @@ const IndexPage = ({ data }) => (
 		<SEO title="Home" />
 		<Slider />
 		<div className="flex flex-wrap">
-			<FeaturedEvent />
+			<MedicareChampions />
 			<FeaturedTweet />
 		</div>
 
