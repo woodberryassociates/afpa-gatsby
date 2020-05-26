@@ -1,5 +1,6 @@
 {
 	"languageStylus.useSeparator": false,
 	"editor.formatOnSave": true,
-	"postcss.validate": false // incorrect checker for the packages
+	"css.validate": false // don't recall how the css is configured w/ tailwind, but it doesn't follow typical syntax
+	// "postcss.validate": false
 }
