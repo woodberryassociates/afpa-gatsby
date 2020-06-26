@@ -4,6 +4,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
+import { logo_light } from '../../images'
+
 const PastEventCard = ({
 	event: {
 		node: {
@@ -16,7 +18,9 @@ const PastEventCard = ({
 	<BackgroundImage
 		className="m-6 flex items-end responsiveFixedImg cardBackgroundImage"
 		fluid={[
-			featured_media.localFile.childImageSharp.fluid,
+			featured_media
+				? featured_media.localFile.childImageSharp.fluid
+				: `url(${logo_light})`,
 			`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))`,
 		].reverse()}
 	>
