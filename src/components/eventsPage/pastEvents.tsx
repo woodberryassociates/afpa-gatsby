@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
-import { logo_light } from '../../images'
+import { logo_light_tall } from '../../images'
 
 const PastEventCard = ({
 	event: {
@@ -20,7 +20,7 @@ const PastEventCard = ({
 		fluid={[
 			featured_media
 				? featured_media.localFile.childImageSharp.fluid
-				: `url(${logo_light})`,
+				: `url(${logo_light_tall})`,
 			`linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))`,
 		].reverse()}
 	>
