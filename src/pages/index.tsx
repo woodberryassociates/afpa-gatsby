@@ -3,19 +3,19 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import FeaturedTweet from '../components/indexPage/featuredTweet'
-import MedicareChampions from '../components/indexPage/medicareChampions'
 import Resources from '../components/indexPage/resources'
 import Slider from '../components/indexPage/slider'
 import WorkingGroups from '../components/indexPage/workingGroups'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import FeaturedEvent from '../components/indexPage/featuredEvent'
 
 const IndexPage = ({ data }) => (
 	<Layout>
 		<SEO title="Home" />
 		<Slider />
 		<div className="flex flex-wrap">
-			<MedicareChampions />
+			<FeaturedEvent />
 			<FeaturedTweet />
 		</div>
 
