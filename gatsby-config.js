@@ -88,49 +88,65 @@ module.exports = {
 					// Menus
 					`**/wp-api-menus/**`,
 				],
-				normalizers: normalizers => [
-					...normalizers,
-					{
-						// Normalizes the link format, so Gatsby doesn't drop
-						// one type (link___NODE or external url string)
-						name: `AcfLinkNormalizer`,
-						normalizer: ({ entities }) => {
-							console.log(`Normalizing links...`)
-							const media = entities.filter(
-								e => e.__type === `wordpress__wp_media`
-							)
-							const links = entities.map(e => {
-								if (
-									// custom post types
-									e.__type === `wordpress__wp_surveys` ||
-									e.__type === `wordpress__wp_covid_19s` ||
-									e.__type === `wordpress__wp_infographics` ||
-									e.__type === `wordpress__wp_annual_reports`
-								) {
-									if (e.acf.link___NODE)
-										// if the link is being treated as a node, then find and return the actual url
-										e.acf.textLink = media.find(
-											m => m.id === e.acf.link___NODE
-										).source_url
-									else e.acf.textLink = e.acf.link
-								} else if (
-									e.__type === `wordpress__PAGE` &&
-									e.title === `About`
-								) {
-									// about page assoc membership link
-									if (e.acf.associate_membership_link___NODE)
-										e.acf.assocLink = media.find(
-											m => m.id === e.acf.associate_membership_link___NODE
-										).source_url
-									else e.acf.assocLink = e.acf.associate_membership_link
-								}
-								return e
-							})
-							console.log(`Done!`)
-							return links
-						},
-					},
-				],
+				/**
+				 * Normalizes the link format, so Gatsby doesn't drop
+				 * one type (link___NODE or external url string).
+				 *
+				 * @NOTE this is a problem due to Gatsby's GraphQL
+				 * 	inference, and one of the issues that is solved
+				 * 	with the WPGraphQL plugin.
+				 */
+				normalizer: ({ entities }) => {
+					console.log(`Normalizing links...`)
+
+					const media = entities.filter(e => e.__type === `wordpress__wp_media`)
+					// const files = entities.filter(e => e.__type === `file`)
+					// const files = media.filter(
+					// 	e => e.localFile___NODE === `a5fb2551-dd46-5af2-b2a9-30bd1f844678` // localFile___NODE
+					// )
+					// console.log(`files: `, files)
+
+					const links = entities.map(e => {
+						if (
+							// custom post types w/ linked resources
+							e.__type === `wordpress__wp_surveys` ||
+							e.__type === `wordpress__wp_covid_19s` ||
+							e.__type === `wordpress__wp_infographics` ||
+							e.__type === `wordpress__wp_annual_reports`
+						) {
+							// if the link is being treated as a node, find and return
+							// the source url. Otherwise just return the source url.
+							if (e.acf.link___NODE) {
+								e.acf.textLink = media.find(
+									m => m.id === e.acf.link___NODE
+								).source_url
+							} else e.acf.textLink = e.acf.link
+
+							// const localFileID = (e.acf.textLink = media.find(
+							// 	m => m.id === e.acf.link___NODE
+							// ).localFile___NODE)
+							// e.acf.staticUrl = media.find(
+							// 	m => m.id === localFileID
+							// ).publicURL
+							// console.log(localFileID)
+							// console.log(media.find(m => m.id === localFileID))
+						} else if (
+							// about page assoc membership link
+							e.__type === `wordpress__PAGE` &&
+							e.title === `About`
+						) {
+							if (e.acf.associate_membership_link___NODE)
+								e.acf.assocLink = media.find(
+									m => m.id === e.acf.associate_membership_link___NODE
+								).source_url
+							else e.acf.assocLink = e.acf.associate_membership_link
+						}
+						return e
+					})
+
+					console.log(`Done!`)
+					return links
+				},
 			},
 		},
 		{
@@ -151,8 +167,9 @@ module.exports = {
 		},
 		{
 			/**
-			 * getNode is OK (vs getNodeAndSavePathDependency) b/c the data is external and
-			 * updated only on build, not dynamically
+			 * @NOTE getNode is OK (vs getNodeAndSavePathDependency) b/c the data is external
+			 * and updated only on build, not dynamically
+			 *
 			 * https://www.gatsbyjs.org/packages/@tsimons/gatsby-plugin-elasticlunr-search/
 			 * https://www.gatsbyjs.org/docs/node-api-helpers/#getNode
 			 */
