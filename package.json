@@ -74,7 +74,7 @@
 		"@types/react-helmet": "^5.0.15",
 		"autoprefixer": "^9.7.4",
 		"elasticlunr": "^0.9.5",
-		"gatsby": "^2.18.22",
+		"gatsby": "^2.23.20",
 		"gatsby-background-image": "^0.8.19",
 		"gatsby-cli": "^2.12.10",
 		"gatsby-gravityforms-component": "^2.0.1",
