@@ -81,7 +81,7 @@ const Leadership = ({
 		<div className="flex flex-col justify-between items-center">
 			{/* CHAIRMAN */}
 			<div
-				id="chairman"
+				id="founder"
 				className="my-10 flex justify-center items-center w-full"
 			>
 				<div className="h-px w-2/5 bg-lighterGray" />

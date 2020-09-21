@@ -47,7 +47,7 @@ const AboutPage = ({ data }) => {
 							<div className="h-px my-4 w-full bg-backgroundGray" />
 						</li>
 						<li>
-							<OutboundLink target="_blank" href="#chairman">
+							<OutboundLink target="_blank" href="#founder">
 								<h3>Founder</h3>
 							</OutboundLink>
 							<div className="h-px my-4 w-full bg-backgroundGray" />
