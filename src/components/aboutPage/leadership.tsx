@@ -85,7 +85,7 @@ const Leadership = ({
 				className="my-10 flex justify-center items-center w-full"
 			>
 				<div className="h-px w-2/5 bg-lighterGray" />
-				<h5 className="mx-4 text-afpaGreen text-center">Chairman</h5>
+				<h5 className="mx-4 text-afpaGreen text-center">Founder</h5>
 				<div className="h-px w-2/5 bg-lighterGray" />
 			</div>
 			<div className="sm:mx-32 flex flex-col-reverse xl:flex-row justify-between items-center bg-white">
