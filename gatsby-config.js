@@ -106,6 +106,7 @@ module.exports = {
 									// custom post types
 									e.__type === `wordpress__wp_surveys` ||
 									e.__type === `wordpress__wp_covid_19s` ||
+									e.__type === `wordpress__wp_copays` ||
 									e.__type === `wordpress__wp_infographics` ||
 									e.__type === `wordpress__wp_annual_reports`
 								) {
