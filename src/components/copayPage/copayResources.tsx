@@ -3,10 +3,10 @@ import React from 'react'
 
 import ResourceCard from '../resourceCard'
 
-const CovidResources = () => {
+const CopayResources = () => {
 	const data = useStaticQuery(graphql`
-		query CovidQuery {
-			upcoming: allWordpressWpCovid19S {
+		query CopayQuery {
+			upcoming: allWordpressWpCopay {
 				edges {
 					node {
 						id
@@ -41,4 +41,4 @@ const CovidResources = () => {
 	)
 }
 
-export default CovidResources
+export default CopayResources
