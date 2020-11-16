@@ -75,6 +75,8 @@ module.exports = {
 					`**/surveys`,
 					// COVID-19 Page CPT
 					`**/covid-19s`,
+					// COVID-19 Page CPT
+					`**/copays`,
 					// Advocacy Page CPTs
 					`**/legislative-advocacy`,
 					`**/regulatory-advocacy`,
