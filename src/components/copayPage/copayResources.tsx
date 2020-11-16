@@ -6,7 +6,7 @@ import ResourceCard from '../resourceCard'
 const CopayResources = () => {
 	const data = useStaticQuery(graphql`
 		query CopayQuery {
-			upcoming: allWordpressWpCopay {
+			upcoming: allWordpressWpCopays {
 				edges {
 					node {
 						id
