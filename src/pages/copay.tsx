@@ -2,7 +2,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 
-import CovidResources from '../components/covidPage/covidResources'
+import CopayResources from '../components/copayPage/copayResources'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -14,11 +14,13 @@ const CopayPage = ({
 	<Layout>
 		<SEO title={title} />
 		<div>
-			{/* COVID Header */}
-			<Img
-				imgStyle={{ objectPosition: `top` }}
-				fluid={featured_media.localFile.childImageSharp.fluid}
-			/>
+			{/* Co-pay Header */}
+			{featured_media ? (
+				<Img
+					imgStyle={{ objectPosition: `top` }}
+					fluid={featured_media.localFile.childImageSharp.fluid}
+				/>
+			) : null}
 
 			<div className="mt-2 lg:mt-10 mb-10 mx-2 md:mx-32 xl:mx-64 pb-10">
 				<h4 dangerouslySetInnerHTML={{ __html: title }} />
@@ -27,7 +29,7 @@ const CopayPage = ({
 				</div>
 			</div>
 
-			<CovidResources />
+			<CopayResources />
 		</div>
 	</Layout>
 )

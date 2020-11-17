@@ -1,12 +1,10 @@
 {
-	"include": [
-		"./src/**/*"
-	],
+	"include": ["./src/**/*"],
 	"compilerOptions": {
 		"target": "es5",
 		"module": "commonjs",
 		"jsx": "react",
-		"rootDir": "./src",
+		"rootDir": "src",
 		"strict": true,
 		"noImplicitAny": false,
 		"esModuleInterop": true
