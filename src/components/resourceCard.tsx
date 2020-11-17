@@ -18,7 +18,7 @@ const ResourceCard: JSX.IntrinsicAttributes & React.FC<any> = ({
 				imgStyle={{
 					objectFit: `contain`,
 				}}
-				fixed={featured_media?.localFile.childImageSharp.fixed} // gatsby-source-wordpress has trouble getting some featured media (must clone post to fix)
+				fixed={featured_media.localFile.childImageSharp.fixed}
 			/>
 		) : null}
 

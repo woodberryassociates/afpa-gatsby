@@ -34,7 +34,7 @@ const CopayPage = ({
 
 export const pageQuery = graphql`
 	query CopayPageQuery {
-		page: wordpressPage(wordpress_id: { eq: 1112 }) {
+		page: wordpressPage(wordpress_id: { eq: 1116 }) {
 			id
 			title
 			content
