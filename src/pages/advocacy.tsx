@@ -213,7 +213,6 @@ export const pageQuery = graphql`
 						link_1
 						link_1_text
 						link_2
-						link_2_text
 					}
 				}
 			}
