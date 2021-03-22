@@ -6,7 +6,7 @@ const slash = require(`slash`)
 exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions
 	const result = await graphql(`
-		query MyQuery {
+		query BackpagesQuery {
 			allWordpressWpBackpages {
 				edges {
 					node {
