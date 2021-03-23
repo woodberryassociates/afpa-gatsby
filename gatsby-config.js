@@ -9,6 +9,12 @@ module.exports = {
 		description: `Alliance for Patient Access is a national network of physicians dedicated to ensuring patient access to approved therapies and appropriate clinical care.`,
 		author: `@avinerenberg`,
 	},
+	flags: {
+		PRESERVE_FILE_DOWNLOAD_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
+		PRESERVE_WEBPACK_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
+		FAST_DEV: true,
+		PARALLEL_SOURCING: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28336
+	},
 	plugins: [
 		{
 			resolve: `gatsby-plugin-manifest`,
@@ -56,6 +62,7 @@ module.exports = {
 				protocol: `https`,
 				hostingWPCOM: false,
 				useACF: true,
+				minimizeDeprecationNotice: true, // ? this version will soon be deprecated in favor of v4:
 				includedRoutes: [
 					// Home Page CPTs
 					`**/sliders`,
@@ -98,9 +105,11 @@ module.exports = {
 						name: `AcfLinkNormalizer`,
 						normalizer: ({ entities }) => {
 							console.log(`Normalizing links...`)
+
 							const media = entities.filter(
 								e => e.__type === `wordpress__wp_media`
 							)
+
 							const links = entities.map(e => {
 								if (
 									// custom post types
@@ -108,27 +117,36 @@ module.exports = {
 									e.__type === `wordpress__wp_covid_19s` ||
 									e.__type === `wordpress__wp_copays` ||
 									e.__type === `wordpress__wp_infographics` ||
-									e.__type === `wordpress__wp_annual_reports`
+									e.__type === `wordpress__wp_annual_reports` ||
+									e.__type === `wordpress__wp_events`
 								) {
+									// if the link is being treated as a node, then find and return the actual url
 									if (e.acf.link___NODE)
-										// if the link is being treated as a node, then find and return the actual url
 										e.acf.textLink = media.find(
 											m => m.id === e.acf.link___NODE
 										).source_url
 									else e.acf.textLink = e.acf.link
-								} else if (
+								}
+
+								// about page assoc membership link
+								else if (
 									e.__type === `wordpress__PAGE` &&
 									e.title === `About`
 								) {
-									// about page assoc membership link
 									if (e.acf.associate_membership_link___NODE)
 										e.acf.assocLink = media.find(
 											m => m.id === e.acf.associate_membership_link___NODE
 										).source_url
 									else e.acf.assocLink = e.acf.associate_membership_link
 								}
+
+								// event links (for some reason, these behave differently than the  ACF link field in the other post types)
+								else if (e.__type === `wordpress__wp_events`)
+									e.acf.textLink = e.acf.link
+
 								return e
 							})
+
 							console.log(`Done!`)
 							return links
 						},

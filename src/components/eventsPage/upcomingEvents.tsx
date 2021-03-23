@@ -9,7 +9,7 @@ const UpcomingEventCard = ({
 	event: {
 		node: {
 			title,
-			acf: { link, link_text, start_date, end_date, blurb },
+			acf: { textLink, link_text, start_date, end_date, blurb },
 			featured_media,
 		},
 	},
@@ -60,7 +60,7 @@ const UpcomingEventCard = ({
 		<OutboundLink
 			target="_blank"
 			className="mr-10 mb-2 curEventCard:mb-0 self-center"
-			href={link}
+			href={textLink}
 		>
 			<button>{link_text}</button>
 		</OutboundLink>
@@ -79,7 +79,7 @@ const UpcomingEvents = () => {
 						id
 						title
 						acf {
-							link
+							textLink
 							link_text
 							start_date
 							end_date

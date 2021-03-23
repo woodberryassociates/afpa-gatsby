@@ -52,7 +52,7 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 								</>
 							) : null}
 						</div>
-						<OutboundLink target="_blank" href={featured.acf.link}>
+						<OutboundLink target="_blank" href={featured.acf.textlink}>
 							<button>Register Now</button>
 						</OutboundLink>
 					</div>
@@ -95,7 +95,7 @@ export const pageQuery = graphql`
 		) {
 			title
 			acf {
-				link
+				textLink
 				start_date
 				end_date
 				blurb

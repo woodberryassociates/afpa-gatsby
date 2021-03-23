@@ -10,7 +10,7 @@ const PastEventCard = ({
 	event: {
 		node: {
 			title,
-			acf: { link, link_text, start_date: date },
+			acf: { textLink, link_text, start_date: date },
 			featured_media,
 		},
 	},
@@ -33,7 +33,7 @@ const PastEventCard = ({
 			{/* Title */}
 			<p dangerouslySetInnerHTML={{ __html: title }} className="my-2 text-xl" />
 			{/* Link */}
-			<OutboundLink target="_blank" href={link} className="text-xs">
+			<OutboundLink target="_blank" href={textLink} className="text-xs">
 				{link_text}
 			</OutboundLink>
 		</div>
@@ -52,7 +52,7 @@ const PastEventsGallery = () => {
 						id
 						title
 						acf {
-							link
+							textLink
 							link_text
 							start_date
 							end_date

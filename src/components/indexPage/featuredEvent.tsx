@@ -13,7 +13,7 @@ const FeaturedEvent = () => {
 				title
 				acf {
 					blurb
-					link
+					textLink
 				}
 				featured_media {
 					localFile {
@@ -49,7 +49,7 @@ const FeaturedEvent = () => {
 							__html: data.event.acf.blurb,
 						}}
 					/>
-					<OutboundLink target="_blank" href={data.event.acf.link}>
+					<OutboundLink target="_blank" href={data.event.acf.textLink}>
 						<button>Register Now</button>
 					</OutboundLink>
 				</div>
