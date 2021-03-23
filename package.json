@@ -17,12 +17,19 @@
 		"serve:lambda": "netlify-lambda serve src/lambda -p 9001",
 		"clean": "gatsby clean",
 		"lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-		"lint:fix": "eslint --fix src --ext .js,.jsx,.ts,.tsx"
+		"lint:fix": "eslint --fix src --ext .js,.jsx,.ts,.tsx",
+		"postinstall": "husky install"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint-staged"
+			"pre-commit": "lint-staged",
+			"commit-msg": "npx --no-install commitlint --edit $1"
 		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
 	},
 	"lint-staged": {
 		"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -111,6 +118,8 @@
 		"typeface-montserrat": "0.0.75"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^12.0.1",
+		"@commitlint/config-conventional": "^12.0.1",
 		"@types/node": "^12.12.24",
 		"@types/react": "^16.9.17",
 		"@types/react-dom": "^16.9.4",
