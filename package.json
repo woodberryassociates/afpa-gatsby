@@ -17,8 +17,7 @@
 		"serve:lambda": "netlify-lambda serve src/lambda -p 9001",
 		"clean": "gatsby clean",
 		"lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-		"lint:fix": "eslint --fix src --ext .js,.jsx,.ts,.tsx",
-		"postinstall": "husky install"
+		"lint:fix": "eslint --fix src --ext .js,.jsx,.ts,.tsx"
 	},
 	"husky": {
 		"hooks": {

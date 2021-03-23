@@ -9,12 +9,12 @@ module.exports = {
 		description: `Alliance for Patient Access is a national network of physicians dedicated to ensuring patient access to approved therapies and appropriate clinical care.`,
 		author: `@avinerenberg`,
 	},
-	flags: {
-		PRESERVE_FILE_DOWNLOAD_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
-		PRESERVE_WEBPACK_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
-		FAST_DEV: true,
-		PARALLEL_SOURCING: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28336
-	},
+	// flags: {
+	// 	PRESERVE_FILE_DOWNLOAD_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
+	// 	PRESERVE_WEBPACK_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
+	// 	FAST_DEV: true,
+	// 	PARALLEL_SOURCING: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28336
+	// },
 	plugins: [
 		{
 			resolve: `gatsby-plugin-manifest`,
