@@ -7,7 +7,7 @@ import { OutboundLink } from 'gatsby-plugin-google-gtag'
 import { facebook, hamburger, search, twitter, youtube } from '../../images' // TODO: use fontawesome here
 import Search from './headerSearch'
 
-const Header = () => {
+export const Header = () => {
 	const data = useStaticQuery(graphql`
 		query Header {
 			img: file(relativePath: { eq: "logo.png" }) {
@@ -66,7 +66,7 @@ const Header = () => {
 								{/* Return Link or anchor element conditionally */}
 								{item.url.slice(0, 37) ===
 								`https://allianceforpatientaccess.org/` ? (
-									<Link className="uppercase" to={item.url.slice(37)}>
+									<Link className="uppercase" to={`/${item.url.slice(37)}`}>
 										{item.title}
 									</Link>
 								) : (

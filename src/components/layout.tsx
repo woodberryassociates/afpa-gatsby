@@ -3,7 +3,7 @@ import '../global.css'
 import React from 'react'
 
 import Footer from './footer'
-import Header from './header/header'
+import Header from './header'
 
 const Layout: React.FC = ({ children }) => {
 	// smooth scrolling for anchor links
