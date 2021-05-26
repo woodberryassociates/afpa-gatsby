@@ -52,7 +52,7 @@ const EventsPage = ({ data: { page, featured, current, past } }) => (
 								</>
 							) : null}
 						</div>
-						<OutboundLink target="_blank" href={featured.acf.textlink}>
+						<OutboundLink target="_blank" href={featured.acf.textLink}>
 							<button>Register Now</button>
 						</OutboundLink>
 					</div>
