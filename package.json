@@ -5,6 +5,31 @@
 	"version": "1.0.0",
 	"author": "Avi Nerenberg <avinerenberg@gmail.com>",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/avinoamsn/afpa-gatsby"
+	},
+	"bugs": {
+		"url": "https://github.com/avinoamsn/afpa-gatsby/issues"
+	},
+	"keywords": [
+		"gatsby",
+		"AfPA",
+		"Alliance",
+		"Patient",
+		"Access"
+	],
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version"
+		]
+	},
 	"scripts": {
 		"start": "run-p start:gatsby start:lambda",
 		"start:gatsby": "gatsby develop",
@@ -19,20 +44,28 @@
 		"lint": "eslint src --ext .js,.jsx,.ts,.tsx",
 		"lint:fix": "eslint --fix src --ext .js,.jsx,.ts,.tsx"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"commit-msg": "npx --no-install commitlint --edit $1"
-		}
-	},
-	"commitlint": {
-		"extends": [
-			"@commitlint/config-conventional"
-		]
-	},
-	"lint-staged": {
-		"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-			"prettier --write"
+	"babel": {
+		"plugins": [
+			[
+				"@babel/plugin-proposal-decorators",
+				{
+					"legacy": true
+				},
+				"add-react-displayname"
+			]
+		],
+		"presets": [
+			[
+				"babel-preset-gatsby",
+				{
+					"targets": {
+						"browsers": [
+							">0.25%",
+							"not dead"
+						]
+					}
+				}
+			]
 		]
 	},
 	"eslintConfig": {
@@ -50,35 +83,27 @@
 		"semi": false,
 		"singleQuote": true
 	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version"
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "npx --no-install commitlint --edit $1"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
 		]
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/avinoamsn/afpa-gatsby"
+	"lint-staged": {
+		"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+			"prettier --write"
+		]
 	},
-	"bugs": {
-		"url": "https://github.com/avinoamsn/afpa-gatsby/issues"
-	},
-	"keywords": [
-		"gatsby",
-		"AfPA",
-		"Alliance",
-		"Patient",
-		"Access"
-	],
 	"dependencies": {
 		"@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
 		"@types/react-helmet": "^5.0.15",
 		"autoprefixer": "^9.7.4",
+		"babel-plugin-add-react-displayname": "^0.0.5",
 		"elasticlunr": "^0.9.5",
 		"gatsby": "^2.18.22",
 		"gatsby-background-image": "^0.8.19",
@@ -100,6 +125,7 @@
 		"he": "^1.2.0",
 		"lint-staged": "^10.1.3",
 		"logrocket": "^1.2.3",
+		"logrocket-react": "^4.0.1",
 		"netlify-lambda": "^1.6.3",
 		"npm-run-all": "^4.1.5",
 		"postcss-easy-import": "^3.0.0",
@@ -118,6 +144,7 @@
 		"typeface-montserrat": "0.0.75"
 	},
 	"devDependencies": {
+		"@babel/plugin-proposal-decorators": "^7.14.2",
 		"@commitlint/cli": "^12.0.1",
 		"@commitlint/config-conventional": "^12.0.1",
 		"@types/node": "^12.12.24",
@@ -126,6 +153,7 @@
 		"@typescript-eslint/eslint-plugin": "^2.17.0",
 		"@typescript-eslint/parser": "^2.17.0",
 		"babel-eslint": "^10.0.3",
+		"babel-preset-gatsby": "^1.6.0",
 		"eslint": "^6.8.0",
 		"eslint-config-prettier": "^6.9.0",
 		"eslint-plugin-prettier": "^3.1.2",
