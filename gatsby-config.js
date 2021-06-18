@@ -42,12 +42,12 @@ module.exports = {
 				},
 			},
 		},
-		{
-			resolve: `gatsby-plugin-facebook-pixel`,
-			options: {
-				pixelId: `1891080854539839`,
-			},
-		},
+		// {
+		// 	resolve: `gatsby-plugin-facebook-pixel`,
+		// 	options: {
+		// 		pixelId: `1891080854539839`,
+		// 	},
+		// },
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -243,6 +243,6 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-typescript`,
-		// `gatsby-plugin-offline`,
+		`gatsby-plugin-offline`,
 	],
 }
