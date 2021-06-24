@@ -42,12 +42,12 @@ module.exports = {
 				},
 			},
 		},
-		// {
-		// 	resolve: `gatsby-plugin-facebook-pixel`,
-		// 	options: {
-		// 		pixelId: `1891080854539839`,
-		// 	},
-		// },
+		{
+			resolve: `gatsby-plugin-facebook-pixel`,
+			options: {
+				pixelId: `1891080854539839`,
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
