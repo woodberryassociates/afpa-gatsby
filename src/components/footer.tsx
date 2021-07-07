@@ -82,9 +82,9 @@ const Footer = () => {
 							href="https://www.google.com/maps/place/1275+Pennsylvania+Ave+NW"
 							className="mr-6 lg:mr-0"
 						>
-							1275 Pennsylvania Ave. NW, Suite 1100A
+							2020 K Street NW, Suite 505
 							<br />
-							Washington, DC 20004-2417
+							Washington, DC 20006
 						</OutboundLink>
 
 						<div className="my-3 md:mx-6 flex flex-col">
