@@ -94,8 +94,8 @@ const Footer = () => {
 							>
 								info@allianceforpatientaccess.org
 							</OutboundLink>
-							<OutboundLink target="_blank" href="tel:202-499-4114">
-								202-499-4114
+							<OutboundLink href="tel:202-951-7097">
+								(202) 951-7097
 							</OutboundLink>
 						</div>
 					</div>
