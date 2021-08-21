@@ -1,8 +1,7 @@
 # [AfPA Website](https://allianceforpatientaccess.org/)
 
- A GatsbyJS-powered WordPress site for [Alliance for Patient Access](https://allianceforpatientaccess.org/) that leverages WP's _REST API_ and _GraphQL_.
+ A GatsbyJS-powered WordPress site for [Alliance for Patient Access](https://allianceforpatientaccess.org/) that leverages WP's _REST API_ and _GraphQL_. Used in conjunction with the [afpa-gatsby-wp](https://github.com/woodberryassociates/afpa-gatsby-wp) custom WordPress theme.
 
-#### TODO: Development instructions
 
 Notes:
 

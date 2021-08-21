@@ -82,7 +82,10 @@ module.exports = {
 					`**/surveys`,
 					// COVID-19 Page CPT
 					`**/covid-19s`,
-					// COVID-19 Page CPT
+					// ICER Page CPTs
+					`**/icer-resources`,
+					`**/icer-speakers`,
+					// Copay Page CPT
 					`**/copays`,
 					// Advocacy Page CPTs
 					`**/legislative-advocacy`,

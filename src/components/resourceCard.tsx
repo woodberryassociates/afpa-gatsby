@@ -38,7 +38,7 @@ const ResourceCard: JSX.IntrinsicAttributes & React.FC<any> = ({
 			className="mr-10 mb-2 curEventCard:mb-0 self-center"
 			href={textLink}
 		>
-			<button>{link_text}</button>
+			<button className="whitespace-no-wrap">{link_text}</button>
 		</OutboundLink>
 	</div>
 )
