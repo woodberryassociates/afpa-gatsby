@@ -27,7 +27,7 @@ const IcerPage = ({
 				<div className="xxl:col-start-2 xxl:col-span-2">
 					<h5>Q & A</h5>
 					<iframe
-						src="https://app.sli.do/event/0ssbsxyo"
+						src="https://app.sli.do/event/rfjrqrv4"
 						width="100%"
 						frameBorder="0"
 						style={{ minHeight: `560px` }}
