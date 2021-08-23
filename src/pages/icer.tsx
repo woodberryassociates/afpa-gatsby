@@ -22,12 +22,17 @@ const IcerPage = ({
 				<div dangerouslySetInnerHTML={{ __html: content }} />
 
 				{/* Video Player */}
-				<div className="w-full lg:w-3/4 m-auto relative py-32 lg:py-72">
+				<div
+					className="w-full m-auto relative"
+					style={{ paddingBottom: `56.25%` }}
+				>
 					<iframe
 						src="https://vimeo.com/event/1221255/embed/28b1a60f6d"
 						frameBorder="0"
 						allow="autoplay; fullscreen; picture-in-picture"
 						allowFullScreen={true}
+						width="100%"
+						height="100%"
 						style={{
 							position: `absolute`,
 							top: 0,
