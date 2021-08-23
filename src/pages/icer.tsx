@@ -14,15 +14,33 @@ const IcerPage = ({
 	<Layout>
 		<SEO title={title} />
 		<div className="mt-2 lg:mt-10 mb-10 mx-2 md:mx-32 xxl:mx-64 pb-10">
-			{/* Header */}
-			<h4 dangerouslySetInnerHTML={{ __html: title }} />
+			{/* Title */}
+			<h4 className="text-center" dangerouslySetInnerHTML={{ __html: title }} />
 
 			{/* Content */}
 			<div className="content flex flex-col">
 				<div dangerouslySetInnerHTML={{ __html: content }} />
+
+				{/* Video Player */}
+				<div className="w-full lg:w-3/4 m-auto relative py-32 lg:py-72">
+					<iframe
+						src="https://vimeo.com/event/1221255/embed/28b1a60f6d"
+						frameBorder="0"
+						allow="autoplay; fullscreen; picture-in-picture"
+						allowFullScreen={true}
+						style={{
+							position: `absolute`,
+							top: 0,
+							left: 0,
+							width: `100%`,
+							height: `100%`,
+						}}
+						title="ICER"
+					></iframe>
+				</div>
 			</div>
 
-			<div className="grid grid-cols-1 col-gap-6 md:grid-cols-2 xxl:grid-cols-6">
+			<div className="mt-8 grid grid-cols-1 col-gap-6 md:grid-cols-2 xxl:grid-cols-6">
 				{/* Q & A (powered by slido) */}
 				<div className="xxl:col-start-2 xxl:col-span-2">
 					<h5>Q & A</h5>

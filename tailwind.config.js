@@ -86,6 +86,9 @@ module.exports = {
 				'1275': `1275px`,
 				'10/12': `83.33vw`,
 			},
+			padding: {
+				72: `18rem`,
+			},
 			fontSize: {
 				'7xl': `4.5rem`,
 			},
