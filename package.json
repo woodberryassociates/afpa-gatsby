@@ -34,7 +34,7 @@
 		"start": "run-p start:gatsby start:lambda",
 		"start:gatsby": "gatsby develop",
 		"start:lambda": "netlify-lambda serve src/lambda",
-		"build": "run-p build:gatsby build:lambda",
+		"build": "run-s build:gatsby build:lambda",
 		"build:gatsby": "gatsby build",
 		"build:lambda": "netlify-lambda build src/lambda",
 		"serve": "run-p serve:gatsby serve:lambda",

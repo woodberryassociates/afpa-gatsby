@@ -12,8 +12,10 @@ module.exports = {
 	flags: {
 		PRESERVE_FILE_DOWNLOAD_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
 		PRESERVE_WEBPACK_CACHE: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28331
-		FAST_DEV: true,
 		PARALLEL_SOURCING: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28336
+		FAST_REFRESH: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28138
+		DEV_SSR: true, // ? https://github.com/gatsbyjs/gatsby/discussions/28138
+		FAST_DEV: true,
 	},
 	plugins: [
 		{
