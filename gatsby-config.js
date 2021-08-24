@@ -117,11 +117,12 @@ module.exports = {
 								if (
 									// custom post types
 									e.__type === `wordpress__wp_surveys` ||
-									e.__type === `wordpress__wp_covid_19s` ||
 									e.__type === `wordpress__wp_copays` ||
 									e.__type === `wordpress__wp_infographics` ||
 									e.__type === `wordpress__wp_annual_reports` ||
-									e.__type === `wordpress__wp_events`
+									e.__type === `wordpress__wp_events` ||
+									e.__type === `wordpress__wp_covid_19s` ||
+									e.__type === `wordpress__wp_icer_resources`
 								) {
 									// if the link is being treated as a node, then find and return the actual url
 									if (e.acf.link___NODE)

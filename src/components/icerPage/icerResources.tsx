@@ -13,7 +13,7 @@ const IcerResources = () => {
 						title
 						acf {
 							author
-							textLink: link
+							textLink
 							link_text
 						}
 						featured_media {
