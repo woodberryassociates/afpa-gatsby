@@ -20,30 +20,41 @@ const IcerPage = ({
 			{/* Content */}
 			<div className="content flex flex-col">
 				<div dangerouslySetInnerHTML={{ __html: content }} />
-
-				{/* Video Player */}
-				<div
-					className="w-full m-auto relative"
-					style={{ paddingBottom: `56.25%` }}
-				>
-					<iframe
-						src="https://vimeo.com/event/1221255/embed/28b1a60f6d"
-						frameBorder="0"
-						allow="autoplay; fullscreen; picture-in-picture"
-						allowFullScreen={true}
-						width="100%"
-						height="100%"
-						style={{
-							position: `absolute`,
-							top: 0,
-							left: 0,
-							width: `100%`,
-							height: `100%`,
-						}}
-						title="ICER"
-					></iframe>
-				</div>
 			</div>
+
+			{/* Video Player */}
+			<div
+				className="w-full m-auto relative"
+				style={{ paddingBottom: `56.25%` }}
+			>
+				<iframe
+					src="https://vimeo.com/event/1221255/embed/28b1a60f6d"
+					frameBorder="0"
+					allow="autoplay; fullscreen; picture-in-picture"
+					allowFullScreen={true}
+					width="100%"
+					height="100%"
+					style={{
+						position: `absolute`,
+						top: 0,
+						left: 0,
+						width: `100%`,
+						height: `100%`,
+					}}
+					title="ICER"
+				></iframe>
+			</div>
+
+			<p className="mt-3 mb-5 text-center">
+				For questions or to get involved email Casey McPherson at{` `}
+				<a
+					href="mailto:CMcPherson@AllianceForPatientAccess.org"
+					className="text-lightBlue"
+				>
+					CMcPherson@AllianceForPatientAccess.org
+				</a>
+				.
+			</p>
 
 			<div className="mt-8 grid grid-cols-1 col-gap-6 md:grid-cols-2 xxl:grid-cols-6">
 				{/* Q & A (powered by slido) */}
@@ -65,6 +76,79 @@ const IcerPage = ({
 
 		{/* Featured Resources */}
 		<IcerResources />
+
+		{/* Agenda */}
+		<div className="px-2 md:px-32 lg:px-64 pt-10 pb-64">
+			{/* Header */}
+			<div className="mb-8 text-center">
+				<p>
+					<b>Clinician Voices for Patient Access</b>
+				</p>
+				<p>
+					<b>August 25, 2021</b>
+				</p>
+			</div>
+
+			{/* Schedule */}
+			<ul>
+				<li className="mb-3">
+					<p>
+						12:00 PM - 12:05 PM ET – <b>Introduction</b>
+					</p>
+					<p>Josie Cooper, Executive Director – Alliance for Patient Access</p>
+				</li>
+
+				<li className="my-3">
+					<p>
+						12:05 PM – 12:10 PM ET – <b>Overview of Severe Asthma</b>
+					</p>
+					<p>
+						Jenna Riemenschneider, Director of Policy and Advocacy – Asthma and
+						Allergy Foundation of America
+					</p>
+				</li>
+
+				<li className="my-3">
+					<p>
+						12:10 PM - 12:20 PM ET – <b>ICER 101</b>
+					</p>
+					<p>
+						Michelle Winokur, DrPH, Executive Director – Institute for Patient
+						Access
+					</p>
+				</li>
+
+				<li className="my-3">
+					<p>
+						12:20-12:25 PM ET – <b>Patient Advocate Perspective</b>
+					</p>
+					<p>Tonya Winders, President and CEO – Allergy and Asthma Network</p>
+				</li>
+
+				<li className="my-3">
+					<p>
+						12:25-12:35 PM ET – <b>Clinician Perspective</b>
+					</p>
+					<p>
+						Allen Meadows, MD – Chairman of AfPA’s Respiratory Therapy Access
+						Working Group
+					</p>
+				</li>
+
+				<li className="my-3">
+					<p>
+						12:35-12:45 PM ET – <b>Call to Action</b>
+					</p>
+					<p>Josie Cooper, Executive Director – Alliance for Patient Access</p>
+				</li>
+
+				<li className="mt-3">
+					<p>
+						12:45 PM - 12:50 PM ET – <b>Q&A </b>
+					</p>
+				</li>
+			</ul>
+		</div>
 	</Layout>
 )
 

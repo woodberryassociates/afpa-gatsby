@@ -5,7 +5,7 @@ import GravityFormForm from 'gatsby-gravityforms-component'
 import Img from 'gatsby-image'
 import { OutboundLink } from 'gatsby-plugin-google-gtag'
 
-import { useGravityData } from '../hooks/gravityForms'
+import { useGravityData } from '../hooks/useGravityData'
 import { facebook_light, twitter_light, youtube_light } from '../images'
 
 const Footer = () => {

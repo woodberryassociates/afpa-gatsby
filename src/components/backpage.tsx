@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { useGravityData } from '../hooks/gravityForms'
+import { useGravityData } from '../hooks/useGravityData'
 
 const Backpage = ({ data: { post } }) => {
 	const formData = useGravityData() // can't use hooks conditionally, so assigning here

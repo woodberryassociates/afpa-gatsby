@@ -1,5 +1,9 @@
 // eslint-disable-next-line no-undef
 module.exports = {
+	future: {
+		purgeLayersByDefault: true,
+	},
+	purge: [`src/**/*.css`, `src/**/*.tsx`],
 	theme: {
 		fontFamily: {
 			mont: [
