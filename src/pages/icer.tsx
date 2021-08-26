@@ -28,10 +28,10 @@ const IcerPage = ({
 				style={{ paddingBottom: `56.25%` }}
 			>
 				<iframe
-					src="https://vimeo.com/event/1221255/embed/28b1a60f6d"
+					src="https://www.youtube.com/embed/U6Sizkp9i94?start=298"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
 					frameBorder="0"
-					allow="autoplay; fullscreen; picture-in-picture"
-					allowFullScreen={true}
 					width="100%"
 					height="100%"
 					style={{
@@ -63,6 +63,7 @@ const IcerPage = ({
 					<iframe
 						src="https://app.sli.do/event/rfjrqrv4"
 						width="100%"
+						height="100%"
 						frameBorder="0"
 						style={{ minHeight: `560px` }}
 						title="Slido"
