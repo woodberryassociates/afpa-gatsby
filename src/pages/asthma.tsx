@@ -21,9 +21,11 @@ const IcerPage = ({
 			<h4 className="text-center" dangerouslySetInnerHTML={{ __html: title }} />
 
 			{/* Header */}
-			<div className="content">
-				<h5 className="text-center">{header}</h5>
-			</div>
+			{header ? (
+				<div className="content">
+					<h5 className="text-center">{header}</h5>
+				</div>
+			) : null}
 
 			{/* Video Player */}
 			<div
@@ -31,7 +33,7 @@ const IcerPage = ({
 				style={{ paddingBottom: `56.25%` }}
 			>
 				<iframe
-					src="https://www.youtube.com/embed/U6Sizkp9i94?start=298"
+					src="https://www.youtube.com/embed/CTmUEK2yHaE"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
 					frameBorder="0"
@@ -50,13 +52,13 @@ const IcerPage = ({
 
 			{/* Content */}
 			<div
-				className="mt-3 content flex flex-col"
+				className="mt-3 flex flex-col content"
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
 		</div>
-
 		{/* Featured Resources */}
 		<IcerResources />
+		pdate i
 	</Layout>
 )
 
