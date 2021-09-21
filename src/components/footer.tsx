@@ -26,7 +26,7 @@ const Footer = () => {
 			<div className="mx-2 md:mx-32 py-12 pt-24 min-h-250 flex flex-col xs:flex-row justify-between items-center xs:items-end">
 				{/* LINKS */}
 				<div className="flex flex-col justify-end leading-loose">
-					<Link className="uppercase" to="afpa-state-chapters">
+					<Link className="uppercase" to="/afpa-state-chapters">
 						State Chapters
 					</Link>
 					<OutboundLink
