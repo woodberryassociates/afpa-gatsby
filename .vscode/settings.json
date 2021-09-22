@@ -1,6 +1,64 @@
 {
 	"languageStylus.useSeparator": false,
 	"editor.formatOnSave": true,
-	"css.validate": false // don't recall how the css is configured w/ tailwind, but it doesn't follow typical syntax
+	"css.validate": false,
+	"commentAnchors.tags.list": [
+		{
+			"tag": "ANCHOR",
+			"iconColor": "default",
+			"highlightColor": "#A8C023",
+			"scope": "file"
+		},
+		{
+			"tag": "TODO",
+			"iconColor": "blue",
+			"highlightColor": "#3ea8ff",
+			"scope": "workspace"
+		},
+		{
+			"tag": "FIXME",
+			"iconColor": "red",
+			"highlightColor": "#F44336",
+			"scope": "workspace"
+		},
+		{
+			"tag": "STUB",
+			"iconColor": "purple",
+			"highlightColor": "#BA68C8",
+			"scope": "file"
+		},
+		{
+			"tag": "NOTE",
+			"iconColor": "orange",
+			"highlightColor": "#FFB300",
+			"scope": "file"
+		},
+		{
+			"tag": "WORKSPACE_NOTE",
+			"iconColor": "orange",
+			"highlightColor": "#FFB300",
+			"scope": "workspace"
+		},
+		{
+			"tag": "REVIEW",
+			"iconColor": "green",
+			"highlightColor": "#64DD17",
+			"scope": "workspace"
+		},
+		{
+			"tag": "SECTION",
+			"iconColor": "blurple",
+			"highlightColor": "#896afc",
+			"scope": "workspace",
+			"behavior": "region"
+		},
+		{
+			"tag": "LINK",
+			"iconColor": "#2ecc71",
+			"highlightColor": "#2ecc71",
+			"scope": "workspace",
+			"behavior": "link"
+		}
+	] // don't recall how the css is configured w/ tailwind, but it doesn't follow typical syntax
 	// "postcss.validate": false
 }
