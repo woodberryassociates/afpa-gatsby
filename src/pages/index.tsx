@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => (
 		<div className="flex flex-col items-center text-center homePageWGClip">
 			<div className="m-4 md:m-24 px-2 sm:px-20 md:px-16 lg:px-32 pt-6 bg-white flex flex-col items-center">
 				{/* <h4>AfPA in Action</h4> */}
-				<h3 className="text-darkBlue">Working Groups</h3>
+				<h3 className="text-darkBlue">Working Groups &amp; Initiatives</h3>
 				<div
 					className="max-w-700 mb-6 text-md leading-relaxed font-light"
 					dangerouslySetInnerHTML={{
