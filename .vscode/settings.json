@@ -1,7 +1,8 @@
 {
 	"languageStylus.useSeparator": false,
 	"editor.formatOnSave": true,
-	"css.validate": false,
+	"css.validate": false, // don't recall how the css is configured w/ tailwind, but it doesn't follow typical syntax
+	// "postcss.validate": false,
 	"commentAnchors.tags.list": [
 		{
 			"tag": "ANCHOR",
@@ -59,6 +60,6 @@
 			"scope": "workspace",
 			"behavior": "link"
 		}
-	] // don't recall how the css is configured w/ tailwind, but it doesn't follow typical syntax
-	// "postcss.validate": false
+	],
+	"cSpell.words": ["bbcec", "copays", "elasticlunr", "gtag", "icer", "WPCOM"]
 }

@@ -21,7 +21,7 @@ const Slide = ({ slide }) => (
 			{slide.acf.link ? (
 				<OutboundLink
 					target="_blank"
-					href={slide.acf.link}
+					href={slide.acf.textLink}
 					className="absolute bottom-0 ml-2 mb-2 md:ml-12 md:mb-12"
 				>
 					<button className="p-2 sm:py-3 sm:px-8 text-sm sm:text-base">
@@ -43,7 +43,7 @@ const Slider = () => {
 						title
 						acf {
 							blurb
-							link
+							textLink
 							link_text
 						}
 						featured_media {

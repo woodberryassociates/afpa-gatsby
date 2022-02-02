@@ -105,8 +105,7 @@ module.exports = {
 				normalizers: normalizers => [
 					...normalizers,
 					{
-						// Normalizes the link format, so Gatsby doesn't drop
-						// one type (link___NODE or external url string)
+						// ? Normalizes the link format, so it's not left up to (unpredictable) Gatsby type inference (link___NODE or external url string)
 						name: `AcfLinkNormalizer`,
 						normalizer: ({ entities }) => {
 							console.log(`Normalizing links...`)
@@ -124,7 +123,8 @@ module.exports = {
 									e.__type === `wordpress__wp_annual_reports` ||
 									e.__type === `wordpress__wp_events` ||
 									e.__type === `wordpress__wp_covid_19s` ||
-									e.__type === `wordpress__wp_icer_resources`
+									e.__type === `wordpress__wp_icer_resources` ||
+									e.__type === `wordpress__wp_sliders`
 								) {
 									// if the link is being treated as a node, then find and return the actual url
 									if (e.acf.link___NODE)
