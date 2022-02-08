@@ -31,6 +31,7 @@
 		]
 	},
 	"scripts": {
+		"prestart": "npm run build:lambda",
 		"start": "run-p start:gatsby start:lambda",
 		"start:gatsby": "gatsby develop",
 		"start:lambda": "netlify-lambda serve src/lambda",

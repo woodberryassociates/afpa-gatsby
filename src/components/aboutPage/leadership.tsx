@@ -81,11 +81,13 @@ const Leadership = ({
 		<div className="flex flex-col justify-between items-center">
 			{/* CHAIRMAN */}
 			<div
-				id="founder"
+				id="chief-medical-officer"
 				className="my-10 flex justify-center items-center w-full"
 			>
 				<div className="h-px w-2/5 bg-lighterGray" />
-				<h5 className="mx-4 text-afpaGreen text-center">Founder</h5>
+				<h5 className="mx-4 text-afpaGreen text-center">
+					Chief Medical Officer
+				</h5>
 				<div className="h-px w-2/5 bg-lighterGray" />
 			</div>
 			<div className="sm:mx-32 flex flex-col-reverse xl:flex-row justify-between items-center bg-white">

@@ -1,65 +1,23 @@
 {
-	"languageStylus.useSeparator": false,
-	"editor.formatOnSave": true,
+	// CSS/Styles
 	"css.validate": false, // don't recall how the css is configured w/ tailwind, but it doesn't follow typical syntax
-	// "postcss.validate": false,
-	"commentAnchors.tags.list": [
-		{
-			"tag": "ANCHOR",
-			"iconColor": "default",
-			"highlightColor": "#A8C023",
-			"scope": "file"
-		},
-		{
-			"tag": "TODO",
-			"iconColor": "blue",
-			"highlightColor": "#3ea8ff",
-			"scope": "workspace"
-		},
-		{
-			"tag": "FIXME",
-			"iconColor": "red",
-			"highlightColor": "#F44336",
-			"scope": "workspace"
-		},
-		{
-			"tag": "STUB",
-			"iconColor": "purple",
-			"highlightColor": "#BA68C8",
-			"scope": "file"
-		},
-		{
-			"tag": "NOTE",
-			"iconColor": "orange",
-			"highlightColor": "#FFB300",
-			"scope": "file"
-		},
-		{
-			"tag": "WORKSPACE_NOTE",
-			"iconColor": "orange",
-			"highlightColor": "#FFB300",
-			"scope": "workspace"
-		},
-		{
-			"tag": "REVIEW",
-			"iconColor": "green",
-			"highlightColor": "#64DD17",
-			"scope": "workspace"
-		},
-		{
-			"tag": "SECTION",
-			"iconColor": "blurple",
-			"highlightColor": "#896afc",
-			"scope": "workspace",
-			"behavior": "region"
-		},
-		{
-			"tag": "LINK",
-			"iconColor": "#2ecc71",
-			"highlightColor": "#2ecc71",
-			"scope": "workspace",
-			"behavior": "link"
-		}
-	],
-	"cSpell.words": ["bbcec", "copays", "elasticlunr", "gtag", "icer", "WPCOM"]
+	// "languageStylus.useSeparator": false, // previously useful for CSS/tailwind decorator formatting
+	// "postcss.validate": false, // previously useful for CSS/tailwind decorator formatting
+
+	// Markdown
+	// NOTE it would be nice to handle this on a per-file basis, instead of universally
+	"markdownlint.config": {
+		"MD041": false
+	},
+
+	// Spelling
+	"cSpell.words": [
+		"bbcec",
+		"copays",
+		"elasticlunr",
+		"gform",
+		"gtag",
+		"icer",
+		"WPCOM"
+	]
 }

@@ -18,7 +18,7 @@ const Slide = ({ slide }) => (
 			fluid={slide.featured_media.localFile.childImageSharp.fluid}
 			className="h-full"
 		>
-			{slide.acf.link ? (
+			{slide.acf.textLink ? (
 				<OutboundLink
 					target="_blank"
 					href={slide.acf.textLink}

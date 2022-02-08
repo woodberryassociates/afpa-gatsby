@@ -14,7 +14,7 @@ $textGreen: #19af6a;
 /* apply montserrat family */
 body {
 	@apply font-mont overflow-x-hidden;
-	/* TODO: overflow-x-hidden is used to fix some uncontained mobile display overflow */
+	/* TODO: overflow-x-hidden is used to fix some unconfined mobile display overflow */
 }
 
 h3 {
