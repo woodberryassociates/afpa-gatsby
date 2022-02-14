@@ -58,7 +58,6 @@ const IcerPage = ({
 		</div>
 		{/* Featured Resources */}
 		<IcerResources />
-		pdate i
 	</Layout>
 )
 

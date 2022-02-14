@@ -15,10 +15,12 @@ const CovidPage = ({
 		<SEO title={title} />
 		<div>
 			{/* COVID Header */}
-			<Img
-				imgStyle={{ objectPosition: `top` }}
-				fluid={featured_media.localFile.childImageSharp.fluid}
-			/>
+			{featured_media && (
+				<Img
+					imgStyle={{ objectPosition: `top` }}
+					fluid={featured_media.localFile.childImageSharp.fluid}
+				/>
+			)}
 
 			<div className="mt-2 lg:mt-10 mb-10 mx-2 md:mx-32 xl:mx-64 pb-10">
 				<h4 dangerouslySetInnerHTML={{ __html: title }} />
@@ -38,15 +40,6 @@ export const pageQuery = graphql`
 			id
 			title
 			content
-			featured_media {
-				localFile {
-					childImageSharp {
-						fluid(maxWidth: 1920) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
-			}
 		}
 	}
 `
