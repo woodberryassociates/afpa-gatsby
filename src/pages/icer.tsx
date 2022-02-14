@@ -2,19 +2,20 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 
-import CovidResources from '../components/covidPage/covidResources'
+import IcerResources from '../components/icerPage/icerResources'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-const CovidPage = ({
+const IcerPage = ({
 	data: {
 		page: { title, content, featured_media },
 	},
 }) => (
 	<Layout>
 		<SEO title={title} />
+
 		<div>
-			{/* COVID Header */}
+			{/* ICER Header */}
 			{featured_media && (
 				<Img
 					imgStyle={{ objectPosition: `top` }}
@@ -29,13 +30,13 @@ const CovidPage = ({
 				</div>
 			</div>
 
-			<CovidResources />
+			<IcerResources />
 		</div>
 	</Layout>
 )
 
 export const pageQuery = graphql`
-	query CovidPageQuery {
+	query IcerPageQuery {
 		page: wordpressPage(wordpress_id: { eq: 768 }) {
 			id
 			title
@@ -44,4 +45,4 @@ export const pageQuery = graphql`
 	}
 `
 
-export default CovidPage
+export default IcerPage

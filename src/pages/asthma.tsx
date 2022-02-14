@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
-import IcerResources from '../components/icerPage/icerResources'
+import IcerResources from '../components/asthmaPage/icerResources'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-const IcerPage = ({
+const AsthmaPage = ({
 	data: {
 		page: {
 			title,
@@ -62,7 +62,7 @@ const IcerPage = ({
 )
 
 export const pageQuery = graphql`
-	query IcerPageQuery {
+	query AsthmaPageQuery {
 		page: wordpressPage(wordpress_id: { eq: 1462 }) {
 			id
 			title
@@ -74,4 +74,4 @@ export const pageQuery = graphql`
 	}
 `
 
-export default IcerPage
+export default AsthmaPage

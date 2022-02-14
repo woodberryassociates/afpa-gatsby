@@ -3,10 +3,10 @@ import React from 'react'
 
 import ResourceCard from '../resourceCard'
 
-const CovidResources = () => {
-	const data = useStaticQuery(graphql`
-		query CovidQuery {
-			upcoming: allWordpressWpCovid19S {
+const IcerResources = () => {
+	const { resources } = useStaticQuery(graphql`
+		query IcerResources {
+			resources: allWordpressWpIcerResources {
 				edges {
 					node {
 						id
@@ -34,11 +34,11 @@ const CovidResources = () => {
 	return (
 		<div className="px-2 md:px-32 lg:px-64 pt-10 pb-64 bg-backgroundLightGray leftBottomTilt">
 			<h5>Featured Resources</h5>
-			{data.upcoming.edges.map(resource => (
+			{resources.edges.map(resource => (
 				<ResourceCard key={resource.node.id} resource={resource} />
 			))}
 		</div>
 	)
 }
 
-export default CovidResources
+export default IcerResources
