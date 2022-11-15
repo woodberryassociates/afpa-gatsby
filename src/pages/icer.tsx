@@ -7,11 +7,7 @@ import SEO from '../components/seo'
 
 const IcerPage = ({
 	data: {
-		page: {
-			title,
-			content,
-			acf: { header },
-		},
+		page: { title, content, acf },
 	},
 }) => (
 	<Layout>
@@ -21,9 +17,9 @@ const IcerPage = ({
 			<h4 className="text-center" dangerouslySetInnerHTML={{ __html: title }} />
 
 			{/* Header */}
-			{header ? (
+			{acf?.header ? (
 				<div className="content">
-					<h5 className="text-center">{header}</h5>
+					<h5 className="text-center">{acf?.header}</h5>
 				</div>
 			) : null}
 
