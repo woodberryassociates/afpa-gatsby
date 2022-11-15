@@ -64,7 +64,7 @@ const IcerPage = ({
 
 export const pageQuery = graphql`
 	query IcerPageQuery {
-		page: wordpressPage(wordpress_id: { eq: 1462 }) {
+		page: wordpressPage(wordpress_id: { eq: 768 }) {
 			id
 			title
 			content
