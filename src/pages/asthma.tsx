@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
-import IcerResources from '../components/asthmaPage/icerResources'
+import AsthmaResources from '../components/asthmaPage/asthmaResources'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
@@ -46,7 +46,7 @@ const AsthmaPage = ({
 						width: `100%`,
 						height: `100%`,
 					}}
-					title="ICER"
+					title="Asthma"
 				></iframe>
 			</div>
 
@@ -56,8 +56,9 @@ const AsthmaPage = ({
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
 		</div>
+
 		{/* Featured Resources */}
-		<IcerResources />
+		<AsthmaResources />
 	</Layout>
 )
 

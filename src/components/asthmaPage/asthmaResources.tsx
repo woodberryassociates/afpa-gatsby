@@ -3,10 +3,10 @@ import React from 'react'
 
 import ResourceCard from '../resourceCard'
 
-const IcerResources = () => {
+const AsthmaResources = () => {
 	const { resources } = useStaticQuery(graphql`
-		query IcerResources {
-			resources: allWordpressWpIcerResources {
+		query AsthmaResources {
+			resources: allWordpressWpAsthmaResources {
 				edges {
 					node {
 						id
@@ -41,4 +41,4 @@ const IcerResources = () => {
 	)
 }
 
-export default IcerResources
+export default AsthmaResources

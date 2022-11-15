@@ -82,11 +82,13 @@ module.exports = {
 					`**/events`,
 					// Surveys Page CPT
 					`**/surveys`,
-					// COVID-19 Page CPT
-					`**/covid-19s`,
+					// Neutropenia (prev. COVID-19) Page CPT
+					`**/neutropenia-resources`,
+					// Asthma (prev. ICER) Page CPT
+					`**/asthma-resources`,
 					// ICER Page CPTs
 					`**/icer-resources`,
-					`**/icer-speakers`,
+					// `**/icer-speakers`, // ? not currently used
 					// Copay Page CPT
 					`**/copays`,
 					// Advocacy Page CPTs
@@ -122,7 +124,8 @@ module.exports = {
 									e.__type === `wordpress__wp_infographics` ||
 									e.__type === `wordpress__wp_annual_reports` ||
 									e.__type === `wordpress__wp_events` ||
-									e.__type === `wordpress__wp_covid_19s` ||
+									e.__type === `wordpress__wp_neutropenia_resources` ||
+									e.__type === `wordpress__wp_asthma_resources` ||
 									e.__type === `wordpress__wp_icer_resources` ||
 									e.__type === `wordpress__wp_sliders`
 								) {
