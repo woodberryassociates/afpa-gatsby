@@ -29,7 +29,7 @@ const IcerPage = ({
 				style={{ paddingBottom: `56.25%` }}
 			>
 				<iframe
-					src="https://youtu.be/7kIsB1BwH00"
+					src="https://www.youtube.com/embed/7kIsB1BwH00"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
 					frameBorder="0" // TODO - deprecated (does it need replacing w/ an alternative?)
